@@ -11,7 +11,7 @@
 
 
 
-<title>MEMORANDOM</title>
+<title>About FOODS4ALL</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,11 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -248,9 +245,6 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
 
 
 
@@ -299,68 +293,15 @@ $(document).ready(function () {
 
 <div class="fluid-row" id="header">
 
-<div class="btn-group pull-right">
-<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
-</div>
 
 
-
-<h1 class="title toc-ignore">MEMORANDOM</h1>
+<h1 class="title toc-ignore">About FOODS4ALL</h1>
 
 </div>
 
 
-<div id="作業メモ" class="section level1">
-<h1>作業メモ</h1>
-<div id="読み込み" class="section level2">
-<h2>読み込み</h2>
-<div id="html-ファイルからの読み込み" class="section level3">
-<h3><code>html</code> ファイルからの読み込み</h3>
-<ul>
-<li>[2020/03/05] html file を <code>xml2::read_html</code> で読み込み、<code>rvest::html_nodes</code> で node を指定し、<code>rvest::html_table</code> で、html の table を data frame に変換。<code>rvest</code> package を読み込むと、<code>xml2</code> も読み込む。</li>
-</ul>
-<pre class="r"><code>library(rvest)
-url &lt;- &quot;https://www.mhlw.go.jp/stf/newpage_09964.html&quot;
-h &lt;- read_html(url)
-tab &lt;- h %&gt;% html_nodes(&quot;table&quot;)
-tab_0 &lt;- tab[[3]] %&gt;% html_table 
-str(tab_0)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    247 obs. of  8 variables:
-##  $ X1: chr  &quot;新No.&quot; &quot;１&quot; &quot;２&quot; &quot;３&quot; ...
-##  $ X2: chr  &quot;旧No.&quot; &quot;１&quot; &quot;２&quot; &quot;３&quot; ...
-##  $ X3: chr  &quot;確定日&quot; &quot;1/15&quot; &quot;1/24&quot; &quot;1/25&quot; ...
-##  $ X4: chr  &quot;年代&quot; &quot;30代&quot; &quot;40代&quot; &quot;30代&quot; ...
-##  $ X5: chr  &quot;性別&quot; &quot;男&quot; &quot;男&quot; &quot;女&quot; ...
-##  $ X6: chr  &quot;居住地&quot; &quot;神奈川県&quot; &quot;中国\r\n\t\t\t\t（武漢市）&quot; &quot;中国\r\n\t\t\t\t（武漢市）&quot; ...
-##  $ X7: chr  &quot;周囲の患者の発生※&quot; &quot;なし&quot; &quot;なし&quot; &quot;なし&quot; ...
-##  $ X8: chr  &quot;濃厚接触者の状況&quot; &quot;38名特定\r\n\t\t\t\t健康観察終了&quot; &quot;32名特定\r\n\t\t\t\t健康観察終了&quot; &quot;７名特定\r\n\t\t\t\t健康観察終了&quot; ...</code></pre>
-</div>
-</div>
-<div id="文字列" class="section level2">
-<h2>文字列</h2>
-<div id="置き換え" class="section level3">
-<h3>置き換え</h3>
-<ul>
-<li><p>[2020/03/05] 文字列の置き換え <code>stringr::str_replace(&quot;中国\r\n\t\t\t\t（武漢市）&quot;, pattern = &quot;\r\n\t\t\t\t&quot;, replacement = &quot;&quot;)</code></p></li>
-<li><p>[2020/03/05] 文字を特定のものに置き換え <code>sprintf(&quot;男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, 5)</code></p></li>
-</ul>
-</div>
-</div>
-<div id="ggplot2" class="section level2">
-<h2><code>ggplot2</code></h2>
-<div id="ラベル" class="section level3">
-<h3>ラベル</h3>
-<ul>
-<li><p>[2020/03/05] <code>ggplot2</code> において、x-軸ラベルの形式 <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))</code></p></li>
-<li><p>[2020/03/05] <code>ggplot2</code> において、time series の x-軸ラベルの形式　<code>scale_x_date(breaks = &quot;2 days&quot;, labels = date_format(&quot;%m/%d&quot;))</code></p></li>
-<li><p>[2020/03/05] <code>ggplot2</code> 設定例 <code>ggplot(aes(x = reorder(居住地, 計), y = 計)) + geom_col() + coord_flip() + theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + xlab(&quot;居住地&quot;)</code></p></li>
-</ul>
-</div>
-</div>
+<div id="このホームパージについて" class="section level2">
+<h2>このホームパージについて</h2>
 </div>
 
 
@@ -396,11 +337,6 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
 
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

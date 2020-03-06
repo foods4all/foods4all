@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Covid-19 in Japan</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Free Open Online Data Science for All</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="examples.html">Examples</a>
+</li>
+<li>
+  <a href="memo.html">Memorandum</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Covid-19 in Japan</h1>
+<h4 class="date">2020/03/04</h4>
+
+</div>
+
+
+<div id="日本におけるコロナウイルス感染による患者確認数について" class="section level2">
+<h2>日本における、コロナウイルス感染による患者確認数について</h2>
+<ul>
+<li>作成日：2020年3月3日</li>
+<li><a href="https://www.mhlw.go.jp/stf/newpage_09925.html">厚生労働省のサイト</a> 2020年3月3日付けデータから計算したもの（表形式にはなったもののなかで最新）</li>
+<li>三番目（国内発症者）の表と、四番目（武漢市からのチャーター便帰国者中の発症者）の表とを結合</li>
+<li>確定日が調査中のもが3件あり、男女別も確認中のものが1件ある。</li>
+<li>「10代未満」が1件あり、調べてみると、<a href="https://www.mhlw.go.jp/stf/newpage_09857.html">新型コロナウイルスに関連した患者の発生について(192～208例目)</a> には、下のようにある。番号が旧と新があり、混乱をきたすが、この事例は、下の196例目と思われ、10歳未満であるだけでなく、男性であり、女性ではない。しかし、表から読み取ることが基本なので、この版では変更せず。</li>
+</ul>
+<pre><code>北海道：患者９例（195例目：80代女性、196例目：10歳未満男性、197例目：80代男性、198例目：60代女性、199例目：60代男性、200例目：60代男性、201例目：60代女性、202例目：40代男性、203例目：70代男性）</code></pre>
+<ul>
+<li>Code Pulldown Menu から、[Show] を選ぶと、R のコードを見ることができます。</li>
+<li>このページはあくまでも、データサイエンス教育の教育用素材として作成しているものです。</li>
+<li>連絡先：freeopenonlinedatascience4all[at]gmail.com　（[at] を @ に変換)</li>
+</ul>
+<div id="日本国内における新型コロナウイルスによる発症者数武漢市からのチャーター便帰国者11名を含む" class="section level3">
+<h3>日本国内における新型コロナウイルスによる発症者数（武漢市からのチャーター便帰国者11名を含む）</h3>
+<pre class="r"><code>library(tidyverse) 
+library(rvest)
+library(stringr)
+library(lubridate)
+library(scales)
+url &lt;- &quot;https://www.mhlw.go.jp/stf/newpage_09925.html&quot;
+h &lt;- read_html(url)
+tab &lt;- h %&gt;% html_nodes(&quot;table&quot;)
+tab_0 &lt;- tab[[3]] %&gt;% html_table 
+# str(tab)
+dat_0 &lt;- tab_0
+colnames_0 &lt;- dat_0[1,]
+colnames(dat_0) &lt;- colnames_0
+# head(dat_0)
+dat_0 &lt;- dat_0[2:nrow(dat_0),]
+#head(dat_0)
+#dim(dat_0)
+dat_0 &lt;- dat_0[,3:6]
+#head(dat_0)
+tab_1 &lt;- tab[[4]] %&gt;% html_table 
+dat_1 &lt;- tab_1
+colnames_1 &lt;- dat_1[1,]
+colnames(dat_1) &lt;- colnames_1
+dat_1 &lt;- dat_1[2:nrow(dat_1),]
+# head(dat_1)
+dat_1 &lt;- dat_1[,4:7]
+# dat_0
+# dat_1
+# dim(dat_1)
+dat &lt;- bind_rows(dat_0, dat_1) %&gt;% arrange(確定日)
+# head(dat,20)
+# dim(dat)
+dat$居住地 &lt;- dat$居住地 %&gt;% str_replace(pattern = &quot;\r\n\t\t\t\t&quot;, replacement = &quot;&quot;)
+dat</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["確定日"],"name":[1],"type":["chr"],"align":["left"]},{"label":["年代"],"name":[2],"type":["chr"],"align":["left"]},{"label":["性別"],"name":[3],"type":["chr"],"align":["left"]},{"label":["居住地"],"name":[4],"type":["chr"],"align":["left"]}],"data":[{"1":"1/15","2":"30代","3":"男","4":"神奈川県"},{"1":"1/24","2":"40代","3":"男","4":"中国（武漢市）"},{"1":"1/25","2":"30代","3":"女","4":"中国（武漢市）"},{"1":"1/26","2":"40代","3":"男","4":"中国（武漢市）"},{"1":"1/28","2":"40代","3":"男","4":"中国（武漢市）"},{"1":"1/28","2":"60代","3":"男","4":"奈良県"},{"1":"1/28","2":"40代","3":"女","4":"中国（武漢市）"},{"1":"1/29","2":"40代","3":"女","4":"大阪府"},{"1":"1/30","2":"50代","3":"男","4":"三重県"},{"1":"1/30","2":"30代","3":"女","4":"中国（湖南省）"},{"1":"1/30","2":"20代","3":"女","4":"京都府"},{"1":"1/30","2":"50代","3":"男","4":"中国（武漢市）"},{"1":"1/31","2":"20代","3":"女","4":"千葉県"},{"1":"2/1","2":"40代","3":"男","4":"調査中"},{"1":"2/1","2":"40代","3":"男","4":"中国"},{"1":"2/1","2":"40代","3":"男","4":"中国（武漢市）"},{"1":"2/10","2":"40代","3":"男","4":"埼玉県"},{"1":"2/10","2":"50代","3":"男","4":"中国（武漢市）"},{"1":"2/11","2":"50代","3":"男","4":"神奈川県"},{"1":"2/13","2":"80代","3":"女","4":"神奈川県"},{"1":"2/13","2":"70代","3":"男","4":"東京都"},{"1":"2/13","2":"50代","3":"男","4":"和歌山県"},{"1":"2/13","2":"20代","3":"男","4":"千葉県"},{"1":"2/14","2":"70代","3":"男","4":"和歌山"},{"1":"2/14","2":"60代","3":"女","4":"沖縄県"},{"1":"2/14","2":"50代","3":"女","4":"東京都"},{"1":"2/14","2":"70代","3":"男","4":"東京都"},{"1":"2/14","2":"60代","3":"男","4":"愛知県"},{"1":"2/14","2":"50代","3":"男","4":"北海道"},{"1":"2/14","2":"30代","3":"男","4":"神奈川県"},{"1":"2/14","2":"50代","3":"男","4":"和歌山県"},{"1":"2/14","2":"50代","3":"女","4":"和歌山県"},{"1":"2/15","2":"60代","3":"男","4":"和歌山県"},{"1":"2/15","2":"40代","3":"男","4":"東京都"},{"1":"2/15","2":"60代","3":"女","4":"東京都"},{"1":"2/15","2":"60代","3":"女","4":"愛知県"},{"1":"2/16","2":"60代","3":"男","4":"愛知県"},{"1":"2/16","2":"30代","3":"男","4":"東京都"},{"1":"2/16","2":"60代","3":"男","4":"調査中"},{"1":"2/16","2":"60代","3":"男","4":"調査中"},{"1":"2/17","2":"40代","3":"女","4":"神奈川"},{"1":"2/17","2":"50代","3":"男","4":"東京都"},{"1":"2/17","2":"80代","3":"女","4":"和歌山県"},{"1":"2/17","2":"50代","3":"男","4":"和歌山県"},{"1":"2/17","2":"50代","3":"男","4":"和歌山県"},{"1":"2/17","2":"60代","3":"男","4":"愛知県"},{"1":"2/18","2":"60代","3":"男","4":"和歌山県"},{"1":"2/18","2":"30代","3":"男","4":"和歌山県"},{"1":"2/18","2":"80代","3":"男","4":"東京都"},{"1":"2/18","2":"20代","3":"男","4":"東京都"},{"1":"2/18","2":"50代","3":"男","4":"東京都"},{"1":"2/18","2":"60代","3":"男","4":"愛知県"},{"1":"2/18","2":"80代","3":"男","4":"神奈川県"},{"1":"2/18","2":"70代","3":"男","4":"神奈川県"},{"1":"2/19","2":"60代","3":"男","4":"神奈川県"},{"1":"2/19","2":"40代","3":"男","4":"北海道"},{"1":"2/19","2":"60代","3":"男","4":"北海道"},{"1":"2/19","2":"60代","3":"男","4":"沖縄県"},{"1":"2/19","2":"70代","3":"男","4":"東京都"},{"1":"2/19","2":"70代","3":"女","4":"東京都"},{"1":"2/19","2":"70代","3":"女","4":"東京都"},{"1":"2/19","2":"50代","3":"女","4":"愛知県"},{"1":"2/19","2":"50代","3":"男","4":"中国（湖北省）"},{"1":"2/20","2":"60代","3":"男","4":"福岡県"},{"1":"2/20","2":"40代","3":"男","4":"北海道"},{"1":"2/20","2":"70代","3":"女","4":"千葉県"},{"1":"2/20","2":"80代","3":"男","4":"沖縄県"},{"1":"2/20","2":"40代","3":"男","4":"東京都"},{"1":"2/20","2":"30代","3":"男","4":"埼玉県"},{"1":"2/20","2":"80代","3":"男","4":"愛知県"},{"1":"2/20","2":"80代","3":"男","4":"神奈川県"},{"1":"2/20","2":"60代","3":"女","4":"福岡県"},{"1":"2/21","2":"10歳未満","3":"男","4":"北海道"},{"1":"2/21","2":"10代","3":"男","4":"北海道"},{"1":"2/21","2":"40代","3":"女","4":"北海道"},{"1":"2/21","2":"50代","3":"男","4":"石川県"},{"1":"2/21","2":"50代","3":"女","4":"東京都"},{"1":"2/21","2":"70代","3":"女","4":"東京都"},{"1":"2/21","2":"50代","3":"女","4":"東京都"},{"1":"2/21","2":"60代","3":"男","4":"千葉県"},{"1":"2/21","2":"80代","3":"男","4":"神奈川県"},{"1":"2/21","2":"70代","3":"男","4":"愛知県"},{"1":"2/21","2":"20代","3":"女","4":"愛知県"},{"1":"2/21","2":"60代","3":"男","4":"熊本県"},{"1":"2/21","2":"60代","3":"女","4":"千葉県"},{"1":"2/21","2":"10歳未満","3":"男","4":"埼玉県"},{"1":"2/22","2":"20代","3":"女","4":"熊本県"},{"1":"2/22","2":"50代","3":"男","4":"熊本県"},{"1":"2/22","2":"40代","3":"男","4":"和歌山県"},{"1":"2/22","2":"50代","3":"女","4":"千葉県"},{"1":"2/22","2":"70代","3":"女","4":"北海道"},{"1":"2/22","2":"80代","3":"男","4":"北海道"},{"1":"2/22","2":"70代","3":"男","4":"北海道"},{"1":"2/22","2":"50代","3":"女","4":"北海道"},{"1":"2/22","2":"60代","3":"男","4":"北海道"},{"1":"2/22","2":"50代","3":"女","4":"北海道"},{"1":"2/22","2":"10代","3":"女","4":"北海道"},{"1":"2/22","2":"50代","3":"女","4":"北海道"},{"1":"2/22","2":"60代","3":"男","4":"東京都"},{"1":"2/22","2":"60代","3":"女","4":"愛知県"},{"1":"2/22","2":"40代","3":"女","4":"愛知県"},{"1":"2/22","2":"60代","3":"男","4":"愛知県"},{"1":"2/22","2":"60代","3":"男","4":"愛知県"},{"1":"2/22","2":"60代","3":"女","4":"栃木県"},{"1":"2/22","2":"50代","3":"男","4":"神奈川県"},{"1":"2/22","2":"50代","3":"男","4":"北海道"},{"1":"2/22","2":"70代","3":"男","4":"北海道"},{"1":"2/22","2":"50代","3":"女","4":"神奈川県"},{"1":"2/22","2":"20代","3":"女","4":"神奈川県"},{"1":"2/22","2":"20代","3":"女","4":"神奈川県"},{"1":"2/23","2":"70代","3":"女","4":"愛知県"},{"1":"2/23","2":"70代","3":"男","4":"愛知県"},{"1":"2/23","2":"40代","3":"男","4":"千葉県"},{"1":"2/23","2":"30代","3":"男","4":"北海道"},{"1":"2/23","2":"60代","3":"女","4":"北海道"},{"1":"2/23","2":"20代","3":"男","4":"北海道"},{"1":"2/23","2":"70代","3":"男","4":"北海道"},{"1":"2/23","2":"30代","3":"女","4":"北海道"},{"1":"2/23","2":"80代","3":"男","4":"北海道"},{"1":"2/23","2":"40代","3":"女","4":"北海道"},{"1":"2/23","2":"20代","3":"女","4":"北海道"},{"1":"2/24","2":"40代","3":"男","4":"東京都"},{"1":"2/24","2":"50代","3":"男","4":"東京都"},{"1":"2/24","2":"60代","3":"男","4":"石川県"},{"1":"2/24","2":"70代","3":"女","4":"北海道"},{"1":"2/24","2":"50代","3":"男","4":"北海道"},{"1":"2/24","2":"20代","3":"女","4":"北海道"},{"1":"2/24","2":"50代","3":"男","4":"北海道"},{"1":"2/24","2":"50代","3":"男","4":"神奈川県"},{"1":"2/24","2":"40代","3":"男","4":"東京都"},{"1":"2/24","2":"50代","3":"男","4":"東京都"},{"1":"2/24","2":"30代","3":"男","4":"東京都"},{"1":"2/25","2":"60代","3":"男","4":"長野県"},{"1":"2/25","2":"50代","3":"男","4":"熊本県"},{"1":"2/25","2":"60代","3":"女","4":"熊本県"},{"1":"2/25","2":"60代","3":"女","4":"北海道"},{"1":"2/25","2":"50代","3":"女","4":"石川県"},{"1":"2/25","2":"70代","3":"女","4":"愛知県"},{"1":"2/25","2":"70代","3":"女","4":"愛知県"},{"1":"2/25","2":"40代","3":"女","4":"愛知県"},{"1":"2/25","2":"60代","3":"男","4":"千葉県"},{"1":"2/25","2":"50代","3":"男","4":"千葉県"},{"1":"2/25","2":"70代","3":"男","4":"千葉県"},{"1":"2/25","2":"20代","3":"男","4":"北海道"},{"1":"2/25","2":"20代","3":"女","4":"北海道"},{"1":"2/25","2":"70代","3":"男","4":"北海道"},{"1":"2/25","2":"確認中","3":"確認中","4":"北海道"},{"1":"2/25","2":"70代","3":"女","4":"北海道"},{"1":"2/26","2":"70代","3":"女","4":"北海道"},{"1":"2/26","2":"40代","3":"男","4":"大阪府"},{"1":"2/26","2":"60代","3":"男","4":"神奈川県"},{"1":"2/26","2":"40代","3":"女","4":"大阪府"},{"1":"2/26","2":"50代","3":"男","4":"愛知県"},{"1":"2/26","2":"60代","3":"男","4":"愛知県"},{"1":"2/26","2":"70代","3":"男","4":"愛知県"},{"1":"2/26","2":"70代","3":"男","4":"愛知県"},{"1":"2/26","2":"70代","3":"女","4":"愛知県"},{"1":"2/27","2":"50代","3":"男","4":"岐阜県"},{"1":"2/27","2":"50代","3":"女","4":"大阪府"},{"1":"2/27","2":"50代","3":"男","4":"滋賀県"},{"1":"2/27","2":"50代","3":"男","4":"神奈川県"},{"1":"2/27","2":"60代","3":"女","4":"千葉県"},{"1":"2/27","2":"40代","3":"男","4":"大阪府"},{"1":"2/27","2":"50代","3":"男","4":"北海道"},{"1":"2/27","2":"50代","3":"男","4":"北海道"},{"1":"2/27","2":"30代","3":"男","4":"北海道"},{"1":"2/27","2":"70代","3":"男","4":"北海道"},{"1":"2/27","2":"60代","3":"男","4":"北海道"},{"1":"2/27","2":"40代","3":"男","4":"北海道"},{"1":"2/27","2":"40代","3":"男","4":"北海道"},{"1":"2/27","2":"10歳未満","3":"男","4":"北海道"},{"1":"2/27","2":"30代","3":"男","4":"北海道"},{"1":"2/27","2":"10歳未満","3":"男","4":"北海道"},{"1":"2/27","2":"80代","3":"男","4":"北海道"},{"1":"2/27","2":"30代","3":"男","4":"北海道"},{"1":"2/27","2":"80代","3":"男","4":"北海道"},{"1":"2/27","2":"60代","3":"男","4":"北海道"},{"1":"2/27","2":"40代","3":"女","4":"北海道"},{"1":"2/27","2":"60代","3":"女","4":"愛知県"},{"1":"2/27","2":"60代","3":"男","4":"愛知県"},{"1":"2/27","2":"50代","3":"男","4":"神奈川県"},{"1":"2/28","2":"40代","3":"女","4":"神奈川県"},{"1":"2/28","2":"20代","3":"男","4":"神奈川県"},{"1":"2/28","2":"60代","3":"男","4":"静岡県"},{"1":"2/28","2":"80代","3":"女","4":"北海道"},{"1":"2/28","2":"10代未満","3":"女","4":"北海道"},{"1":"2/28","2":"80代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"女","4":"北海道"},{"1":"2/28","2":"60代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"女","4":"北海道"},{"1":"2/28","2":"40代","3":"男","4":"北海道"},{"1":"2/28","2":"70代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"女","4":"北海道"},{"1":"2/28","2":"60代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"男","4":"北海道"},{"1":"2/28","2":"60代","3":"男","4":"愛知県"},{"1":"2/28","2":"40代","3":"女","4":"大阪市"},{"1":"2/28","2":"30代","3":"女","4":"高知県"},{"1":"2/29","2":"60代","3":"男","4":"新潟県"},{"1":"2/29","2":"70代","3":"男","4":"宮城県"},{"1":"2/29","2":"20代","3":"女","4":"東京都"},{"1":"2/29","2":"90代","3":"女","4":"北海道"},{"1":"2/29","2":"60代","3":"女","4":"北海道"},{"1":"2/29","2":"30代","3":"女","4":"北海道"},{"1":"2/29","2":"20代","3":"女","4":"北海道"},{"1":"2/29","2":"70代","3":"女","4":"愛知県"},{"1":"2/4","2":"30代","3":"女","4":"中国（武漢市）"},{"1":"2/4","2":"50代","3":"男","4":"中国（湖北省）"},{"1":"2/4","2":"50代","3":"女","4":"千葉県"},{"1":"2/5","2":"40代","3":"男","4":"中国（武漢市）"},{"1":"2/5","2":"20代","3":"男","4":"京都府"},{"1":"2/5","2":"50代","3":"男","4":"中国（武漢市）"},{"1":"2/8","2":"20代","3":"男","4":"中国（武漢市）"},{"1":"3/1","2":"60代","3":"男","4":"福岡県"},{"1":"3/1","2":"70代","3":"女","4":"神奈川県"},{"1":"3/1","2":"50代","3":"女","4":"神奈川県"},{"1":"3/1","2":"20代","3":"男","4":"千葉県"},{"1":"3/1","2":"20代","3":"女","4":"北海道"},{"1":"3/1","2":"40代","3":"女","4":"北海道"},{"1":"3/1","2":"50代","3":"女","4":"東京都"},{"1":"3/1","2":"70代","3":"女","4":"東京都"},{"1":"3/1","2":"50代","3":"男","4":"神奈川県"},{"1":"3/1","2":"50代","3":"女","4":"神奈川県"},{"1":"3/1","2":"調査中","3":"調査中","4":"高知県"},{"1":"3/1","2":"調査中","3":"調査中","4":"愛知県"},{"1":"3/1","2":"調査中","3":"調査中","4":"愛知県"},{"1":"3/1","2":"調査中","3":"調査中","4":"愛知県"},{"1":"3/1","2":"40代","3":"男","4":"兵庫県"},{"1":"3/2","2":"30代","3":"女","4":"高知県"},{"1":"3/2","2":"40代","3":"男","4":"新潟県"},{"1":"3/2","2":"60代","3":"男","4":"北海道"},{"1":"3/2","2":"60代","3":"男","4":"北海道"},{"1":"3/2","2":"50代","3":"男","4":"北海道"},{"1":"3/2","2":"40代","3":"女","4":"北海道"},{"1":"3/2","2":"50代","3":"男","4":"北海道"},{"1":"3/2","2":"50代","3":"男","4":"大阪府"},{"1":"3/2","2":"40代","3":"女","4":"大阪府"},{"1":"調査中","2":"80代","3":"男","4":"東京都"},{"1":"調査中","2":"70代","3":"男","4":"東京都"},{"1":"調査中","2":"70代","3":"男","4":"東京都"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="新型コロナウイルスによる男女別発症者数" class="section level3">
+<h3>新型コロナウイルスによる男女別発症者数</h3>
+<pre class="r"><code>nodat &lt;- dat %&gt;% filter(性別 %in% c(&quot;調査中&quot;, &quot;確認中&quot;)) %&gt;% nrow
+# nodat
+dat0 &lt;- dat %&gt;% filter(性別 %in% c(&quot;女&quot;, &quot;男&quot;)) %&gt;%
+  group_by(性別) %&gt;% summarize(計 = n()) %&gt;% mutate(割合 = 計/sum(計))
+dat0  %&gt;% ggplot(aes(性別, 計)) + geom_col(aes(fill = 性別)) +
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) +
+  labs(title = sprintf(&quot;男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, nodat))</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+<div id="新型コロナウイルスによる年代別発症者数" class="section level3">
+<h3>新型コロナウイルスによる年代別発症者数</h3>
+<pre class="r"><code>dat10 &lt;- dat %&gt;% 
+  group_by(年代) %&gt;% summarize(計 = n())
+dat10 %&gt;% ggplot(aes(x = 年代, y = 計)) + geom_bar(stat = &quot;identity&quot;) + 
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  labs(title = &quot;年代別発症者数&quot;)</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>dat1 &lt;- dat %&gt;% filter(性別 %in% c(&quot;女&quot;, &quot;男&quot;)) %&gt;%
+  group_by(年代, 性別) %&gt;% summarize(計 = n())
+dat1 %&gt;% ggplot(aes(x = 年代, y = 計, fill = 性別)) + geom_bar(stat = &quot;identity&quot;) + 
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  labs(title = sprintf(&quot;年代・男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, nodat))</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="新型コロナウイルスによる確定日別発症者数" class="section level3">
+<h3>新型コロナウイルスによる確定日別発症者数</h3>
+<pre class="r"><code>dat2 &lt;- dat %&gt;% filter(性別 %in% c(&quot;女&quot;, &quot;男&quot;)) %&gt;% 
+  group_by(確定日, 性別) %&gt;% summarize(計 = n()) 
+dat2$確定日1 &lt;- as.Date(dat2$確定日, &quot;%m/%d&quot;)
+dat2$確定日1 &lt;- paste0(as.character(month(dat2$確定日1)),&quot;/&quot;,substr(as.character(dat2$確定日1), 9,10))
+dat2$確定日1[dat2$確定日1==&quot;NA/NA&quot;] &lt;- &quot;調査中&quot;
+# dat2$確定日1
+dat2 %&gt;% ggplot(aes(x = 確定日1, y = 計, fill = 性別)) + geom_bar(stat = &quot;identity&quot;) +  
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) + xlab(&quot;確定日&quot;) +
+  labs(title = sprintf(&quot;確定日・男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, nodat))</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<ul>
+<li>確定日のみ不明の3件は、一番右に記載</li>
+</ul>
+<pre class="r"><code>dat3 &lt;- dat %&gt;% group_by(確定日) %&gt;% summarize(計 = n()) 
+dat3$確定日 &lt;- as.Date(dat3$確定日, &quot;%m/%d&quot;)
+# dat3$確定日 &lt;- paste0(as.character(month(dat3$確定日)),&quot;/&quot;,substr(as.character(dat3$確定日), 9,10))
+# head(dat3)
+dat3 %&gt;% ggplot(aes(x = 確定日, y = 計)) + geom_smooth() +  geom_line() +
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_x_date(breaks = &quot;2 days&quot;, labels = date_format(&quot;%m/%d&quot;)) + 
+  labs(title = &quot;発症者数の変化&quot;)</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<ul>
+<li><code>geom_line</code> に <code>geom_smooth</code> のグラフを加えたもの。</li>
+</ul>
+</div>
+<div id="居住地" class="section level3">
+<h3>居住地</h3>
+<pre class="r"><code>dat4 &lt;- dat %&gt;% group_by(居住地) %&gt;% summarize(計 = n()) %&gt;% arrange(desc(計))
+dat4</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["居住地"],"name":[1],"type":["chr"],"align":["left"]},{"label":["計"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"北海道","2":"74"},{"1":"愛知県","2":"30"},{"1":"東京都","2":"29"},{"1":"神奈川県","2":"23"},{"1":"千葉県","2":"13"},{"1":"中国（武漢市）","2":"12"},{"1":"和歌山県","2":"10"},{"1":"大阪府","2":"7"},{"1":"熊本県","2":"5"},{"1":"沖縄県","2":"3"},{"1":"高知県","2":"3"},{"1":"埼玉県","2":"3"},{"1":"石川県","2":"3"},{"1":"調査中","2":"3"},{"1":"福岡県","2":"3"},{"1":"京都府","2":"2"},{"1":"新潟県","2":"2"},{"1":"中国（湖北省）","2":"2"},{"1":"岐阜県","2":"1"},{"1":"宮城県","2":"1"},{"1":"三重県","2":"1"},{"1":"滋賀県","2":"1"},{"1":"神奈川","2":"1"},{"1":"静岡県","2":"1"},{"1":"大阪市","2":"1"},{"1":"中国","2":"1"},{"1":"中国（湖南省）","2":"1"},{"1":"長野県","2":"1"},{"1":"栃木県","2":"1"},{"1":"奈良県","2":"1"},{"1":"兵庫県","2":"1"},{"1":"和歌山","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>dat4 %&gt;% ggplot(aes(x = reorder(居住地, 計), y = 計)) + geom_col() + coord_flip() +
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + xlab(&quot;居住地&quot;)</code></pre>
+<p><img src="covid-19_20200304-1_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="参考" class="section level3">
+<h3>参考</h3>
+<ul>
+<li><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">WHO のサイト</a>に素晴らしい WebAPI があります。<a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd">Novel Coronavirus (COVID-19) Situation</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
