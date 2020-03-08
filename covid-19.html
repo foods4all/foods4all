@@ -316,7 +316,7 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Covid-19 in Japan</h1>
-<h4 class="date">2020/03/07</h4>
+<h4 class="date">2020/03/08</h4>
 
 </div>
 
@@ -324,23 +324,23 @@ $(document).ready(function () {
 <div id="日本における新型コロナウイルス感染による発症者確認数" class="section level2">
 <h2>日本における、新型コロナウイルス感染による発症者確認数</h2>
 <ul>
-<li>作成日：2020年3月7日</li>
+<li>作成日：2020年3月8日</li>
 <li>背景：コロナウイルス感染症の広がりにより、小中高が二週間休校になり、また、多くの行事が中止になっている。感染者数、患者数、死亡者数は、日々報告されるが、確定日毎の人数の変化を現したグラフは、メディアなどにも登場しないように思われた（NHK TV では、おそらく、2020年3月6日にはじめて発症確定日ごとの人数を示した棒グラフが登場。）。患者の居住地域も重要であるが、総数ではない、人数の変化をみることも重要と考え、グラフを作成することにした。作成を始めた段階で、参考にあげた WHO のサイトに国別の状況もあり、すぐれたものであるが、厚生労働省のサイトの情報から直接作成することも意味があると考え、作成することにした。情報源は、あくまでも、厚生労働省のサイトであり、このページは、グラフの作成例である。</li>
 <li>厚生労働省のサイト、<a href="https://www.mhlw.go.jp/stf/newpage_10022.html">新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年３月６日版）</a> のデータから計算したもの（表形式にはなったもののなかで最新）</li>
 <li>三番目（国内発症者）の表と、四番目（武漢市からのチャーター便帰国者中の発症者）の表とを結合</li>
 <li>確定日が調査中のも、男女別も確認中のものもある。</li>
-<li>「10代未満」が1件あり、調べてみると、<a href="https://www.mhlw.go.jp/stf/newpage_09857.html">新型コロナウイルスに関連した患者の発生について(192～208例目)</a> には、下のようにある。番号が旧と新があり、混乱をきたすが、この事例は、下の196例目（新185） と思われ、10歳未満であるだけでなく、男性であり、女性ではない。しかし、表から読み取ることが基本であるか、次の事例も出たことから、この版では修正。</li>
-</ul>
-<pre><code>北海道：患者９例（195例目：80代女性、196例目：10歳未満男性、197例目：80代男性、198例目：60代女性、199例目：60代男性、200例目：60代男性、201例目：60代女性、202例目：40代男性、203例目：70代男性）</code></pre>
-<ul>
+<li>「10代未満」が1件あり、調べてみると、<a href="https://www.mhlw.go.jp/stf/newpage_09857.html">新型コロナウイルスに関連した患者の発生について(192～208例目)</a> には、下のようにある。番号が旧と新があり、混乱をきたすが、この事例は、下の196例目（新185） と思われ、10歳未満であるだけでなく、男性であり、女性ではない。しかし、表から読み取ることが基本であるか、次の事例も出たことから、この版では修正。<br />
+<em>北海道：患者９例（195例目：80代女性、196例目：10歳未満男性、197例目：80代男性、198例目：60代女性、199例目：60代男性、200例目：60代男性、201例目：60代女性、202例目：40代男性、203例目：70代男性）</em></li>
 <li>年代として「305」が一件あり、調べると、この事例は、下の263例目（新252）<a href="https://www.mhlw.go.jp/stf/newpage_09974.html">新型コロナウイルスに関連した患者の発生について(258～287例目)</a> より 30代女性と思われるので、この版で修正。</li>
 <li><p>クルーズ船乗船者における発症者は、WHO も含めて、別途記録であり、データの情報も異なるため、ここには含まれていない。参考にある、報告を参考のこと。ただし、3月に入ったことから、クルーズ船乗船者における、発症者との合計の数も、報道されるようになったことを記録しておく。</p></li>
 <li>タイトル横の [Code] または、各グラフの上の [Code] ボタンで、R のコードの [Show] [Hide] を切り替えることができます。</li>
 <li>このページはあくまでも、データサイエンス教育の教育用素材として作成しているものです。</li>
 <li><p>連絡先：freeopenonlinedatascience4all[at]gmail.com　（[at] を @ に変換)</p></li>
 </ul>
+<hr />
 <div id="日本国内における発症者武漢市からのチャーター便帰国者11名を含む" class="section level3">
 <h3>1. 日本国内における発症者（武漢市からのチャーター便帰国者11名を含む）</h3>
+<p><strong>修正部分</strong></p>
 <pre class="r"><code>library(tidyverse) 
 library(rvest)
 library(stringr)
@@ -430,13 +430,14 @@ dat1 %&gt;% ggplot(aes(x = 年代, y = 計, fill = 性別)) + geom_bar(stat = &q
 <div id="確定日別発症者数" class="section level3">
 <h3>4. 確定日別発症者数</h3>
 <pre class="r"><code>dat2 &lt;- dat %&gt;% filter(性別 %in% c(&quot;女&quot;, &quot;男&quot;)) %&gt;% 
-  group_by(確定日, 性別) %&gt;% summarize(計 = n()) 
+  group_by(確定日) %&gt;% mutate(合計 = n()) %&gt;% ungroup()
+dat2 &lt;- dat2 %&gt;%  group_by(確定日, 性別) %&gt;% mutate(計 = n(), 合計 = 合計) 
 dat2$確定日1 &lt;- as.Date(dat2$確定日, &quot;%m/%d&quot;)
 dat2$確定日1 &lt;- paste0(as.character(month(dat2$確定日1)),&quot;/&quot;,substr(as.character(dat2$確定日1), 9,10))
 dat2$確定日1[dat2$確定日1==&quot;NA/NA&quot;] &lt;- &quot;調査中&quot;
 # dat2$確定日1
 dat2 %&gt;% ggplot(aes(x = 確定日1, y = 計, fill = 性別)) + geom_bar(stat = &quot;identity&quot;) +  
-  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) + xlab(&quot;確定日&quot;) +
   labs(title = sprintf(&quot;確定日・男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, nodat))</code></pre>
 <p><img src="covid-19_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
@@ -469,9 +470,25 @@ dat4</code></pre>
 {"columns":[{"label":["居住地"],"name":[1],"type":["chr"],"align":["left"]},{"label":["計"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"北海道","2":"80"},{"1":"愛知県","2":"49"},{"1":"東京都","2":"42"},{"1":"神奈川県","2":"25"},{"1":"大阪府","2":"16"},{"1":"千葉県","2":"14"},{"1":"中国（武漢市）","2":"12"},{"1":"和歌山県","2":"11"},{"1":"高知県","2":"7"},{"1":"京都府","2":"6"},{"1":"熊本県","2":"5"},{"1":"埼玉県","2":"5"},{"1":"新潟県","2":"5"},{"1":"沖縄県","2":"3"},{"1":"石川県","2":"3"},{"1":"調査中","2":"3"},{"1":"福岡県","2":"3"},{"1":"兵庫県","2":"3"},{"1":"滋賀県","2":"2"},{"1":"中国（湖北省）","2":"2"},{"1":"栃木県","2":"2"},{"1":"愛媛県","2":"1"},{"1":"岐阜県","2":"1"},{"1":"宮崎県","2":"1"},{"1":"宮城県","2":"1"},{"1":"三重県","2":"1"},{"1":"山口県","2":"1"},{"1":"神奈川","2":"1"},{"1":"静岡県","2":"1"},{"1":"大阪市","2":"1"},{"1":"大分県","2":"1"},{"1":"中国","2":"1"},{"1":"中国（湖南省）","2":"1"},{"1":"長野県","2":"1"},{"1":"奈良県","2":"1"},{"1":"和歌山","2":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<pre class="r"><code>dat4 %&gt;% ggplot(aes(x = reorder(居住地, 計), y = 計)) + geom_col() + coord_flip() +
-  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + xlab(&quot;居住地&quot;)</code></pre>
+<pre class="r"><code>dat4 %&gt;% ggplot(aes(x = reorder(居住地, 計), y = 計, label = 計)) + geom_col() + coord_flip() +
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + xlab(&quot;居住地&quot;) + geom_text(nudge_y = 2.1)</code></pre>
 <p><img src="covid-19_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+</div>
+<div id="合計の多い居住地の動向" class="section level3">
+<h3>7. 合計の多い５居住地の動向</h3>
+<pre class="r"><code>top5 &lt;- dat %&gt;% group_by(居住地) %&gt;% summarize(計 = n()) %&gt;% 
+  arrange(desc(計)) %&gt;% top_n(5) %&gt;% distinct(居住地)
+top5 &lt;- top5[[1]]
+dat5 &lt;- dat[dat$居住地 %in% top5, ]
+dat5 &lt;- dat5 %&gt;% group_by(確定日, 居住地) %&gt;% summarize(計 = n()) 
+dat5$確定日 &lt;- as.Date(dat5$確定日, &quot;%m/%d&quot;)
+dat5 %&gt;% ggplot(aes(x = 確定日, y = 計)) + geom_line(aes(color = reorder(居住地, -計))) + 
+  geom_point(aes(shape = reorder(居住地, -計))) + #scale_color_brewer(palette = &quot;Set1&quot;) + 
+  theme_gray(base_family = &quot;HiraKakuPro-W3&quot;) + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1)) +
+  scale_x_date(breaks = &quot;2 days&quot;, limits = c(as.Date(&quot;2020-02-10&quot;), NA), labels = date_format(&quot;%m/%d&quot;)) + 
+  labs(title = &quot;合計数の多い発症者数居住地別の変化&quot;) </code></pre>
+<p><img src="covid-19_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 </div>
 <div id="参考" class="section level3">
 <h3>参考</h3>
