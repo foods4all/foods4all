@@ -11,7 +11,7 @@
 
 
 
-<title>Free Open Online Data Science for All</title>
+<title>index.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,6 +22,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -281,13 +283,13 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="examples.html">Examples</a>
-</li>
-<li>
   <a href="resources.html">Resources</a>
 </li>
 <li>
   <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="examples.html">Examples</a>
 </li>
 <li>
   <a href="memo.html">Memorandum</a>
@@ -301,14 +303,95 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Free Open Online Data Science for All</h1>
+<h1 class="title toc-ignore"><div class="line-block">Let’s enjoy learning data science together!<br />
+データサイエンスを一緒に学んでみませんか</div></h1>
 
 </div>
 
 
-<p>Let’s learn data science together, shall we?</p>
-<p>一緒にデータサイエンスを学んでみませんか。</p>
+<div id="free-open-online-data-science-for-all-foods4all" class="section level2">
+<h2>Free Open Online Data Science for All (FOODS4ALL)</h2>
+<ul>
+<li><strong>Free</strong>: 無償(Free of Charge)・偏見をなくし(With Less Bias)</li>
+<li><strong>Open</strong>: 公開されているものを活用し (Utilizing Public Domain Software, Open Data)、結果を共有し (Open to Others)</li>
+<li><strong>Online</strong>: 公共の資源としての Internet 上の、Online ツールを活用</li>
+</ul>
+<blockquote>
+<p><strong>Data Science</strong> 「データを活用して課題を発見・探求し、適切な解決策を探る意思決定のための科学（Decision Science）」 エンピリカル（Empirical Study）すなわち、理論ではなく、実証性を特徴とする。 データから得られる特徴を表示するとともに、数理モデルを適用し・機械学習で評価し・アルゴリズムを策定する数理的思考、その共有、可視化によるコミュニケーションをおこなう。</p>
+</blockquote>
+<ul>
+<li><strong>For All</strong>: 経済的な格差が、教育格差とならないよう、Free Open Online の特徴を生かして、すべてのひとに開かれた、学びを場をめざす。</li>
+</ul>
+<p>より詳しくは、<a href="about.html">About 参照</a></p>
+</div>
+<div id="reproducible-and-literate-programing" class="section level2">
+<h2>Reproducible and Literate Programing</h2>
+<blockquote>
+<p>Reproducible （再現可能）かつ、Literate　な（理解できるように記述する）ことをたいせつにします。</p>
+</blockquote>
+<ul>
+<li>学びは、まねをする部分もありますし、覚えることも、実際に、試してみることもたいせつで、それには、記録が不可欠です。理解できるように記述しておくことは、自分のためにも、共有するためにも、改善のためにもたいせつです。</li>
+<li>Science 科学に、Reproducibility（再現可能性）は、たいせつです。宇宙物理学や、進化生物学などでは、再現可能性を問うことは困難ですが、Data Science においては、結果を導いた、道筋を再現でき、かつ共有できることは、たいせつなだけでなく、とても有効です。科学の性質の、反証可能性のためにも、Literate な記録は、鍵となるものです。早い段階から、Reproducible and Literate Programing が習慣となることを期待しています。</li>
+</ul>
+</div>
+<div id="software" class="section level2">
+<h2>Software</h2>
+<blockquote>
+<p><code>R</code> を主として利用します。<code>RStudio</code> を活用します。</p>
+</blockquote>
+<ul>
+<li>Data Science には、多くの Software がありますが、特に、<code>R</code> または、Python を使うことが殆どになっているとおもいます。</li>
+<li>Phyton の情報についても、いずれは、加えていきますが、Program の基本から始める必要がありますので、初級レベルでは、<code>R</code> が適しているのではないでしょうか。</li>
+<li>学びのためにも、共有するためにも、Reproducible （再現可能）かつ、Literate　な（理解できるように記述した）ものとして記録してきたいと思います。そのためにも、<code>R</code> では、<code>Rmarkdown</code> が使えますので、適切です。Python にも、Jupyter が同様の機能を持っています。Python を使うときには、Jupyter を使いたいと思います。<code>Rmarkdown</code> については、別途説明します。</li>
+<li>Excel に慣れている方も多いかと思いますが、Reproducible and Literate を考えると、適切とは言えません。商用ですから、Free でもありません。</li>
+<li><code>R</code> を <code>RStudio</code> を用いて、利用することが、一般的になっています。Windows でも、Mac でも、Linux でも、Free（無償）で利用することができます。</li>
+</ul>
+</div>
+<div id="local-and-online" class="section level2">
+<h2>Local and Online</h2>
+<blockquote>
+<p>手元の Computer と同時に、Online でも、作業が可能であるようにします。</p>
+</blockquote>
+<ul>
+<li>Online Cloud の環境をもつことで、どこでも、同じ環境で Data Science をすることができます。</li>
+<li>同じ環境なので、共同での作業、協力も可能となります。</li>
+<li><a href="https://rstudio.cloud">RStudio.cloud</a> を Free （無償）で利用することができます。</li>
+<li>大学などで、RStudio Server を利用できれば、ひとり一人が、別々に、package を install する手間も省けます。共有も、楽になります。</li>
+</ul>
+</div>
+<div id="learning-resources" class="section level2">
+<h2>Learning Resources</h2>
+<blockquote>
+<p>学びのための Resource を紹介します。</p>
+</blockquote>
+<ul>
+<li>Fee（無償）の、Online の Resource ですばらしいものがたくさんあります。</li>
+<li>Moocs (Massive Open Online Courses) を紹介します。</li>
+<li>Free（無償）で公開されている、本を紹介します。</li>
+</ul>
+</div>
+<div id="public-and-open-data" class="section level2">
+<h2>Public and Open Data</h2>
+<blockquote>
+<p>利用可能な、Public Data とか Open Data といわれるものと、利用方法を紹介します。</p>
+</blockquote>
+<ul>
+<li>膨大なすばらしいデータがたくさん利用可能です。</li>
+</ul>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<blockquote>
+<p>Data Science の例とともに、Reproducible, Literate Programming の例を増やしていきます。</p>
+</blockquote>
+<ul>
+<li>このサイトの管理者の学びの記録でもあります。</li>
+<li>Memorandom（覚え書き）を必要に応じて残します。</li>
+</ul>
+</div>
 
+<hr>
+<p><i><font color = "gray"><i>For comments, please send us an email to: freeopenonlinedatascience4all[at]gmail.com</font></i></p>
 
 
 

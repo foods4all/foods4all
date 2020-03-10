@@ -11,7 +11,7 @@
 
 
 
-<title>EXAMPLEs</title>
+<title>EXAMPLEs - 例</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -250,6 +253,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -257,6 +323,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -283,13 +359,13 @@ $(document).ready(function () {
   <a href="about.html">About</a>
 </li>
 <li>
-  <a href="examples.html">Examples</a>
-</li>
-<li>
   <a href="resources.html">Resources</a>
 </li>
 <li>
   <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="examples.html">Examples</a>
 </li>
 <li>
   <a href="memo.html">Memorandum</a>
@@ -303,13 +379,28 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">EXAMPLEs</h1>
+<h1 class="title toc-ignore">EXAMPLEs - 例</h1>
 
 </div>
 
 
-<div id="例" class="section level1">
-<h1>例</h1>
+<blockquote>
+<p>Data Science は、理論ではなく、Empirical（実証的な）科学ですから、実例を通して学びましょう。</p>
+</blockquote>
+<ul>
+<li><code>R</code> に付属のデータや <code>R</code> の　package には、例がついています。<br />
+</li>
+<li><code>Rmarkdown</code> で書かれた、本には、code がそのまま掲載されていることが多いです。<br />
+</li>
+<li>実際の例では、Data を取得し、整形する (Wrangling, Munging, Reshaping) することが必要になります。<br />
+</li>
+<li>極力 Data の取得も、Data Wrangling も、Reproducible （再現可能）なように、また、Literate　な（理解できるように記述した）ものとして、<code>Rmarkdown</code> で記録するように心がけましょう。 （<code>Python</code> では、Jupyter Notebook が対応しています。）</li>
+<li>すばらしい、例を見ることも助けになります。どうやって作成したのだろうと、考えてみる習慣もつくとよいですね。</li>
+</ul>
+<blockquote>
+<p>少しずつ例を作成し、下に、挙げて行きます。<br />
+お勧めのサイトなどがあれば、お知らせください。</p>
+</blockquote>
 <div id="united-nations-sdgs" class="section level2">
 <h2>United Nations’ SDGs</h2>
 <div id="sustainable-development-goals" class="section level3">
@@ -324,8 +415,10 @@ $(document).ready(function () {
 </div>
 <div id="others-その他" class="section level2">
 <h2>Others その他</h2>
+<div id="covid-19" class="section level3">
+<h3>1. Covid-19</h3>
 <ul>
-<li><p>日本における、新型コロナウイルス感染による発症者確認数（改訂版） <a href="covid-19.html">Covid-19 in Japan</a>　[2020/03/08]</p>
+<li>日本における、新型コロナウイルス感染による発症者確認数（改訂版） <a href="covid-19.html">Covid-19 in Japan</a>　[2020/03/08]
 <ul>
 <li>3月7日版 <a href="examples/covid-19_20200307.html">Covid-19 as of March 6 in Japan</a>　[2020/03/07]</li>
 <li>3月6日版 <a href="examples/covid-19_20200306.html">Covid-19 as of March 6 in Japan</a>　[2020/03/06]</li>
@@ -336,12 +429,25 @@ $(document).ready(function () {
 <li>作成途中： <a href="examples/covid-19_20200302.html">Covid-19 as of March 2 in Japan</a>　[2020/03/02]</li>
 <li>作成途中： <a href="examples/covid-19_20200301.html">Covid-19 as of March 1 in Japan</a>　[2020/03/01]</li>
 </ul></li>
+<li>参考：関連情報
+<ul>
+<li>WHO: <a href="https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200225-sitrep-36-covid-19.pdf?sfvrsn=2791b4e0_2" class="uri">https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200225-sitrep-36-covid-19.pdf?sfvrsn=2791b4e0_2</a>
+<ul>
+<li><a href="https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd" class="uri">https://experience.arcgis.com/experience/685d0ace521648f8a5beeeee1b9125cd</a></li>
+</ul></li>
+<li>Johns Hopkins University: <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" class="uri">https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6</a></li>
+<li>ジャッグジャパン：<a href="https://gis.jag-japan.com/covid19jp/" class="uri">https://gis.jag-japan.com/covid19jp/</a></li>
+</ul></li>
 </ul>
 </div>
 </div>
 
+<hr>
+<p><i><font color = "gray"><i>For comments, please send us an email to: freeopenonlinedatascience4all[at]gmail.com</font></i></p>
 
 
+</div>
+</div>
 
 </div>
 
@@ -374,6 +480,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
