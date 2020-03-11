@@ -11,7 +11,7 @@
 
 
 
-<title>About FOODS4ALL</title>
+<title>about.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -253,69 +250,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -323,16 +257,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -379,28 +303,68 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">About FOODS4ALL</h1>
+<h1 class="title toc-ignore"><div class="line-block">About FOODS4ALL<br />
+このホームページについて</div></h1>
 
 </div>
 
 
-<div id="このホームページについて" class="section level2">
-<h2>このホームページについて</h2>
-<p>FOODS4All supports everyone who wants to learn data science. For the first five years, 2020-2025, we will develop the site mainly in Japanese.</p>
-<p>FOODS4ALL は、データサイエンスの学びの支援のサイトです。 飢餓対策のページではありません。</p>
-<p>最初の5年間（2020年から2025年）は、基本的に日本語でサイトを構築します。 目的は、世界のリソースを紹介することで、内容は英語での学びをたいせうにします。 しかし、英語でつまづいたり、ドアを自ら閉めてしまわないような、支援をしていきたいと思います。</p>
-<p>いずれは、Blog も考えていますが、それまでは、ご質問などは、下のアドレスにメールでお願いいたします。</p>
+<blockquote>
+<p>FOODS4All supports everyone who wants to enjoy data science, and see the issues of the world through data.<br />
+For the first several years, we will develop the site mainly in Japanese.<br />
+FOODS4ALL は、データサイエンスの学びの支援のサイトです。 飢餓対策のページではありません。<br />
+最初の数年間は、基本的に日本語でサイトを構築します。 世界のリソースを紹介することで、英語も活用した学びをたいせつにします。 しかし、英語や、数学や、コンピュータでつまづいたり、ドアを自ら閉めてしまわないような、支援をしていきたいと思います。</p>
+</blockquote>
+<p>FOODS4ALL は、食べ物をすべてのひとにという意味ではありませんが、Free Open Online Data Science を、すべてのひとが学ぶことで、貧困や、飢餓といった問題とも、向き合うことができると考えています。すなわち、そのような課題に向き合うためには、Data Science を学ぶこと、Data に基づいて、ひとり一人が、考え、行動することが、必要なので、それが、Foods for All につながっていくのでははないかと思います。長期ビジョンの達成には、教育、学習が不可欠だからです。</p>
+<div id="data-science" class="section level2">
+<h2>Data Science</h2>
+<blockquote>
+<p>What is Data Science? Why Data Science?</p>
+</blockquote>
+<p>1990年代には、Computer Science（情報科学・コンピュータ科学）が、そして、2000年代には、Statistics（統計学）が、2010年ごろからでしょうか、Data Science ということばが使われるようになりました。最近は、AI が Buzz Word というのでしょうか、頻繁に話題に上っています。<a href="http://trends.google.com">Trends Google</a> で、設定を全期間とし、キーワードとして AI（人工知能）を検索すると、2016年ぐらいから、急激に増えていることがわかります。この trends はどのように調べているのでしょうか。Google Trends lessons もありますから、調べてみてください。地域・国を変更するとどうなるでしょうか。言語を変えるとどうなるでしょうか。</p>
+<p>Data Science は新しい学問で、FOODS4ALL を構築し始めた、2020年3月時点では、Oxford English Dictionary には、まだことばとしても載っていません。Home には、Data Science の定義を、わたしのことばで書きましたが、はっきりとした定義もまだされていません。しかし、様々な意見、考え方の人がいるときに、Data に基づいて、議論し、決定していくことは、とても、たいせつなことは確かです。Data Science は、Decision Science とも言われます。それは、どのように、機能しているのでしょうか。まずは、基本的な部分を、一緒に、学んでみませんか。そして、Data に基づいて、考えることを、日常の一部にできればと願っています。</p>
+<div id="ai-or-data-science" class="section level3">
+<h3>AI or Data Science</h3>
+<blockquote>
+<p>Data Science を学び、AI の中身を理解しましょう。</p>
+</blockquote>
+<p>「AI技術によって」「AI によると」ということばがよくニュースなどで使われますが、Black Box 化が気になっています。「AI が職を奪うのでは。」「様々な困難を AI で解決して」などという表現も聞きますが、AI はどのように考えるのでしょうか。AI という実体は何なのでしょうか。AI に任せる、AI が結論を出したらなしょうがないと、思考停止になっていないでしょうか。それが、社会に大きな影響を及ぼし、ある場合には、倫理的な問題も、生じています。背後にある、Data Science、Neural Network（ニューラルネットワーク）を組み合わせた Deap Learning（深層学習）や、Reinforcement Learning（強化学習）などを加えた、広い意味での Machine Learning（機械学習）を含む、Data Science を少しずつ学ぶことで、一人の人間として、なすべきことも、わかると思います。</p>
+</div>
+<div id="data-scientists" class="section level3">
+<h3>Data Scientists?</h3>
+<blockquote>
+<p>Data Scientists の育成は目的としていません。</p>
+</blockquote>
+<p>FOODS4ALL からスタートして、Data Scientist として仕事をするひとが現れれば、とても嬉しいですが、そのような、Professional な Data Scientists を育成することを目的とはしていません。Data を利用して考えるひとが増えていくように支援し、一緒に、考えることができればと願っています。Amateur Data Scientists の育成でしょうか。</p>
+</div>
+</div>
+<div id="administrater-sl" class="section level2">
+<h2>Administrater SL</h2>
+<blockquote>
+<p>管理者のNickname は SL、わたしの好きなことば、Service-Learner からとりました。 Learning Through Serving (Volunteering)!（特に現場での）ボランティア活動を通して、学ぶことをモットーとしています。<br />
+2019年ごろから Data Science を勉強し始めた、Data Science 初心者です。<br />
+注目され、Buzz Word ともなっている、AI の背景にある、Data Science を勉強し、Data Science を活用して、様々な課題を考えたいと願うと共に、様々な課題を考えるために、Data Science を勉強したいひとと、協力できればと願っています。<br />
+いずれは、Blog 始めることも視野に入っていますが、自己主張を抑え気味にするため、しばらくは、Home Page の構築に、エネルギーを注ぎたいと思います。<br />
+Footnote にもあるように、ご意見、ご質問などは、下のアドレスにメールでお願いいたします。</p>
+</blockquote>
 <ul>
 <li>連絡先：<em>freeopenonlinedatascience4all[at]gmail.com</em>　（[at] を @ に変換)</li>
 </ul>
+<div id="data-science-and-learning-through-serving" class="section level3">
+<h3>Data Science and Learning Through Serving</h3>
+<blockquote>
+<p>Data Science と、ボランティア活動を通して学ぶことの関係は何でしょうか。</p>
+</blockquote>
+<p>Data Science は、Data から、世界を見ます。最近は、いくつもの指標を利用することが可能になっていますが、それでも、限られた個数ですし、ものごとの全体を捕らえることは、難しいのではないでしょうか。特に、人間社会や、地球規模の問題に関係する場合、その影響はとても大きい。AI や、その背景にもある、アルゴリズムに支配されてしまうのではないかという危険性を指摘する人もいます。データを根拠とすることは、数値化しやすい価値が強調され、単純な功利主義的な判断（Naive Utilitarianism）が優先され、公平・尊厳・人権・倫理・感情・共感・文化など（Fairness, Dignity, Human Rights, Ethics, Emotion, Empathy, Culture, etc.）、数値化が困難ではあるが、ひとにとって本質的なことが置き去りにされることはないでしょうか。人間社会や、自然環境などを、総体として（as a whole）見ることとのギャップは、どのように埋めたら良いでしょうか。どのような配慮、方策、制度、法律などが必要かも、検討する必要があるように思います。膨大な、データから判断すること自体が、客観的で価値が高いように思われますが、それから得られることの多くは、おそらく人間にとって、理解しづらいことで、納得感、安心感などが、失われる可能性も十分にあり、母集団をいくつかの因子からではなくトータルにみる視点を意識して育むことも必須だと思います。</p>
+<p>その、母集団（Population）の特徴を理解することなしには、Data Science から得られることは、おそらく有効ではないでしょう。サービス活動・ボランティア活動と書いたのは、その母集団の近くで一緒に生きることです。そのように、しなければ見えないものがたくさんあるのではないでしょうか。同時に、狭い、個人的な関係を持っているだけでは、見えない事実もあります。その視点を与えてくれるのが、Data Science です。サービス活動・ボランティア活動は、価値のあるものですが、Data Science から見える視点もたいせつにすべきだと思います。自らの経験、共に生きる経験は、たいせつですが、それが絶対化し、変化を認めることができないこともあります。さらに、この大きな変化の時代には、経験から得られる智では、対応できないこともたくさんあるように思います。</p>
+<p>“Data Science and Learning Through Serving” おそらく、他にも必要不可欠な、視点がいくつもあるでしょう。現在のわたしは、達し得たところ、いま、たいせつだと考えている、この二つを、活動の中心に据えて、学び、活動していきたいと思っています。</p>
+</div>
 </div>
 
 <hr>
 <p><i><font color = "gray"><i>For comments, please send us an email to: freeopenonlinedatascience4all[at]gmail.com</font></i></p>
 
 
-</div>
-</div>
 
 </div>
 
@@ -433,32 +397,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
