@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Let’s Get Started! - はじめてみよう</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">FOODS4ALL</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="get_started.html">Get Started</a>
+</li>
+<li>
+  <a href="resources.html">Resources</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+<li>
+  <a href="examples.html">Examples</a>
+</li>
+<li>
+  <a href="memo.html">Memorandum</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Let’s Get Started! - はじめてみよう</h1>
+
+</div>
+
+
+<blockquote>
+<p>Rstudio で <code>R</code> を使う、はじめの一歩</p>
+</blockquote>
+<div id="r-and-rstudio" class="section level2">
+<h2><code>R</code> and RStudio</h2>
+<div id="r" class="section level3">
+<h3><code>R</code></h3>
+<blockquote>
+<p>R is ‘GNU S’, a freely available language and environment for statistical computing and graphics which provides a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time series analysis, classification, clustering, etc. (<a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a>)</p>
+</blockquote>
+<p><code>R</code> を管理している cran (The Comprehensive R Archive Network) にある、<code>R</code> の説明です。「統計解析とグラフ作成のための言語」とあり、様々な Data Analysis（データ解析）に対応していることがわかります。最初に、‘GNU S’ とありますが、GNU は、Free Software の意味だとして、Free の意味についても、<a href="https://www.gnu.org/home.en.html">GNU</a> の Site に書かれています。‘S’ とありますが、これは、<code>R</code> の母体となっている、米国の、Bell Laboratories（ベル研究所）で開発された統計解析ソフトの名称です。</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=dKmkcadmIu8">Richard Stallman’s TEDx video: “Introduction to Free Software”</a>: GNU の創始者の Richard Stallman の TED での TALK の Youtube Video です。なにが、Free Software かを語っています。英語の字幕を見ることができます。[13’39’’]</li>
+</ul>
+</div>
+<div id="rstudio.cloud" class="section level3">
+<h3>RStudio.cloud</h3>
+<blockquote>
+<p>Let’s try <code>R</code> on online! <code>R</code> を <a href="https://rstudio.cloud">RStudio.cloud</a> を使って Online で。</p>
+</blockquote>
+<p><code>R</code> は RStudio を使って利用することが一般的になっています。<code>R</code> や RStudio (desktop RStudio IDE) も Free（無償）で、Local な Computer に Install することが可能ですが、まずは、Online で <code>R</code> を RStudio で使う方法を紹介します。大学・研究機関などでは、RStudio Server を導入しているところも多いと思いますが、ここでは、Free Open Online な、RStudio.cloud を紹介します。</p>
+<ul>
+<li><strong>Account の取得から Login まで</strong>
+<ol style="list-style-type: decimal">
+<li><a href="https://rstudio.cloud">RStudio.cloud</a> に Access します。</li>
+<li>右上の Sign Up を click。</li>
+<li>Email を入力すると、Password の提案ができますが、使用しないとして、Password を設定、First Name, Last Name を入力します。Sign Up をクリックすると、アカウントが作成されます。名前をどうするか聞かれますが、それを決めれば、完了です。Your Workspace という画面に移ります。
+<ul>
+<li>[Alternative] 他の方法として、Sign Up with Google と、Sing Up with Github があります。自分の Google や、Github のアカウントとリンクすることでもアカウントを作成できます。その場合は、それぞれのアカウントの Password を入力してください。すでに、Google の自分のアカウントに Login していれば、Password は不要です。</li>
+</ul></li>
+<li>New Project を Click または、Project 名を入れて Click すれば、Project が立ち上がります。Project 名を入れてみてください。Learning R などでも良いですよ。あとから、Project 名を入れることもできます。ここからは、Local で RStudio を利用する場合と殆ど同じですから、別途説明します。</li>
+<li>右上の名前を選び、Logout すれば、終了できます。</li>
+<li>アカウントができていて Login するときは、Sign In を選択し、アカウントで使った、Email Address を入力します。自分しか使わない、Laptop PC などで、Login のときなど、他の形で、Security が保てる場合には、Login 情報を保存しておけば、簡単に、Sign In できますが、危険もありますので、十分注意してください。</li>
+</ol></li>
+<li><strong>RStudio.cloud</strong> について
+<ul>
+<li>2020年3月時点では、beta 版となっており、開発途上であることを示しています。</li>
+<li><a href="https://rstudio.cloud/learn/guide">RStudio.cloud Guide</a>: 基本的な解説があります。<br />
+</li>
+<li>25 Projects が上限、公開・非公開・限定公開を選べますが、共同で編集する場合は、10人が上限、1 Project 毎に 1GB が上限とあります。[2020.3.12]</li>
+</ul></li>
+<li><strong>RStudio.cloud</strong> での <code>R</code> の利用について
+<ul>
+<li>基本的に、desktop RStudio IDE の使い方と同じですので、対応する項をみてください。</li>
+</ul></li>
+</ul>
+</div>
+<div id="local-installation-of-r-and-rstudio" class="section level3">
+<h3>Local Installation of <code>R</code> and RStudio</h3>
+<blockquote>
+<p>自分のコンピュータに、<code>R</code> や、RStudio を Install しましょう。 しばらくは、Online だけで学びたい場合は、この節は飛ばしてください。</p>
+</blockquote>
+<p>インターネットが自由に使えない環境にいる場合もあるでしょうし、RStudio はまだ、beta 版ですから、個人で使える、パソコンがある場合には、<code>R</code> や、Rstudio を Install しておきましょう。まず、<code>R</code> を Install してから、RStudio を Install します。</p>
+<ul>
+<li><strong><code>R</code> の Download and Installation</strong>
+<ol style="list-style-type: decimal">
+<li><a href="https://cran.r-project.org/">CRAN</a> に Access します。</li>
+<li>Download R for Linux, Download R for (Mac) OS X, Download R for Windows と並んでいます。Linux, Mac, Windows を選択して、Click してください。<br />
+</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Windows では、Install R for the first time と base のところにありますから、それを選択、Install してください。<br />
+</li>
+<li>Mac では、Latest Release とあるものを、Install しますが、古い Operaton System (OS) を使っている場合は、説明を読んで、適切なものを選択してください。OS の version が不明のときは、Mac の左上の、リンゴマークの「このMacについて」から情報を得てください。</li>
+</ol>
+<ol start="3" style="list-style-type: decimal">
+<li>あとは、他の Software の Installation と同じです。指示に従ってください。</li>
+<li>Version は、三つの数字からなっており、3.x.y 形式になっています。このページを compile しているのは、R version 3.6.2 (2019-12-12) となっています。二番目の x の部分は、ほぼ一年間に一つずつ大きくなり、3.6.y は 2019年、3.7.y は2020年のものなどとなっています。三番目は、minor change の version となります。</li>
+</ol></li>
+</ul>
+<p>この <code>R</code> を、Application として立ち上げれば、Console が現れ、そのまま使えますが、<code>R</code> の Integrated Development Environment（IDE 総合開発環境）である、RStudio IDE を導入します。</p>
+<ul>
+<li><strong>RStudio IDE の Download and Installation</strong>
+<ol style="list-style-type: decimal">
+<li><a href="https://rstudio.com/">RStudio</a> に Access します。</li>
+<li>一番上の Download を Click します。</li>
+<li>RStudio Desktop IDE, Open Source License, Free と書いてあるものを、Download し、他の Application と同じように Install します。</li>
+<li>Application として、RStudio を立ち上げます。すると、RStudio.cloud で、Project を立ち上げたときと似た画面が出てきます。上の Menu Bar の File の上の方（おそらく上から二番目）にある New Project を選択します。新しい Project を Computer のどこに Save するかと、Project 名を入力します。何でもかまいませんが、Learning R でもよいでしょう。すると、右端に、Project 名が入ります。ここまでで、RStudio.cloud の項で述べた状態とほぼ同じになります。</li>
+</ol></li>
+<li>R や、RStudio の Installation でつまずいてしまったら、<a href="https://www.youtube.com">Youtube</a> で、Install R and RStudio, Windows [または Mac] と入れて検索してください。video がいくつも見つかります。英語がわかりにくいときは、字幕を出して確認して、Install してください。</li>
+</ul>
+<p>RStudio Desktop IDE, Open Source License, Free, そして Download と書いてある下に、Learn More とありますから、それを、Click すると、仲程に、‘Take a tour of RStudio’s IDE’ と書いてある、Video があります。ざっと見てみるのもよいでしょう。なとなく、概要（雰囲気）がわかります。</p>
+<p>さらに、CLICK HERE TO SEE MORE RSTUDIO FEATURES へと進むと、もう少し情報を得ることができます。急ぐ必要はありません。使い始めてから、<a href="https://rstudio.com/products/rstudio/features/">このページ</a> に戻ってくるとよいでしょう。</p>
+</div>
+<div id="lets-try-r-on-rstudio" class="section level3">
+<h3>Let’s Try <code>R</code> on RStudio</h3>
+<blockquote>
+<p>ここまでで、準備 OK です。RStudio.cloud または、RStudio Desktop IDE で R を使うことができるようになりました。</p>
+</blockquote>
+<p>ほんの少し、RStudio 上で、<code>R</code> を使ってみましょう。</p>
+<div id="step-1.-console-and-panes" class="section level4">
+<h4>Step 1. Console and Panes</h4>
+<ul>
+<li>RStudio には、<a href="https://rstudio.com/resources/cheatsheets/">たくさんの Cheat Sheets</a>（カンニング・ペーパー）とよばれるものが、用意されています。とても、便利です。（<a href="https://rstudio.com/">RStudio の Top Page</a> の Resources から見ることができます）まずは、RStudio IDE の Cheat Sheet を見てみましょう。
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio IDE Cheat Sheet</a> [Download English Version]</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/translations/japanese/rstudio-IDE-cheatsheet_ja.pdf">RStudio IDE Cheat Sheet translated by Masato Takahashi</a> [Download Japanese Version] このように、いくつかの Cheat Sheets は日本語に訳されています。Cheat Sheets のページの下の方を探してください。</li>
+</ul></li>
+<li>上に Menu Bar があり、下が、通常は、4つの枠に別れています。これを pane と言います。隠れている場合もあります。Maximize（最大化）すると現れるようになっています。左下の pane に Console という Tab（タブ）があると思います。起動時には、これが開いていると思いますが、開いていなければ、それを選択して開いてみてください。左下の Pane が、Console になります。</li>
+<li>Console に、<span class="math inline">\(&gt;\)</span> が表示されていると思います。そこに、<code>3+5</code> といれて、Enter (Enter Key, Carriage Return (CR) でもかまいません）してください。[1] 8 と出て、新しい、<span class="math inline">\(&gt;\)</span> が現れます。次に、<code>7*24</code> と入れてみてください。[2] 168 一週間の時間数が現れます。次に、<code>plot(cars)</code> と入力してみてください。右下の pane の Plots Tab に、下のようなグラフが現れるはずです。 <img src="get_started_files/figure-html/unnamed-chunk-1-1.png" width="672" /></li>
+<li><code>R</code> には、付属のデータがたくさんついていて、これは、Speed and Stopping Distances of Cars（自動車のスピードと制動距離）のデータです。右下の pane に Help という Tab があると思います。その pane の右上に、虫眼鏡マークの、Search Box があると思いますから、そこに、cars と小文字で入れてみてください。その情報が現れます。今度は、その Search Box に、plot と入れてみてください。manual（説明）が現れます。</li>
+<li>今度は、右上の pane から、History（履歴）tab を見つけて、選択してください。すると、いままでに、Console に打ち込んだ、Command（命令）<code>3+5</code>, <code>7*24</code>, <code>plot(cars</code> が現れると思います。</li>
+</ul>
+</div>
+<div id="step-2.-package-installation-and-swirl" class="section level4">
+<h4>Step 2. Package Installation and <code>swirl</code></h4>
+<ul>
+<li><code>R</code> には、現在、15000を越える、あるプロセスで、公式に認証された packages があります。Open Software ということで、世界中の users が、program（data が含まれる場合もあります） を作成して、形式を整えて、登録してあり、それを利用することができます。</li>
+<li>一つの package が他の package に関連していたり、依存していたりするため、これを利用するときには、その依存関係も考慮に入れて、Install する必要があります。 Rstudio では、このことも考慮して、簡単に Install できるようになっています。しかし、一つの機能が、二つの package で異なる形で、拡張されることもあるため、package の Installation は、能動的に行うようになっています。</li>
+<li>たとえば、よく使われる、<code>tidyverse</code> という package の場合には、利用するときには、<code>ggplot2</code>, <code>purrr</code>, <code>tibble</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, <code>readr</code>, <code>forcats</code> と 8つの package を同時によみこむようになっています。さらに、Install するときには、他の関連する packages も、読み込まれます。いずれ使うようになりますので、Install してみましょう。</li>
+<li>Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>tidyverse</code> と入力してみてください。途中まで入力すると、候補がいろいろと現れ、最後、spell を間違っていなければ、<code>tidyverse</code> だけが残りますから、Install ボタンを押してください。ちょっと時間がかかりますが、Console に次々とメッセージが現れ、最後に <span class="math inline">\(&gt;\)</span> が現れます。RStudio IDE のときは、どこから、Download するかを聞かれるかもしれませんが、そのときは、どれかを選んでください。近いところのほうが一般的には Install の時間が身近くなります。どのようなものか見たいときには、また、右下の pane から、Help tab を選んで、<code>tidyverse</code> と入れてみてください。<code>vignette</code> と現れ、その右に、選択肢が現れます。manual よりもう少し、詳しい情報が、わかりやすくかかれているものが、<code>vignette</code> です。すべての package にあるわけではありませんが、manual だけでは、わからないことも多いので、これがあると有効です。</li>
+<li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、menu bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力してみて、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、package も用意されています。<code>swirlify</code> です。</li>
+<li>使ってみましょう。package は、Install しただけでは、使えません。使うよと宣言します。それが、<code>library(&quot;swirl&quot;)</code> です。quotation mark は、この場合、なくても可ですが、入れる習慣をつけておくとよいでしょう。場合によっては、問題が起こることもないとはいえません。Console の <span class="math inline">\(&gt;\)</span> の次に、<code>library(&quot;swirl&quot;)</code>　として Enter、そして、<code>swirl()</code> と入力すると、学習プログラムが始まります。ちょっとした説明のあと、“What shall I call you?” とでます。名前でも、Nickname でも、イニシャルでも入れてください。このあとは、あなたのことを、この名前で呼ばれます。そのあとは、“…” まで読んだら、Enter と言う説明がありますから、また Enter。1 Continue., 2 Proceed. , 3 Let’s get going! の選択がでます。どれでもよいので、番号を入力してください。次に、途中でどうするかの説明があります。ともかくやめたいときは、ESC（Escape Key）、<span class="math inline">\(&gt;\)</span> が出ていて、そこまでを保存してやめたいときは、<code>quit()</code> 他にも、いくつも選択肢があることがわかります。次には、1: R Programming 2: Take me to the swirl course repository!　と出ます。1 を選ぶのがよいでしょう。2 を選ぶと、Pop-up window が出ます。Browser がそれを、Pop-up を表示しない設定になっていると、一旦終わります。1 を選ぶと、1-15 の項目が現れます。どれからでもよいですが、<code>R</code> について何も知らない場合は、1 からトライしてみてください。<span class="math inline">\(&gt;\)</span> が出ているときには、<code>quit()</code>、<span class="math inline">\(&gt;\)</span> が出ていないときに、ともかくやめたいときは、ESC です。Interactive Lesson を楽しんでみてください。</li>
+<li>音声がありませんが、<code>swirl</code> のサイトから、簡単な Youtube Video にリンクがあります。それを見てみるのもよいでしょう。最初のビデオは、最初の module あとのビデオでは、15 Basic Graphics を選んでいます。三つ目は、説明もあり、<code>R</code> と、RStudio の Installation から説明しています。
+<ul>
+<li><a href="https://www.youtube.com/watch?v=0ksZmNU5FRM">Learning R interactively with Swirl by Jonghyun Lee</a> [5’39’’]</li>
+<li><a href="https://www.youtube.com/watch?v=McoHQIxJd-o">Learn R interactively via Swirl by Yimi Zhao</a> [1’37’’]</li>
+<li><a href="https://www.youtube.com/watch?v=6azsCcyJ-lM">Learn to Program R in R! Intro to Swirl by BurkeyAcademy</a></li>
+</ul></li>
+</ul>
+<p>続けて、<code>swirl</code> でしばらく学ぶのも良いでしょう。他の、Learning Resource を、下で紹介しますが、その前に、RStudio での次の大切なステップを紹介します。</p>
+</div>
+<div id="step-3.-r-scripts" class="section level4">
+<h4>Step 3. R Scripts</h4>
+<blockquote>
+<p><code>R</code> の一つ一つの、Command であっても、保存しておくことが重要になります。<br />
+ある程度の長さのプログラムになれば、なおのことです。Reproducibility（再現性）のためにも、大切です。Console ではなく、R script を使って、記録します。</p>
+</blockquote>
+<ul>
+<li>RStudio の Menu Bar の File から、R Script を選択します。左上の pane に、Untitled1 などと書かれた枠ができます。</li>
+<li>RStudio の Menu Bar の File から、Save as … を選択して、名前をつけて、保存してください。このときに、現在の、Project （desktop RStudio IDE の場合は、Project を作った Folder です。）の中に、新しいファイルができます。もし、新しい、Folder に入れたいときは、新たに作成して、Save してください。ここでは、test1 としてみます。RStudio.cloud を使っているときは、Browser（閲覧ソフト）を使っていて、それにも、名前を付けて保存（Save as …）などがあると思いますから、それと間違わないでください。</li>
+<li>下の、三行を、入力するか、copy &amp; paste をしてください。</li>
+</ul>
+<pre><code>data(cars)
+head(cars)
+plot(cars)</code></pre>
+<ul>
+<li>それぞれ改行していますが、なにも起こりません。ここで、左上の RScript の pane の右上にある、Source Pulldown Menu の Source を選んでください。なにか、動きがあり、右下には、以前も、生じた <code>plot(cars)</code> のグラフが現れたと思います。Source では、その RScript の最初からすべてを、実行します。Plots の pane には、Exports ボタンもありますので、画像として、取り出すことも可能です。また、Zoom で拡大することもできます。</li>
+<li>右上の pane の Environments に Data, Values と現れたはずです。Data には、cars とあり、50 obj. 2 variables、Values には、x, y とあります。cars を Click すると、speed, dist の値が現れ、50 obj. 2 variables を Click すると、R Script があった pane に表があらわれます。Filter とも書いてあり、speed や dist のあたりを、さわると、順番の並べ替えも起こります。</li>
+<li>左上の pane の、R Script のファイル名を選ぶと、R Script に戻ります。そこで、<code>head(cars)</code> の後ろに、マウスなどで、carret（入力位置）をおき、または、その行を highlight（選択）して、Run ボタンをおすと、<code>head(cars)</code> が実行されて、Console に、cars という data の最初の6行が現れます。一行または、highlight した箇所が実行されます。</li>
+<li>右下の pane の Help の枠に、<code>head</code> と入れてみてください。Return the First or Last Part of an Object と出てきます。何も特別な指定をしないと、通常は、最初の6行が現れます。Help の一番下にある、Example を R Script のところに入れて、試してみるとよいでしょう。たとえば、<code>head(letters, n = -6L)</code> では何が現れますか。Help をよく読むとわかります。<code>letters</code> を、<code>cars</code> にするなどして、試してみてください。</li>
+<li>右下の pane の Files を見ると、おそらく、三つファイルがあるのではないかと思います。.Rhistory, project.Rproj, それと、R Script のファイル名です。上で、test1 とファイル名を決めた場合には、test1.R とあると思います。ピリオッド以下の最後の部分を File extension（ファイル拡張子）といいますが、それが、R Script の場合には、.R になります。</li>
+<li>Menu bar の File から Save を選んで、保存すれば、そこまでの状態をあとから、Reproduce（再現）することも可能です。</li>
+</ul>
+<p>どうですか。R Script の使い方、R Studio の機能、少し理解できましたか。</p>
+</div>
+<div id="step-4.-r-markdown-and-notebook" class="section level4">
+<h4>Step 4. R Markdown and notebook</h4>
+<blockquote>
+<p>R Script などで、実行したことを、説明も含めて、R Markdown, notebook で文書として記録することで、Reproducibility（再現性）だけでなく、Literate Programming（理解できるように記録する）として残しましょう。</p>
+</blockquote>
+<ul>
+<li>RStudio の Menu Bar の New File から、今度は、Notebook を選択してください。すでに、なにやら、文章がはいったものが出てきます。読んでみてください。</li>
+<li>まず、<a href="http://rmarkdown.rstudio.com">R Markdown</a> の Notebook であることで、R Markdown のリンクが書かれています。つぎに、Chunk（code chunk と呼ばれる、プログラムの塊で、例では、<code>plot(cars)</code> が —{r} から — までで囲まれている部分をさします。Run ボタン（Code Chunk の右上にある、右をむいた三角印のことです。）を押すか cursor（カーソル）をその Chunk の中に合わせて、Cmd+Shift+Enter を押すと、実行することができるとあります。やってみてください。この Chunk の下に、グラフが現れます。右上には、X がありますから、それ押せば消えます。</li>
+<li>このような Chunk を加えるには、Tool Bar の Insert Chunk（Insert ボタンを押すと一番上に、R とありますからそれを）を押すか、Cmd+Option+I とします。と、書いてあります。そこで、どこでも良いのですが、一番下まで、Cursor を持って行って、そこで、実行してみてください。すると、上の Chunk と似たもので、真ん中が一行空いたものが現れます。そこで、たとえば、<code>head(cars)</code> と書き入れてみてください。</li>
+<li>Preview と書いてあるボタンを押すか、<code>knit</code> とあり、knit to HTML, knit to PDF, knit to Word と選べるようになっているかもしれません。それを選択すると、HTML（ホームページの記述に標準的に使われる、Hypertext Markup Language）か、PDF（Portable Document Format）か、Microsoft Word file になります。RStudio.cloud では、最初、Pop-up が block されていると、表示されませんが、Retry をすれば、表示されると思います。</li>
+<li>HTML は通常問題ありませんが、PDF と、Word については、多少コメントが必要です。最初は読み飛ばしてください。
+<ul>
+<li>PDF には、<span class="math inline">\(\TeX\)</span> という プログラムが使われています。RStudio.cloud には、最初から、Install されているようですが、通常は、<code>tinytex</code> というプログラムを Install します。また、日本語が含まれるときには、少し修正が必要です。別途解説します。特に、すでに、<code>LiveTeX</code> などを、Local に Install されているときは、調整が必要です。<br />
+</li>
+<li>Word は、Default では、Paper Size が Letter になっています。A4 に変えるなどが必要です。<a href="https://bookdown.org/yihui/rmarkdown/word-document.html">Word Document</a> に少し説明がありますが、出力した、Word File の Format をお好みに変えてから、my-styles.docx と名前を変えて、Project のある Folder に入れ、、一番上の <code>yaml</code> と言われる部分に、引用した箇所のように、<code>reference_docx: my-styles.docx</code> を加えれば、そのフォーマットで次から、output してくれます。<br />
+</li>
+<li><a href="https://rmarkdown.rstudio.com">R Markdown</a> を参照してください。</li>
+</ul></li>
+<li>これで、HTML の文書が作れることがわかりました。Title: “R Notebook” を自分の好みに変え、日本語で説明の文書をを加えるなどして、R Notebook を作成してください。Reproducible and Literate Programming というものが、できるようになります。今後も、R Notebook を使って、自分のノートを作っておくと良いでしょう。</li>
+<li>流れを復習します。R Script でプログラムを作成する。完成したら、R Notebook を作成、Code Chunk に、R Script の プログラムを挿入すれば、その結果を含んだ HTML 文書を作成することができます。</li>
+<li>Notebook ではなく、R Markdown を選択しても、基本的には同じです。ただ、最初に、出力形式を選択したり、名前を入れたりします。File Extention（拡張子）は、.Rmd でどちらも同じです。</li>
+</ul>
+<p><strong>Note 備考</strong></p>
+<ul>
+<li><code>R</code> の update: Installation と同じ方法で行います。作業の途中はさけてください。挙動が変わる場合もたまにあります。<code>R.version</code> Command などで、version を確認して、net 上で調べてください。</li>
+<li>RStudio の update: Installation と同じ方法で行います。RStudio の About RStudio menu から version を確認できます。</li>
+</ul>
+</div>
+</div>
+<div id="r-markdown" class="section level3">
+<h3>R Markdown</h3>
+<ul>
+<li>R Markdown の基本は、RStudio の Menu Bar の Markdown Quick Reference を参照してください。</li>
+<li>R Markdown では、Homepage や、本の作成も可能です。詳細は、<a href="http://rmarkdown.rstudio.com">R Markdown</a> を参照してください。</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheat Sheet</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
+</ul>
+<div id="markdown" class="section level4">
+<h4>Markdown</h4>
+<blockquote>
+<p>More information on Markdown Syntax and Markdown Editors</p>
+</blockquote>
+<p><code>R Markdown</code> を頻繁に使うようになると、RStudio の Help に書かれている情報より、もう少し詳しい説明が欲しくなります。 また、日本語入力において、RStudio では、困難を覚えることもあるかもしれません。</p>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>: RStudio の <a href="https://rmarkdown.rstudio.com/lesson-8.html">Markdown のページ</a>からリンクがある Pandoc’s Markdown に <code>Markdown</code> についての、正確な情報が書かれています。Pandoc は、universal document converter で、様々な Format（形式）の文書の、変換を行うもので、<code>R Markdown</code> の文書を、html や、MS Word file に、書き換えるときに、使われているものです。</li>
+<li><a href="https://www.markdowntutorial.com">Markdown Tutorials</a>: Exercise 形式で、Markdown の Syntax（文法）について学べるようになっています。</li>
+<li><a href="https://daringfireball.net/projects/markdown/dingus">DARING FIREBALL <code>Markdown</code> Dingus</a>: [DARING FIREBALL: Markdown] (<a href="https://daringfireball.net/projects/markdown/" class="uri">https://daringfireball.net/projects/markdown/</a>)] にある、Dingus（「なんとか言う奴」という程度の意味）。日本語入力のときは、RStudio と比較して、入力がスムーズです。Online の Markdown Editor として利用できます。Filter を Markdown、Results を Preview にして、Convert を押します。他にも、Online の Markdown Editor はいくつもあります。入力と同時に、Preview が表示されるものもあります。好みのものを探してください。</li>
+</ul>
+</div>
+</div>
+<div id="more-on-rstudio" class="section level3">
+<h3>More on RStudio</h3>
+<blockquote>
+<p>はじめて、<code>R</code> や RStudio に触れるひとは、この項は読み飛ばしてください。<br />
+<a href="https://rstudio.com">RStudio Site</a> の上の Resources の Webinar &amp; Videos を見てみましょう。<code>R</code> や Data Science を少し知っているので、先回りして、RStudio でできることを知りたい人にお勧めです。</p>
+</blockquote>
+<p>ページの左に、次のようにあります。</p>
+<ul>
+<li>Learning Roadmap
+<ul>
+<li>RStudio Essentials</li>
+<li>Data Science Essentials</li>
+<li>Advanced Data Science</li>
+<li>Working with Spark</li>
+<li>Product: Connect</li>
+<li>RStudio Pro Administration</li>
+<li>Español Materials</li>
+</ul></li>
+<li>Events
+<ul>
+<li>Webinars</li>
+<li>rstudio::conf by Year</li>
+<li>rstudio::conf by Topic</li>
+<li>Additional Talks</li>
+</ul></li>
+<li>Important RStudio Sites
+<ul>
+<li>shiny</li>
+<li>R Markdown</li>
+<li>tidyverse</li>
+<li>Databases</li>
+<li>sparklyr</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="learning-sites" class="section level2">
+<h2>Learning Sites</h2>
+</div>
+<div id="miscellaneous" class="section level2">
+<h2>Miscellaneous</h2>
+</div>
+
+<hr>
+<p><i><font color = "gray"><i>For comments, please send us an email to: freeopenonlinedatascience4all[at]gmail.com</font></i></p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
