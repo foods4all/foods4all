@@ -323,10 +323,20 @@ $(document).ready(function () {
 </div>
 
 
-<div id="読み込み" class="section level2">
-<h2>読み込み</h2>
-<div id="html-ファイルからの読み込み" class="section level3">
-<h3><code>html</code> ファイルからの読み込み</h3>
+<div id="interactive-documents---対話型文書" class="section level2">
+<h2>Interactive Documents - 対話型文書</h2>
+<div id="constructing-interactive-learning-tools---対話型学習ツールの開発" class="section level3">
+<h3>Constructing Interactive Learning Tools - 対話型学習ツールの開発</h3>
+<ul>
+<li>Quality of Learning（学びの質）は、Exercise（練習問題）で決まると言っても、過言ではない。<code>R</code> などの学びには、Interactive Learning Tools は有効だが、ネット上のものは、無料で公開されているものは、ほんの少しで、十分な学びができるのは、殆どが有償。無償でかつ、特に、すぐれているものは紹介していくが、いずれは、自分で作りたい。Server が必要となることが多い。しかし、それでは、だれでも、作成するというわけにはいかないので、Server なしで Ineractive に、Exercise を解きながら学ぶツールを活用していきたい。</li>
+<li>2020年3月時点で有望なのは、<a href="https://swirlstats.com"><code>swirl</code></a> を作成する、<a href="https://swirlstats.com/instructors.html"><code>swirlify</code></a>、R Markdown の Shiny を利用する、<a href="https://rstudio.github.io/learnr/index.html"><code>learnr</code></a>、<a href="https://www.datacamp.com/teach/content/course">DataCamp が提供するもの</a>である。</li>
+</ul>
+</div>
+</div>
+<div id="reading-files---ファイルの読み込み" class="section level2">
+<h2>Reading Files - ファイルの読み込み</h2>
+<div id="reading-html-and-web-scraping---web-site-の読み込み" class="section level3">
+<h3>Reading <code>html</code> and Web Scraping - Web Site の読み込み</h3>
 <ul>
 <li>[2020/03/05] html file を <code>xml2::read_html</code> で読み込み、<code>rvest::html_nodes</code> で node を指定し、<code>rvest::html_table</code> で、html の table を data frame に変換。<code>rvest</code> package を読み込むと、<code>xml2</code> も読み込む。</li>
 </ul>
@@ -347,20 +357,20 @@ str(tab_0)</code></pre>
 ##  $ X8: chr  &quot;濃厚接触者の状況&quot; &quot;38名特定\r\n\t\t\t\t健康観察終了&quot; &quot;32名特定\r\n\t\t\t\t健康観察終了&quot; &quot;７名特定\r\n\t\t\t\t健康観察終了&quot; ...</code></pre>
 </div>
 </div>
-<div id="文字列" class="section level2">
-<h2>文字列</h2>
-<div id="置き換え" class="section level3">
-<h3>置き換え</h3>
+<div id="manupulating-strings---文字列の取り扱い" class="section level2">
+<h2>Manupulating Strings - 文字列の取り扱い</h2>
+<div id="replacement-置き換え" class="section level3">
+<h3>Replacement 置き換え</h3>
 <ul>
 <li><p>[2020/03/05] 文字列の置き換え <code>stringr::str_replace(&quot;中国\r\n\t\t\t\t（武漢市）&quot;, pattern = &quot;\r\n\t\t\t\t&quot;, replacement = &quot;&quot;)</code></p></li>
 <li><p>[2020/03/05] 文字を特定のものに置き換え <code>sprintf(&quot;男女別発症者数 (%s 件の「調査中」「確認中」のデータを除く)&quot;, 5)</code></p></li>
 </ul>
 </div>
 </div>
-<div id="ggplot2" class="section level2">
-<h2><code>ggplot2</code></h2>
-<div id="ラベル" class="section level3">
-<h3>ラベル</h3>
+<div id="graphics-with-ggplot2" class="section level2">
+<h2>Graphics with <code>ggplot2</code></h2>
+<div id="labels---ラベル" class="section level3">
+<h3>Labels - ラベル</h3>
 <ul>
 <li><p>[2020/03/05] <code>ggplot2</code> において、x-軸ラベルの形式 <code>theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))</code></p></li>
 <li><p>[2020/03/05] <code>ggplot2</code> において、time series の x-軸ラベルの形式　<code>scale_x_date(breaks = &quot;2 days&quot;, labels = date_format(&quot;%m/%d&quot;))</code></p></li>
