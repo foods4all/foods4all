@@ -412,7 +412,7 @@ $(document).ready(function () {
 <li>上に Menu Bar があり、下が、通常は、4つの枠に別れています。これを pane と言います。隠れている場合もあります。Maximize（最大化）すると現れるようになっています。左下の pane に Console という Tab（タブ）があると思います。起動時には、これが開いていると思いますが、開いていなければ、それを選択して開いてみてください。左下の Pane が、Console になります。</li>
 <li>Console に、<span class="math inline">\(&gt;\)</span> が表示されていると思います。そこに、<code>3+5</code> といれて、Enter (Enter Key, Carriage Return (CR) でもかまいません）してください。[1] 8 と出て、新しい、<span class="math inline">\(&gt;\)</span> が現れます。次に、<code>7*24</code> と入れてみてください。[2] 168 一週間の時間数が現れます。次に、<code>plot(cars)</code> と入力してみてください。右下の pane の Plots Tab に、下のようなグラフが現れるはずです。 <img src="get_started_files/figure-html/unnamed-chunk-1-1.png" width="672" /></li>
 <li><code>R</code> には、付属のデータがたくさんついていて、これは、Speed and Stopping Distances of Cars（自動車のスピードと制動距離）のデータです。右下の pane に Help という Tab があると思います。その pane の右上に、虫眼鏡マークの、Search Box があると思いますから、そこに、cars と小文字で入れてみてください。その情報が現れます。今度は、その Search Box に、plot と入れてみてください。manual（説明）が現れます。</li>
-<li>今度は、右上の pane から、History（履歴）tab を見つけて、選択してください。すると、いままでに、Console に打ち込んだ、Command（命令）<code>3+5</code>, <code>7*24</code>, <code>plot(cars</code> が現れると思います。</li>
+<li>今度は、右上の pane から、History（履歴）tab を見つけて、選択してください。すると、いままでに、Console に打ち込んだ、Command（命令）<code>3+5</code>, <code>7*24</code>, <code>plot(cars)</code> が現れると思います。</li>
 </ul>
 </div>
 <div id="step-2.-package-installation-and-swirl" class="section level4">
@@ -421,14 +421,14 @@ $(document).ready(function () {
 <li><code>R</code> には、現在、15000を越える、あるプロセスで、公式に認証された packages があります。Open Software ということで、世界中の users が、program（data が含まれる場合もあります） を作成して、形式を整えて、登録してあり、それを利用することができます。</li>
 <li>一つの package が他の package に関連していたり、依存していたりするため、これを利用するときには、その依存関係も考慮に入れて、Install する必要があります。 Rstudio では、このことも考慮して、簡単に Install できるようになっています。しかし、一つの機能が、二つの package で異なる形で、拡張されることもあるため、package の Installation は、能動的に行うようになっています。</li>
 <li>たとえば、よく使われる、<code>tidyverse</code> という package の場合には、利用するときには、<code>ggplot2</code>, <code>purrr</code>, <code>tibble</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, <code>readr</code>, <code>forcats</code> と 8つの package を同時によみこむようになっています。さらに、Install するときには、他の関連する packages も、読み込まれます。いずれ使うようになりますので、Install してみましょう。</li>
-<li>Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>tidyverse</code> と入力してみてください。途中まで入力すると、候補がいろいろと現れ、最後、spell を間違っていなければ、<code>tidyverse</code> だけが残りますから、Install ボタンを押してください。ちょっと時間がかかりますが、Console に次々とメッセージが現れ、最後に <span class="math inline">\(&gt;\)</span> が現れます。RStudio IDE のときは、どこから、Download するかを聞かれるかもしれませんが、そのときは、どれかを選んでください。近いところのほうが一般的には Install の時間が身近くなります。どのようなものか見たいときには、また、右下の pane から、Help tab を選んで、<code>tidyverse</code> と入れてみてください。<code>vignette</code> と現れ、その右に、選択肢が現れます。manual よりもう少し、詳しい情報が、わかりやすくかかれているものが、<code>vignette</code> です。すべての package にあるわけではありませんが、manual だけでは、わからないことも多いので、これがあると有効です。</li>
+<li>Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>tidyverse</code> と入力してみてください。途中まで入力すると、候補がいろいろと現れ、最後、spell を間違っていなければ、<code>tidyverse</code> だけが残りますから、Install ボタンを押してください。ちょっと時間がかかりますが、Console に次々とメッセージが現れ、最後に <span class="math inline">\(&gt;\)</span> が現れます。RStudio IDE のときは、どこから、Download するかを聞かれるかもしれませんが、そのときは、どれかを選んでください。近いところのほうが一般的には Install の時間が短くなります。どのようなものか見たいときには、また、右下の pane から、Help tab を選んで、<code>tidyverse</code> と入れてみてください。<code>vignette</code> と現れ、その右に、選択肢が現れます。manual よりもう少し、詳しい情報が、わかりやすくかかれているものが、<code>vignette</code> です。すべての package にあるわけではありませんが、manual だけでは、わからないことも多いので、これがあると有効です。</li>
 </ul>
 <blockquote>
-<p>ちょっと小休止。ここまでを Video と Exercise で確認していませんか。Skip してもかまいません。<br />
+<p>ちょっと小休止。ここまでを Video と Exercise で確認してみませんか。Skip してもかまいません。<br />
 <a href="https://learnr-examples.shinyapps.io/ex-setup-r/#section-install-r">確認とExercise</a> （<code>learnr</code> で作成されています。<code>learnr</code> に興味のあるかたは、この Link の左にある <a href="https://learnr-examples.shinyapps.io/ex-setup-r/">Welcome</a> および、<a href="https://rstudio.github.io/learnr/index.html"><code>learnr</code></a> を参照してください。）</p>
 </blockquote>
 <ul>
-<li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力してみて、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、package も用意されています。<code>swirlify</code> です。</li>
+<li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力して、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、package も用意されています。<code>swirlify</code> です。</li>
 <li>使ってみましょう。package は、Install しただけでは、使えません。使うよと宣言します。それが、<code>library(&quot;swirl&quot;)</code> です。quotation mark は、この場合、なくても可ですが、入れる習慣をつけておくとよいでしょう。場合によっては、問題が起こることもないとはいえません。Console の <span class="math inline">\(&gt;\)</span> の次に、<code>library(&quot;swirl&quot;)</code>　として Enter、そして、<code>swirl()</code> と入力すると、学習プログラムが始まります。ちょっとした説明のあと、“What shall I call you?” とでます。名前でも、Nickname でも、イニシャルでも入れてください。このあとは、あなたのことを、この名前で呼ばれます。そのあとは、“…” まで読んだら、Enter と言う説明がありますから、また Enter。1 Continue., 2 Proceed. , 3 Let’s get going! の選択がでます。どれでもよいので、番号を入力してください。次に、途中でどうするかの説明があります。ともかくやめたいときは、ESC（Escape Key）、<span class="math inline">\(&gt;\)</span> が出ていて、そこまでを保存してやめたいときは、<code>quit()</code> 他にも、いくつも選択肢があることがわかります。次には、1: R Programming 2: Take me to the swirl course repository!　と出ます。1 を選ぶのがよいでしょう。2 を選ぶと、Pop-up window が出ます。Browser がそれを、Pop-up を表示しない設定になっていると、一旦終わります。1 を選ぶと、1-15 の項目が現れます。どれからでもよいですが、<code>R</code> について何も知らない場合は、1 からトライしてみてください。<span class="math inline">\(&gt;\)</span> が出ているときには、<code>quit()</code>、<span class="math inline">\(&gt;\)</span> が出ていないときに、ともかくやめたいときは、ESC です。Interactive Lesson を楽しんでみてください。</li>
 <li>音声がありませんが、<code>swirl</code> のサイトから、簡単な Youtube Video にリンクがあります。それを見てみるのもよいでしょう。最初のビデオは、最初の module あとのビデオでは、15 Basic Graphics を選んでいます。三つ目は、説明もあり、<code>R</code> と、RStudio の Installation から説明しています。
 <ul>
@@ -443,7 +443,7 @@ $(document).ready(function () {
 <h4>Step 3. R Scripts</h4>
 <blockquote>
 <p><code>R</code> の一つ一つの、Command であっても、保存しておくことが重要になります。<br />
-ある程度の長さのプログラムになれば、なおのことです。Reproducibility（再現性）のためにも、大切です。Console ではなく、R script を使って、記録します。</p>
+ある程度の長さのプログラムになれば、なおのことです。Reproducibility（再現性）のためにも、大切です。Console ではなく、R Script を使って、記録します。</p>
 </blockquote>
 <ul>
 <li>RStudio の Menu Bar の File から、R Script を選択します。左上の pane に、Untitled1 などと書かれた枠ができます。</li>
@@ -466,7 +466,7 @@ plot(cars)</code></pre>
 <div id="step-4.-r-markdown-and-notebook" class="section level4">
 <h4>Step 4. R Markdown and notebook</h4>
 <blockquote>
-<p>R Script などで、実行したことを、説明も含めて、R Markdown, notebook で文書として記録することで、Reproducibility（再現性）だけでなく、Literate Programming（理解できるように記録する）として残しましょう。</p>
+<p>R Script などで、実行したことを、説明も含めて、R Markdown, Notebook で文書として記録することで、Reproducibility（再現性）だけでなく、Literate Programming（理解できるように記録する）ことが可能になります。</p>
 </blockquote>
 <ul>
 <li>RStudio の Menu Bar の New File から、今度は、Notebook を選択してください。すでに、なにやら、文章がはいったものが出てきます。読んでみてください。</li>
@@ -575,7 +575,7 @@ Internet 上を検索して調べること、Blog などでの、Discussion か�
 <li><strong>Preface</strong>: <code>R</code> についてなど、基本事項の紹介のあと、読者に二件書いてあります。
 <ul>
 <li><em>Most R novices will start with the introductory session in Appendix A. This should give some familiarity with the style of R sessions and more importantly some instant feedback on what actually happens.</em>　まず “Appendix A A sample session” を見ると、<code>R</code> の実際についての基本についてわかります、とありますから、見てみることをお勧めします。</li>
-<li><em>Many users will come to R mainly for its graphical facilities. See Graphics, which can be read at almost any time and need not wait until all the preceding sections have been digested.</em> 二つ目として、グラフィックについて調べる場合が多いと思うので、他の箇所を十分理解してからでなくても、12. Graphical Procedures をmみることを勧めています。</li>
+<li><em>Many users will come to R mainly for its graphical facilities. See Graphics, which can be read at almost any time and need not wait until all the preceding sections have been digested.</em> 二つ目として、グラフィックについて調べる場合が多いと思うので、他の箇所を十分理解してからでなくても、12. Graphical Procedures を読むことを勧めています。</li>
 <li>以上二件、ざっと見てみることをお勧めします。</li>
 </ul></li>
 </ul>
@@ -631,7 +631,7 @@ RStudio で紹介した、<code>swirl</code> も活用してください。</p>
 <p>少しずつ紹介していきます。</p>
 </blockquote>
 <ul>
-<li>Rstat: <a href="http://r-statistics.co" class="uri">http://r-statistics.co</a>.</li>
+<li>Rstat by Selva Prabhakaran: <a href="http://r-statistics.co" class="uri">http://r-statistics.co</a>.</li>
 <li>Tutorials Point.
 <ul>
 <li>Learning R Programming: <a href="https://www.tutorialspoint.com/r/index.htm" class="uri">https://www.tutorialspoint.com/r/index.htm</a></li>
@@ -666,24 +666,16 @@ RStudio で紹介した、<code>swirl</code> も活用してください。</p>
 <ul>
 <li><a href="https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8" class="uri">https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8</a></li>
 </ul></li>
-<li>U of Tronto Coders: <a href="https://uoftcoders.github.io/studyGroup/" class="uri">https://uoftcoders.github.io/studyGroup/</a>.
-<ul>
-<li>Lessons: <a href="https://uoftcoders.github.io/studyGroup/lessons/" class="uri">https://uoftcoders.github.io/studyGroup/lessons/</a></li>
-</ul></li>
 <li>Harvard University Data Science Services: <a href="https://dss.iq.harvard.edu" class="uri">https://dss.iq.harvard.edu</a>.
 <ul>
 <li>Materials: <a href="https://dss.iq.harvard.edu/workshop-materials" class="uri">https://dss.iq.harvard.edu/workshop-materials</a></li>
 </ul></li>
 <li>University of Michigan: <a href="https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html" class="uri">https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html</a>.</li>
-<li>UCLA;
+<li>UCLA:
 <ul>
-<li>An Introduction to R by W. N. Venables, D. M. Smith and the R Development Team (Read it online!): <a href="https://cran.r-project.org/doc/manuals/R-intro.pdf" class="uri">https://cran.r-project.org/doc/manuals/R-intro.pdf</a></li>
 <li>Data Science and Predictive Analytics: Biomedical and Health Applications using R with supporting materials (including R code)</li>
 </ul></li>
-<li>Udemy: Introduction to R</li>
 <li>Data Novia Courses: <a href="https://www.datanovia.com/en/dtcourses/" class="uri">https://www.datanovia.com/en/dtcourses/</a></li>
-<li>Learnr: <a href="https://rstudio.github.io/learnr/index.html" class="uri">https://rstudio.github.io/learnr/index.html</a></li>
-<li>Swirl: <a href="https://swirlstats.com" class="uri">https://swirlstats.com</a></li>
 <li>Code Academy: Learn R: <a href="https://www.codecademy.com/learn" class="uri">https://www.codecademy.com/learn</a>.
 <ul>
 <li>readr, dplyr</li>
