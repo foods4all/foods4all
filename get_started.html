@@ -312,7 +312,7 @@ $(document).ready(function () {
 
 
 <blockquote>
-<p>Rstudio で <code>R</code> を使う、はじめの一歩</p>
+<p>Rstudio で <code>R</code> を使う、はじめの一歩. <code>R</code> とは、RStudio.cloud の紹介、<code>R</code> と RStudio IDE の Install、簡単な使い方を説明します。 そのあとで、 <code>R</code> の基本を学ぶ、Site の紹介をします。</p>
 </blockquote>
 <div id="r-and-rstudio" class="section level2">
 <h2><code>R</code> and RStudio</h2>
@@ -485,6 +485,9 @@ plot(cars)</code></pre>
 <li>流れを復習します。R Script でプログラムを作成する。完成したら、R Notebook を作成、Code Chunk に、R Script の プログラムを挿入すれば、その結果を含んだ HTML 文書を作成することができます。</li>
 <li>Notebook ではなく、R Markdown を選択しても、基本的には同じです。ただ、最初に、出力形式を選択したり、名前を入れたりします。File Extention（拡張子）は、.Rmd でどちらも同じです。</li>
 </ul>
+<blockquote>
+<p><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown Overview</a>: R Markdown の概要の Video を見てみませんか。</p>
+</blockquote>
 <p><strong>Note 備考</strong></p>
 <ul>
 <li><code>R</code> の update: Installation と同じ方法で行います。作業の途中はさけてください。挙動が変わる場合もたまにあります。<code>R.version</code> Command などで、version を確認して、net 上で調べてください。</li>
@@ -512,9 +515,8 @@ plot(cars)</code></pre>
 <li><a href="https://daringfireball.net/projects/markdown/dingus">DARING FIREBALL <code>Markdown</code> Dingus</a>: [DARING FIREBALL: Markdown] (<a href="https://daringfireball.net/projects/markdown/" class="uri">https://daringfireball.net/projects/markdown/</a>)] にある、Dingus（「なんとか言う奴」という程度の意味）。日本語入力のときは、RStudio と比較して、入力がスムーズです。Online の Markdown Editor として利用できます。Filter を Markdown、Results を Preview にして、Convert を押します。他にも、Online の Markdown Editor はいくつもあります。入力と同時に、Preview が表示されるものもあります。好みのものを探してください。</li>
 </ul>
 </div>
-</div>
-<div id="more-on-rstudio" class="section level3">
-<h3>More on RStudio</h3>
+<div id="more-on-rstudio" class="section level4">
+<h4>More on RStudio</h4>
 <blockquote>
 <p>はじめて、<code>R</code> や RStudio に触れるひとは、この項は読み飛ばしてください。<br />
 <a href="https://rstudio.com">RStudio Site</a> の上の Resources の Webinar &amp; Videos を見てみましょう。<code>R</code> や Data Science を少し知っているので、先回りして、RStudio でできることを知りたい人にお勧めです。</p>
@@ -549,8 +551,145 @@ plot(cars)</code></pre>
 </ul>
 </div>
 </div>
+</div>
+<div id="manual-and-online-help" class="section level2">
+<h2>Manual and Online Help</h2>
+<blockquote>
+<p><code>R</code> の文法、<code>R</code> や package の Command（命令）の詳細は膨大で覚えることは不可能です。<br />
+基本をある程度理解し、あとは、Manual や、Help を調べ、Examples をとおして学びます。<br />
+Internet 上を検索して調べること、Blog などでの、Discussion から情報をえることも必要な場合が多いですが、まずは基本を理解しましょう。</p>
+</blockquote>
+<div id="manual-and-introduction-to-r" class="section level3">
+<h3>Manual and Introduction to <code>R</code></h3>
+<blockquote>
+<p><strong>Introduction to <code>R</code></strong> は、CRAN (The Comprehensive R Archive Network) で編集している、短い Manual です。常に Update し最新の情報になっています。</p>
+</blockquote>
+<ul>
+<li><a href="https://cran.r-project.org">The R Manuals</a>: Manual の名称、R-release、R-pached、R-devel とあり、それぞれに、HTML, PDF, EPUB 形式のファイルが置かれています。
+<ul>
+<li>R-release: the most recent released R version （最新の公式版）</li>
+<li>R-pached: a very current version for the patched release version（細かい修正を加えた新しい版）</li>
+<li>R-devel: a version for the forthcoming R version（開発版）</li>
+</ul></li>
+<li>Introduction to <code>R</code> の日本語版も、Internet 上に、いくつか公開されています。構造が大きく変更になることは、あまりありませんし、三桁の version 名の最初の一つが同じならば、殆ど問題はないと思います。しかし、最新版というだけではなく、用語などを考えると、英語のものを利用する価値は十分にあると思います。また、実際に使うときには、他の、Site の英語の説明を参照することも多くなります。</li>
+<li><strong>Preface</strong>: <code>R</code> についてなど、基本事項の紹介のあと、読者に二件書いてあります。
+<ul>
+<li><em>Most R novices will start with the introductory session in Appendix A. This should give some familiarity with the style of R sessions and more importantly some instant feedback on what actually happens.</em>　まず “Appendix A A sample session” を見ると、<code>R</code> の実際についての基本についてわかります、とありますから、見てみることをお勧めします。</li>
+<li><em>Many users will come to R mainly for its graphical facilities. See Graphics, which can be read at almost any time and need not wait until all the preceding sections have been digested.</em> 二つ目として、グラフィックについて調べる場合が多いと思うので、他の箇所を十分理解してからでなくても、12. Graphical Procedures をmみることを勧めています。</li>
+<li>以上二件、ざっと見てみることをお勧めします。</li>
+</ul></li>
+</ul>
+</div>
+<div id="online-help" class="section level3">
+<h3>Online Help</h3>
+<blockquote>
+<p><code>R</code>には、膨大な packages があり、それを日常的に利用します。一つ一つの package については、Introdution to <code>R</code> には書かれていません。また、上の Manual ではなく、RStudio の画面などで、Help を利用する方が簡単です。Help の使い方を基本から紹介します。</p>
+</blockquote>
+<ul>
+<li>‘Introduction to <code>R</code>’ の項でも紹介した、Appendix A の最初に、<code>help.start()</code> について、<em>Start the HTML interface to on-line help (using a web browser available at your machine). You should briefly explore the features of this facility with the mouse.</em> とあります。これを、RStudio の Console や、R Script で、command として実行（run）すると、RStudio の 右下の pane の Help に、‘Statistical Data Analysis <code>R</code>’ と現れ、最初に、‘Introduction to <code>R</code>’ が現れます。ここからも、この文書を見ることができます。‘The <code>R</code> Language Definition’、‘<code>R</code> Data Import/Export’, ‘Packages’, ‘<code>R</code> Resources’ は、すぐにでも役に立つと思います。</li>
+<li>RStudio で、<code>head</code>, <code>mean</code>（平均）, <code>sd</code>（標準偏差）, <code>plot</code>, <code>summary</code>, <code>tidyverse</code>, <code>ggplot2</code> などを調べたいとき.
+<ol style="list-style-type: decimal">
+<li>Console または、R Script で、? を付けて検索。<code>?head</code> Enter。</li>
+<li>Console または、R Script で、?? を付けて検索。<code>??head</code> Enter。</li>
+<li>右下の pane の Help Tab の右上の虫眼鏡マークに head などと入力。</li>
+</ol></li>
+</ul>
+<p>それぞれどのように表示されるか、比較してみてください。</p>
+<ul>
+<li><code>tidyverse</code> や <code>ggplot2</code> などの、重要な package の場合は、Vignette が表示され、かなり詳しい説明にアクセスできます。</li>
+<li><code>plot</code> などで、Help に表示されるものが長い時は、さらに、検索が必要な場合もあります。RStudio の時には、虫眼鏡の次の行の Box に調べたい Key Word を入力すると、その Help のページ内で、検索してくれます。</li>
+</ul>
+<p>Help の活用は、とても、有効ですから、Internet での情報を探す前に、まずは、Help を活用してください。</p>
+</div>
+</div>
 <div id="learning-sites" class="section level2">
 <h2>Learning Sites</h2>
+<blockquote>
+<p><code>R</code> の基本を学びましょう。Interactive に学べるサイトと、Static な Online Contents を、実際に使ってみながら紹介していきます。<br />
+RStudio で紹介した、<code>swirl</code> も活用してください。</p>
+</blockquote>
+<div id="rstudio-primers" class="section level3">
+<h3>RStudio Primers</h3>
+<blockquote>
+<p>Interactive Tutorials が Free Open Online で提供されています。今後、Contents が増えていくことが期待されます。</p>
+</blockquote>
+<ul>
+<li><a href="#rstudio-primers">RStudio Primers</a>(<a href="https://rstudio.cloud/learn/primers" class="uri">https://rstudio.cloud/learn/primers</a>: <a href="https://rstudio.cloud">RStudio.cloud</a> の下からリンクがついています。Login なしで使えます。
+<ol style="list-style-type: decimal">
+<li><a href="https://rstudio.cloud/learn/primers/1">The Basics</a>: <code>ggplot2</code> 入門の、Visualization Basics と、Programing Basics にわかれています。最初から、<code>ggplot2</code> の package は load されています。もし、R Script や、R Markdown, Notebook などに記録するときは、最初に <code>library(ggplot2)</code> を実行してから始めてください。問題は <a href="https://r4ds.had.co.nz">R for Data Science</a> からとられています。<a href="https://jrnold.github.io/r4ds-exercise-solutions/">Solutions to Exercises of R for Data Science</a> の答えも公開されています。</li>
+<li><a href="https://rstudio.cloud/learn/primers/2">Working with Data</a>: <code>R</code> の基本的なデータ形式は、Data Frame ですが、より、扱いやすい、<code>tibble</code> および、それをあつかう、<code>dplyr</code> package についての問題です。</li>
+<li><a href="https://rstudio.cloud/learn/primers/3">Visualizing Data</a>: <code>ggplot2</code> で扱う、様々なグラフについての問題です。</li>
+<li><a href="https://rstudio.cloud/learn/primers/4">Tidy Your Data</a>: <code>tidyverse</code> を学ぶ問題です。</li>
+<li><a href="https://rstudio.cloud/learn/primers/5">Iterate</a>: <code>R</code> で Program を書くときに、必要なことを学びます。</li>
+<li><a href="https://rstudio.cloud/learn/primers/6">Write Functions</a>: 関数を書いて利用するときに、必要なことを学びます。</li>
+</ol></li>
+</ul>
+</div>
+<div id="various-learning-sites" class="section level3">
+<h3>Various Learning Sites</h3>
+<blockquote>
+<p>少しずつ紹介していきます。</p>
+</blockquote>
+<ul>
+<li>Rstat: <a href="http://r-statistics.co" class="uri">http://r-statistics.co</a>.</li>
+<li>Tutorials Point.
+<ul>
+<li>Learning R Programming: <a href="https://www.tutorialspoint.com/r/index.htm" class="uri">https://www.tutorialspoint.com/r/index.htm</a></li>
+<li>Big Data and Analytics Tutorials: <a href="https://www.tutorialspoint.com/big_data_tutorials.htm" class="uri">https://www.tutorialspoint.com/big_data_tutorials.htm</a></li>
+<li>Machine Learning: <a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm" class="uri">https://www.tutorialspoint.com/machine_learning_tutorials.htm</a></li>
+<li>Mathematics for Data Science and Machine Learning Using R: (some previews) <a href="https://www.tutorialspoint.com/mathematics_for_data_science_and_machine_learning_using_r/index.asp" class="uri">https://www.tutorialspoint.com/mathematics_for_data_science_and_machine_learning_using_r/index.asp</a></li>
+</ul></li>
+<li>R Tutorial: <a href="http://www.r-tutor.com/r-introduction" class="uri">http://www.r-tutor.com/r-introduction</a></li>
+<li>Quick R: <a href="https://www.statmethods.net/r-tutorial/index.html" class="uri">https://www.statmethods.net/r-tutorial/index.html</a></li>
+<li>Guru99: <a href="https://www.guru99.com/r-tutorial.html" class="uri">https://www.guru99.com/r-tutorial.html</a></li>
+<li>TutorialsPoint: <a href="https://www.tutorialspoint.com/r/index.htm" class="uri">https://www.tutorialspoint.com/r/index.htm</a></li>
+<li>Cyclismo: <a href="https://www.cyclismo.org/tutorial/R/" class="uri">https://www.cyclismo.org/tutorial/R/</a></li>
+<li>Edureka <a href="https://www.edureka.co/blog/r-tutorial/" class="uri">https://www.edureka.co/blog/r-tutorial/</a>:</li>
+<li>Monash Data Fluency: <a href="https://monashdatafluency.github.io/r-intro-2/index.html" class="uri">https://monashdatafluency.github.io/r-intro-2/index.html</a></li>
+<li>Data carpentry <a href="https://datacarpentry.org/R-ecology-lesson/index.html" class="uri">https://datacarpentry.org/R-ecology-lesson/index.html</a>.
+<ul>
+<li>Ggplot2 <a href="https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html" class="uri">https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html</a>:</li>
+</ul></li>
+<li>R Tutorials: <a href="https://data-flair.training/blogs/r-tutorials-home/" class="uri">https://data-flair.training/blogs/r-tutorials-home/</a></li>
+<li>Intro R datacamp: <a href="https://learn.datacamp.com/courses/free-introduction-to-r%20" class="uri">https://learn.datacamp.com/courses/free-introduction-to-r%20</a>.
+<ul>
+<li><a href="https://learn.datacamp.com/courses/data-visualization-with-ggplot2-1" class="uri">https://learn.datacamp.com/courses/data-visualization-with-ggplot2-1</a></li>
+</ul></li>
+<li>Data Quest: <a href="https://app.dataquest.io/dashboard" class="uri">https://app.dataquest.io/dashboard</a> - interactive</li>
+<li>W3square spaces: <a href="https://www.w3resource.com/r-programming-exercises/basic/" class="uri">https://www.w3resource.com/r-programming-exercises/basic/</a></li>
+<li>Vertabelo <a href="https://academy.vertabelo.com/course/introduction-to-r" class="uri">https://academy.vertabelo.com/course/introduction-to-r</a> 28 exercises [good]</li>
+<li>edX Microsoft: Introduction to R for Data Science: Data Camp.
+<ul>
+<li><a href="https://www.edx.org/course/introduction-to-r-for-data-science-2" class="uri">https://www.edx.org/course/introduction-to-r-for-data-science-2</a></li>
+</ul></li>
+<li>Coursera <a href="https://www.coursera.org/learn/r-programming" class="uri">https://www.coursera.org/learn/r-programming</a>:
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8" class="uri">https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8</a></li>
+</ul></li>
+<li>U of Tronto Coders: <a href="https://uoftcoders.github.io/studyGroup/" class="uri">https://uoftcoders.github.io/studyGroup/</a>.
+<ul>
+<li>Lessons: <a href="https://uoftcoders.github.io/studyGroup/lessons/" class="uri">https://uoftcoders.github.io/studyGroup/lessons/</a></li>
+</ul></li>
+<li>Harvard University Data Science Services: <a href="https://dss.iq.harvard.edu" class="uri">https://dss.iq.harvard.edu</a>.
+<ul>
+<li>Materials: <a href="https://dss.iq.harvard.edu/workshop-materials" class="uri">https://dss.iq.harvard.edu/workshop-materials</a></li>
+</ul></li>
+<li>University of Michigan: <a href="https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html" class="uri">https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html</a>.</li>
+<li>UCLA;
+<ul>
+<li>An Introduction to R by W. N. Venables, D. M. Smith and the R Development Team (Read it online!): <a href="https://cran.r-project.org/doc/manuals/R-intro.pdf" class="uri">https://cran.r-project.org/doc/manuals/R-intro.pdf</a></li>
+<li>Data Science and Predictive Analytics: Biomedical and Health Applications using R with supporting materials (including R code)</li>
+</ul></li>
+<li>Udemy: Introduction to R</li>
+<li>Data Novia Courses: <a href="https://www.datanovia.com/en/dtcourses/" class="uri">https://www.datanovia.com/en/dtcourses/</a></li>
+<li>Learnr: <a href="https://rstudio.github.io/learnr/index.html" class="uri">https://rstudio.github.io/learnr/index.html</a></li>
+<li>Swirl: <a href="https://swirlstats.com" class="uri">https://swirlstats.com</a></li>
+<li>Code Academy: Learn R: <a href="https://www.codecademy.com/learn" class="uri">https://www.codecademy.com/learn</a>.
+<ul>
+<li>readr, dplyr</li>
+</ul></li>
+</ul>
+</div>
 </div>
 <div id="miscellaneous" class="section level2">
 <h2>Miscellaneous</h2>
