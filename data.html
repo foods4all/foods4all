@@ -19,9 +19,6 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -253,69 +250,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -323,16 +257,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -390,31 +314,69 @@ div.tocify {
 <blockquote>
 <p>Data は、機械的に構成したり、手で入力することも、可能ですが、ここでは、ある程度の大きさも持った、実際の Data の分析を目指します。最初は、Data を探し、目的に合わせて利用できる形にする必要があります (Data Wrangling, Munging, or Reshaping)。このプロセスが、もっとも手がかかる部分で、Data Engineering とも呼ばれます。Data Science を学ぶには、まずは、整えられた Data を利用するのが、良いでしょう。その上で、実際の Data と取り組みましょう。</p>
 </blockquote>
+<div id="built-in-datasets-and-data-attached-to-packages" class="section level2">
+<h2>Built-in Datasets and Data Attached to Packages</h2>
+<blockquote>
+<p><code>R</code> には、付属の Data が付属しており、<code>R</code> の　package にも、Data が付属していることが多いので、まずは、それらを試してみましょう。 Data の集合体が package となっているものもあります。</p>
+</blockquote>
+<div id="built-in-datasets" class="section level3">
+<h3>Built-in Datasets</h3>
 <ul>
-<li><code>R</code> には、付属の Data が付属しており、<code>R</code> の　package にも、Data が付属していることが多いので、まずは、それらを試してみましょう。 Data の集合体が package となっているものもあります。
-<ul>
-<li>Built-in（<code>R</code> が Install されたときに、<code>base</code> に含まれる）Datasets は、<code>R</code> の Console または　R Script などで、<code>library(help = &quot;datasets&quot;)</code> とすると、リストを見ることができます。<code>cars</code> も含まれます。また、<code>ggplot2</code> など他の package を読み込んだあとで、<code>data()</code> とすると、そのときに利用可能な Data のリストを見ることができます。</li>
-<li><code>R</code> の version 4.0.0 の datasets の情報は <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">Statistical Data Analysis</a> に掲載されています。</li>
+<li>Built-in（<code>R</code> が Install されたときに、<code>base</code> に含まれる）Datasets は、<code>R</code> の Console または　R Script などで、<code>library(help = &quot;datasets&quot;)</code> とすると、リストを見ることができます。<code>cars</code> も含まれます。また、<code>ggplot2</code> など他の package を読み込んだあとで、<code>data()</code> とすると、Built-in Datasets に加えて、packages などに含まれる、そのときに利用可能な Data のリストを見ることができます。</li>
+<li><code>R</code> の version 4.0.0 の Built-in Datasets の情報は <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">Statistical Data Analysis</a> に掲載されています。</li>
 <li>RStudio の 右下の pane の Help tab で、たとえば、<code>cars</code> と入力するか、Console または R Script で、<code>? cars</code> と入力すると、基本情報が得られ、<code>?? cars</code> と入力すると、<code>cars</code> という言葉が含まれる他の package の Data の情報も表示されます。</li>
-<li>Built-in dataset には Examples がついているものもあり、たとえば <code>example(cars)</code> などで実行できます。ただし、膨大な時間がかかると、注意がついている場合もあります。</li>
-<li><a href="examples/datasets.html">Built-in Datasets with Explanations and Examples</a>: <code>? data</code> と、<code>head(data)</code>, <code>example(data)</code> の出力をリスとしてあります。</li>
-</ul></li>
+<li>Built-in Dataset には Examples がついているものが多く、たとえば <code>example(cars)</code> などで実行できます。ただし、時間がかかると、注意がついていて、<code>example</code> Command では実行できない場合もあります。</li>
+<li><a href="examples/datasets.html">Built-in Datasets with Explanations and Examples</a>: <code>? data</code> と、<code>head(data)</code>, <code>example(data)</code> の出力をリストです。</li>
 </ul>
-<div id="public-data" class="section level3">
-<h3>Public Data</h3>
+</div>
+</div>
+<div id="public-data" class="section level2">
+<h2>Public Data</h2>
 <blockquote>
 <p>Public Data として様々な国際機関や、政府、大学や、研究所などがデータを公開しています。登録が必要な場合もありますが、基本的には、自由に、Download することができます。<br />
 データ取得のための、API や、<code>R</code> Package を提供している場合も多いので、調べてみましょう。</p>
 </blockquote>
-<p>まず、Public Data と検索してみてください。商用のサイト以外に、Google Public Data が見つかると思います。日本語で検索すると、日本語サイトが現れ、世界開発銀行の世界開発指標へのリンクなど、いくつかのサイトのリストがあらわれます。つぎに、言語を英語に切り替えると、長いリストが現れます。言語の切り替え方法が不明な場合は、下のリンクをクリックしてください。</p>
+<div id="google-public-data" class="section level3">
+<h3>Google Public Data</h3>
+<blockquote>
+<p>Public Data と検索してみます。商用のサイト以外に、Google Public Data が見つかります。日本語で検索すると、日本語サイトが現れ、世界開発銀行の世界開発指標へのリンクなど、いくつかのサイトのリストがあらわれます。つぎに、言語を英語に切り替えると、長いリストが現れます。 Google Public Data では、いろいろと設定を変えて、グラフを表示させることができます。</p>
+</blockquote>
+<ul>
+<li>言語の切り替え方法が不明な場合は、下のリンクをクリックしてください。
 <ul>
 <li><a href="https://www.google.com/publicdata/directory?hl=en_US">Google Public Data</a></li>
+<li>ブラウザー（IE, Safari, Crome, FireFox など）の一つの言語を英語に設定しておくことも一つです。</li>
+</ul></li>
+<li>上の、英語の Google Public Data Site で、検索 Box に Japan と入れると、日本に関係した、Data が表示されます。</li>
+<li>World Development Indicators（世界開発指標）を選択します。左の Indicator の Environment のところから、CO2 emission per capita （1人あたりの、二酸化炭素排出量）を探し、チェックします。グラフが現れます。左下は、World の Check Box にチェックされていると思いますが、左下の Check Box をすべて選択してみてください。グラフはどうなりますか。North America だけ、Check Box を外してみてください。どう変化しますか。ここから、どのような、ことがわかりますか。</li>
+<li>CO2 emission については、他の指標もありますから、いろいろと試してみてください。また、上には、グラフの種類も選べるようになっており、対数での値に切り替えることもできるようになっています。</li>
+<li>膨大な種類の Public Data を、Google がこのように、グラフ表示できるようにしています。Web API (Application Programming Interface) と呼ばれるもので、特に、このような形式のものを、Dashboard（もともとの意味は「計器計」）と呼ばれます。<code>R</code> では、Shiny を利用することで、作成することができます。いずれにしても、Public Data を用い、このような Dashboard から得られる情報は膨大です。ただ、Update や、細かい形式など、Google という私企業の方針に依存することになります。Open Online ではありますが、Free かどうかは、難しいところです。</li>
 </ul>
-<p>ブラウザー（IE, Safari, Crome, FireFox など）の一つの言語を英語に設定しておくことも一つです。</p>
 <p>以下、主要な Public Data とそのデータの入手方法を説明します。</p>
 </div>
-<div id="other-open-data" class="section level3">
-<h3>Other Open Data</h3>
+<div id="world-development-indicators世界開発指標" class="section level3">
+<h3>World Development Indicators（世界開発指標）</h3>
+<blockquote>
+<p><a href="https://cran.r-project.org/web/packages/WDI/WDI.pdf"><code>WPI</code></a> または <a href="https://cran.r-project.org/web/packages/wbstats/wbstats.pdf"><code>wbstat</code></a> という <code>R</code> の package を用いて、データの入手ができます。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.worldbank.org/">The World Bank（世界銀行）</a></li>
+<li><a href="https://datacatalog.worldbank.org/">The World Bank（世界銀行）Data Catalog</a></li>
+<li><a href="https://datacatalog.worldbank.org/dataset/world-development-indicators">the World Development Indicators (WDI)</a></li>
+</ul>
+</div>
+<div id="usa-httpswww.data.gov" class="section level3">
+<h3>USA: <a href="https://www.data.gov/" class="uri">https://www.data.gov/</a></h3>
+</div>
+<div id="uk-httpsdata.gov.uk" class="section level3">
+<h3>UK: <a href="https://data.gov.uk/" class="uri">https://data.gov.uk/</a></h3>
+</div>
+<div id="japan-estat" class="section level3">
+<h3>Japan: estat</h3>
+</div>
+</div>
+<div id="other-open-data" class="section level2">
+<h2>Other Open Data</h2>
 <blockquote>
 <p>下に紹介していきます。<br />
 お勧めのサイトなどがあれば、お知らせください。</p>
@@ -422,14 +384,16 @@ div.tocify {
 <ul>
 <li>Social Media Services (SNS) でも、ある程度のデータは取得できるサービスを提供しています。</li>
 </ul>
+<div id="quandl-httpswww.quandl.com" class="section level3">
+<h3>Quandl: <a href="https://www.quandl.com" class="uri">https://www.quandl.com</a></h3>
+<pre><code>* R package: https://cran.r-project.org/web/packages/Quandl/Quandl.pdf</code></pre>
+</div>
 </div>
 
 <hr>
 <p><i><font color = "gray"><i>For comments, please send us an email to: freeopenonlinedatascience4all[at]gmail.com</font></i></p>
 
 
-</div>
-</div>
 
 </div>
 
@@ -462,32 +426,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
