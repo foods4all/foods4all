@@ -388,26 +388,40 @@ div.tocify {
 
 
 <blockquote>
-<p>Data は、機械的に構成したり、手で入力することも、可能ですが、興味のある実際の Data の分析をすることを目指すのが自然です。しかし、最初は、Data を探し、目的に合わせて利用できる形にする必要があります (Data Wrangling, Munging, or Reshaping)。このプロセスが、おそらく、もっとも手がかかる部分で、Data Engineering とも呼ばれます。Data Science を学ぶには、まずは、整えられた Data を利用するのが、良いでしょう。その上で、実際の Data と取り組みましょう。</p>
+<p>Data は、機械的に構成したり、手で入力することも、可能ですが、ここでは、ある程度の大きさも持った、実際の Data の分析を目指します。最初は、Data を探し、目的に合わせて利用できる形にする必要があります (Data Wrangling, Munging, or Reshaping)。このプロセスが、もっとも手がかかる部分で、Data Engineering とも呼ばれます。Data Science を学ぶには、まずは、整えられた Data を利用するのが、良いでしょう。その上で、実際の Data と取り組みましょう。</p>
 </blockquote>
 <ul>
-<li><code>R</code> には、付属の Data が付属しており、<code>R</code> の　package にも、Data が付属していることが多いので、まずは、それらを試してみましょう。Data sets が package となっているものも、たくさんあります。</li>
-<li>Public Data として様々な国際機関や、政府、大学や、研究所などがデータを公開しています。登録が必要な場合もありますが、基本的には、自由に、Download することができます。</li>
-<li>データ取得のための、API や、<code>R</code> Package を提供している場合も多いので、調べてみましょう。</li>
-<li>Social Media Services (SNS) でも、ある程度のデータは取得できるサービスを提供しています。</li>
+<li><code>R</code> には、付属の Data が付属しており、<code>R</code> の　package にも、Data が付属していることが多いので、まずは、それらを試してみましょう。 Data の集合体が package となっているものもあります。
+<ul>
+<li>Built-in（<code>R</code> が Install されたときに、<code>base</code> に含まれる）Datasets は、<code>R</code> の Console または　R Script などで、<code>library(help = &quot;datasets&quot;)</code> とすると、リストを見ることができます。<code>cars</code> も含まれます。また、<code>ggplot2</code> など他の package を読み込んだあとで、<code>data()</code> とすると、そのときに利用可能な Data のリストを見ることができます。</li>
+<li><code>R</code> の version 4.0.0 の datasets の情報は <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">Statistical Data Analysis</a> に掲載されています。</li>
+<li>RStudio の 右下の pane の Help tab で、たとえば、<code>cars</code> と入力するか、Console または R Script で、<code>? cars</code> と入力すると、基本情報が得られ、<code>?? cars</code> と入力すると、<code>cars</code> という言葉が含まれる他の package の Data の情報も表示されます。</li>
+<li>Built-in dataset には Examples がついているものもあり、たとえば <code>example(cars)</code> などで実行できます。ただし、膨大な時間がかかると、注意がついている場合もあります。</li>
+<li><a href="examples/datasets.html">Built-in Datasets with Explanations and Examples</a>: <code>? data</code> と、<code>head(data)</code>, <code>example(data)</code> の出力をリスとしてあります。</li>
+</ul></li>
 </ul>
-<blockquote>
-<p>下に紹介していきたいと思います。<br />
-お勧めのサイトなどがあれば、お知らせください。</p>
-</blockquote>
 <div id="public-data" class="section level3">
 <h3>Public Data</h3>
+<blockquote>
+<p>Public Data として様々な国際機関や、政府、大学や、研究所などがデータを公開しています。登録が必要な場合もありますが、基本的には、自由に、Download することができます。<br />
+データ取得のための、API や、<code>R</code> Package を提供している場合も多いので、調べてみましょう。</p>
+</blockquote>
 <p>まず、Public Data と検索してみてください。商用のサイト以外に、Google Public Data が見つかると思います。日本語で検索すると、日本語サイトが現れ、世界開発銀行の世界開発指標へのリンクなど、いくつかのサイトのリストがあらわれます。つぎに、言語を英語に切り替えると、長いリストが現れます。言語の切り替え方法が不明な場合は、下のリンクをクリックしてください。</p>
 <ul>
 <li><a href="https://www.google.com/publicdata/directory?hl=en_US">Google Public Data</a></li>
 </ul>
 <p>ブラウザー（IE, Safari, Crome, FireFox など）の一つの言語を英語に設定しておくことも一つです。</p>
 <p>以下、主要な Public Data とそのデータの入手方法を説明します。</p>
+</div>
+<div id="other-open-data" class="section level3">
+<h3>Other Open Data</h3>
+<blockquote>
+<p>下に紹介していきます。<br />
+お勧めのサイトなどがあれば、お知らせください。</p>
+</blockquote>
+<ul>
+<li>Social Media Services (SNS) でも、ある程度のデータは取得できるサービスを提供しています。</li>
+</ul>
 </div>
 
 <hr>
