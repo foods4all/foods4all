@@ -350,14 +350,29 @@ $(document).ready(function () {
 <li>上の、英語の Google Public Data Site で、検索 Box に Japan と入れると、日本に関係した、Data が表示されます。</li>
 <li>World Development Indicators（世界開発指標）を選択します。左の Indicator の Environment のところから、CO2 emission per capita （1人あたりの、二酸化炭素排出量）を探し、チェックします。グラフが現れます。左下は、World の Check Box にチェックされていると思いますが、左下の Check Box をすべて選択してみてください。グラフはどうなりますか。North America だけ、Check Box を外してみてください。どう変化しますか。ここから、どのような、ことがわかりますか。</li>
 <li>CO2 emission については、他の指標もありますから、いろいろと試してみてください。また、上には、グラフの種類も選べるようになっており、対数での値に切り替えることもできるようになっています。</li>
-<li>膨大な種類の Public Data を、Google がこのように、グラフ表示できるようにしています。Web API (Application Programming Interface) と呼ばれるもので、特に、このような形式のものを、Dashboard（もともとの意味は「計器計」）と呼ばれます。<code>R</code> では、Shiny を利用することで、作成することができます。いずれにしても、Public Data を用い、このような Dashboard から得られる情報は膨大です。ただ、Update や、細かい形式など、Google という私企業の方針に依存することになります。Open Online ではありますが、Free かどうかは、難しいところです。</li>
+<li>膨大な種類の Public Data を、Google がこのように、グラフ表示できるようにしています。Web API (Application Programming Interface) と呼ばれるもので、特に、このような形式のものを、Dashboard（もともとの意味は「計器計」）と呼ばれます。<code>R</code> では、Shiny を利用することで、作成することができます。いずれにしても、Public Data を用い、このような Dashboard から得られる情報は膨大です。ただ、常に Update されているわけではなく、細かい形式など、Google という私企業の方針に依存することになります。ある意味では Open で、Online ではありますが、Free かどうかは、難しいところです。</li>
 </ul>
 <p>以下、主要な Public Data とそのデータの入手方法を説明します。</p>
+</div>
+<div id="united-nations-un-data国際連合" class="section level3">
+<h3>United Nations’ UN Data（国際連合）</h3>
+<blockquote>
+<p>UN Data Home または、下のリンクからデータを入手することができます。　　 UN Comprade のデータは、<code>R</code> の package <a href="https://cran.r-project.org/web/packages/comtradr/comtradr.pdf">comtradr</a> を用いて、入手ができます。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.un.org/en/">United Nations Home</a></li>
+<li><a href="https://data.un.org">UN data</a></li>
+<li><a href="https://data.un.org">Sustainable Development Goals Home</a></li>
+<li><a href="https://comtrade.un.org">UN Comtrade Database</a>: a repository of official international trade statistics and relevant analytical tables</li>
+<li><a href="https://unstats.un.org/SDGAPI/swagger/">United Nations Statistics Division SDG API</a></li>
+<li><a href="https://rpubs.com/angelamhkim/sdgapi">Getting SDG Data Using APIs</a></li>
+</ul>
 </div>
 <div id="world-development-indicators世界開発指標" class="section level3">
 <h3>World Development Indicators（世界開発指標）</h3>
 <blockquote>
-<p><a href="https://cran.r-project.org/web/packages/WDI/WDI.pdf"><code>WPI</code></a> または <a href="https://cran.r-project.org/web/packages/wbstats/wbstats.pdf"><code>wbstat</code></a> という <code>R</code> の package を用いて、データの入手ができます。</p>
+<p>World Development Indicators (WDI) は、世界銀行により編纂された、開発・生活水準に関する国際比較可能な統計をまとめた世界開発指標<br />
+<code>R</code> の package <a href="https://cran.r-project.org/web/packages/WDI/WDI.pdf"><code>WPI</code></a> または <a href="https://cran.r-project.org/web/packages/wbstats/wbstats.pdf"><code>wbstat</code></a> を用いて、データの入手ができます。</p>
 </blockquote>
 <ul>
 <li><a href="https://www.worldbank.org/">The World Bank（世界銀行）</a></li>
@@ -365,14 +380,73 @@ $(document).ready(function () {
 <li><a href="https://datacatalog.worldbank.org/dataset/world-development-indicators">the World Development Indicators (WDI)</a></li>
 </ul>
 </div>
-<div id="usa-httpswww.data.gov" class="section level3">
-<h3>USA: <a href="https://www.data.gov/" class="uri">https://www.data.gov/</a></h3>
+<div id="oecd経済協力開発機構" class="section level3">
+<h3>OECD（経済協力開発機構）</h3>
+<blockquote>
+<p>The Organisation for Economic Co-operation and Development (OECD) is an international organisation that works to build better policies for better lives. 第二次大戦後の 1948年4月、欧州16か国でOEEC（欧州経済協力機構）が発足。その後、欧州経済の復興に伴い1961年9月、OEEC加盟国に米国及びカナダが加わり新たにOECD（経済協力開発機構）が発足。日本は1964年に加盟。<br />
+<code>R</code> の package <a href="https://cran.r-project.org/web/packages/OECD/OECD.pdf">OECD</a> を用いて、データの入手ができます。</p>
+</blockquote>
+<ul>
+<li><a href="http://www.oecd.org">OECD Home</a></li>
+<li><a href="https://data.oecd.org">OECD Data</a></li>
+<li><code>R</code> の package <code>OECD</code> の <a href="https://cran.r-project.org/web/packages/OECD/vignettes/oecd_vignette_main.html">vignette</a>：例もついています。</li>
+<li><a href="https://www.meti.go.jp/policy/trade_policy/oecd/html/index.html">OECD（経済産業省）</a></li>
+</ul>
 </div>
-<div id="uk-httpsdata.gov.uk" class="section level3">
-<h3>UK: <a href="https://data.gov.uk/" class="uri">https://data.gov.uk/</a></h3>
+<div id="eurostat-欧州連合統計データ" class="section level3">
+<h3>Eurostat 欧州連合統計データ</h3>
+<blockquote>
+<p>Eurostat（ユーロスタット）は、欧州連合（EU）の統計局（Statistical Office of the European Union）<br />
+<code>R</code> の package <a href="https://cran.r-project.org/web/packages/eurostat/eurostat.pdf">eurostat</a> を用いて、データの入手ができます。</p>
+</blockquote>
+<ul>
+<li><a href="https://ec.europa.eu/eurostat/">Eurostat</a>: Your Key to European statistics</li>
+<li><a href="https://ec.europa.eu/eurostat/data/database">Eurostat Database</a></li>
+<li><a href="https://www.rdocumentation.org/packages/eurostat/versions/3.6.1">RDocumentation of eurostat</a></li>
+<li>基本情報は、EU MAG (europe magazoine) の <a href="http://eumag.jp/eufacts/">EU FACTS 基本情報</a> にもあります。</li>
+</ul>
 </div>
-<div id="japan-estat" class="section level3">
-<h3>Japan: estat</h3>
+<div id="e-stat-日本政府統計データ" class="section level3">
+<h3>e-Stat 日本政府統計データ</h3>
+<blockquote>
+<p>日本の公式版、政府統計データは、e-Stat にまとめられており、Dashboard での表示および、ダウンロードも可能です。<br />
+公式にサポートをしているわけではありませんが、登録をすることで、R の package <a href="https://cran.r-project.org/web/packages/estatapi/estatapi.pdf">estatapi</a> を使って、データの入手が可能です。詳細は　<a href="https://www.e-stat.go.jp/api/api-info/api-guide">e-Stat API 機能のページ</a> を参照してください。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.e-stat.go.jp/">e-Stat</a>：e-Stat ホーム</li>
+<li><a href="https://www.e-stat.go.jp/stat-search?page=1">e-Stat</a>: データサーチページ</li>
+<li><a href="https://www.e-stat.go.jp/api/">e-Stat API 機能</a>：API ホーム</li>
+<li><a href="https://www.stat.go.jp/index.html">政府統計局</a></li>
+<li><a href="https://dashboard.e-stat.go.jp/">統計 Dashboard</a></li>
+<li><a href="https://dashboard.e-stat.go.jp/static/api">WebAPI（Application Programming Interface）</a>: XML, JASON, CSV で ダウンロード可能</li>
+</ul>
+</div>
+<div id="usaアメリカ合衆国" class="section level3">
+<h3>USA（アメリカ合衆国）</h3>
+<blockquote>
+<p>アメリカ合衆国が関係している、膨大なデータを提供しています。<br />
+<code>R</code> の package <a href="https://cran.r-project.org/web/packages/censusapi/vignettes/getting-started.html">censusapi</a> および、<a href="https://cran.r-project.org/web/packages/tidycensus/tidycensus.pdf">tidycensus</a> など、多数の API を使って、データの入手が可能です。</p>
+</blockquote>
+<ul>
+<li><a href="https://www.data.gov/">Data.gov</a>: The home of the U.S. Government’s open data</li>
+<li><a href="https://catalog.data.gov/dataset">Data Catalog</a>: 2020年3月時点では、‘253,742 datasets found’ と表示されます。</li>
+<li><a href="https://cran.r-project.org/web/packages/censusapi/vignettes/getting-started.html">censusapi vignettes</a>：例もついています。</li>
+<li><a href="https://walkerke.github.io/tidycensus/articles/basic-usage.html">Basic use of tidycensus</a>: 例もついています。</li>
+</ul>
+</div>
+<div id="uk英連邦" class="section level3">
+<h3>UK（英連邦）</h3>
+<ul>
+<li><a href="https://data.gov.uk/">UK Government Data</a></li>
+<li><a href="https://data.gov.uk/search?q=api">About API</a>: API を使うには、登録が必要なようです。いくつかのデータ毎に、API も別々に存在するようです。</li>
+</ul>
+</div>
+<div id="prc中華人民共和国" class="section level3">
+<h3>PRC（中華人民共和国）</h3>
+<ul>
+<li><a href="http://www.stats.gov.cn/english/">National Bureau of Statistics of China</a></li>
+<li><a href="http://www.stats.gov.cn/english/Statisticaldata/AnnualData/">Anual Data</a></li>
+</ul>
 </div>
 </div>
 <div id="other-open-data" class="section level2">
@@ -386,7 +460,15 @@ $(document).ready(function () {
 </ul>
 <div id="quandl-httpswww.quandl.com" class="section level3">
 <h3>Quandl: <a href="https://www.quandl.com" class="uri">https://www.quandl.com</a></h3>
-<pre><code>* R package: https://cran.r-project.org/web/packages/Quandl/Quandl.pdf</code></pre>
+<ul>
+<li>R package: <a href="https://cran.r-project.org/web/packages/Quandl/Quandl.pdf" class="uri">https://cran.r-project.org/web/packages/Quandl/Quandl.pdf</a></li>
+</ul>
+</div>
+<div id="yahoo-finance" class="section level3">
+<h3>Yahoo Finance</h3>
+</div>
+<div id="twitter" class="section level3">
+<h3>Twitter</h3>
 </div>
 </div>
 
