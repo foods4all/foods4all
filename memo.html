@@ -323,13 +323,69 @@ $(document).ready(function () {
 </div>
 
 
+<div id="process-of-learning-data-science-データサイエンスの学びについて" class="section level2">
+<h2>Process of Learning Data Science データサイエンスの学びについて</h2>
+<blockquote>
+<p>はじめて、データサイエンスを学ぶかたへのお勧め</p>
+</blockquote>
+<div id="予備的メモ" class="section level4">
+<h4>予備的メモ</h4>
+<ol style="list-style-type: decimal">
+<li>グラフを考察し、メモを作成。（グラフに慣れる。良いグラフ、問題のあるグラフをたくさん見、自分でもグラフを作りたいと思えるようになることが必須。）
+<ul>
+<li>グラフが示すもの、グラフから読み取れることは何か。</li>
+<li>グラフを構成するデータはどのようなものか。構造は。元のデータはどのように取得したものか。それぞれの項目の定義は。</li>
+<li>他にどのようなことをデータから読み取ることができるか。そのためには、どのようなグラフが適切か。</li>
+<li>関連して、どのようなことを知りたいか。そのためには、他にどのような関連する情報（データ）を取得し、どのようなグラフを作成するとよいか。</li>
+</ul></li>
+<li>データを取得し、形式を整える。記録を残す。
+<ul>
+<li>サイト、形式、取得方法。</li>
+<li>必要項目の洗い出し。</li>
+<li>変数（variables）を列に、値（observation）を決め、その型、欠損値などの処理</li>
+</ul></li>
+<li>グラフ作成。統計量を考察。再現性を確保し記録。
+<ul>
+<li>いくつかのグラフを作成し、データの特徴を考察する。</li>
+<li>コミュニケーションすることを絞り、そのためのグラフを作成。</li>
+</ul></li>
+<li>全体のプロセスのまとめ。
+<ul>
+<li>Reproducibility and Literate Programming としての記録を確認。</li>
+<li>全体を公開</li>
+</ul></li>
+</ol>
+<p>[2020/3/28]</p>
+</div>
+</div>
+<div id="data-science-with-tidyverse---tidyverse-によるデータサイエンス" class="section level2">
+<h2>Data Science with Tidyverse - Tidyverse によるデータサイエンス</h2>
+<blockquote>
+<p><code>tidyverse</code> Package を活用した、データサイエンスの流れ。<code>R</code> の Base でも、殆どすべての事は可能だが、論理的かつ高速に作業を進めるために、広く使われている、<code>tidyverse</code> Package による作業の流れを示す。</p>
+</blockquote>
+<div id="予備的メモ-1" class="section level4">
+<h4>予備的メモ　</h4>
+<blockquote>
+<p><a href="https://www.tidyverse.org/packages/">Tidyverse</a>　参照。特に、Online で読むことができる、<a href="https://r4ds.had.co.nz">r4ds</a>（<a href="https://www.tidyverse.org/learn/">参照</a>）、R Studio サイトにある、<a href="https://rstudio.com/resources/cheatsheets/">Cheatsheet</a> は基本。</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li>Graphics（グラフィック）<code>ggplot2</code>: The Grammar of Graphics（グラフィックの文法）と呼ばれ、論理的にグラフを作成する。<code>tidyverse</code> Package を読み込むと同時に読み込まれ、全体の 核となる。</li>
+<li>Data Import（取得）<code>readr</code>: <code>tidyverse</code> Package を読み込むときに、同時に読み込まれる。他に、Excel シート読み込みの、<code>readxl</code>, SPSS, Stata, SAS 読み込みの、<code>haven</code>、Google Drive からの読み込みには、<code>googledrive</code>, JSON タイプのファイルのための <code>jsonlite</code>, XML のための <code>xml2</code>, web API のための <code>httr</code>, web scraping（web ページからの読み込み）の <code>rvest</code>、データベース連携のため <code>DBI</code> がある。データベースについて詳細は <a href="https://db.rstudio.com">R Studio のページ</a> 参照.</li>
+<li>Wrangle（整理）<code>tidyr</code>, <code>dplyr</code>: <code>tidyverse</code> Package を読み込むときに、同時に読み込まれる。他に、文字列処理の <code>stringr</code>, Factor を扱う <code>forcats</code>, 日付と時間を扱う <code>lubridate</code>, 日時の計算のための <code>hms</code>, blob (binary) データを扱う、<code>blob</code> がある。</li>
+<li>Program（プログラム）<code>purr</code>: <code>tidyverse</code> Package を読み込むときに、同時に読み込まれる。他に、pipe (%&gt;%) を使えるようにする <code>magrittr</code>, Base の <code>paste</code> の代替・拡張となる <code>glue</code> によって、文字列やデータの結合を行う。</li>
+<li>Model（数理モデル）: 現時点では、<code>modelr</code> Package が <a href="https://r4ds.had.co.nz">r4ds</a> では使われているが、現在開発中。<code>broom</code> Package 参照。</li>
+</ol>
+<p><em>以上は、<a href="https://www.tidyverse.org/packages/">Tidyverse</a> からの引用。</em></p>
+<p>[2020/3/28]</p>
+</div>
+</div>
 <div id="interactive-documents---対話型文書" class="section level2">
 <h2>Interactive Documents - 対話型文書</h2>
 <div id="constructing-interactive-learning-tools---対話型学習ツールの開発" class="section level3">
 <h3>Constructing Interactive Learning Tools - 対話型学習ツールの開発</h3>
 <ul>
 <li>Quality of Learning（学びの質）は、Exercise（練習問題）で決まると言っても、過言ではない。<code>R</code> などの学びには、Interactive Learning Tools は有効だが、ネット上のものは、無料で公開されているものは、ほんの少しで、十分な学びができるのは、殆どが有償。無償でかつ、特に、すぐれているものは紹介していくが、いずれは、自分で作りたい。Server が必要となることが多い。しかし、それでは、だれでも、作成するというわけにはいかないので、Server なしで Ineractive に、Exercise を解きながら学ぶツールを活用していきたい。</li>
-<li>2020年3月時点で有望なのは、<a href="https://swirlstats.com"><code>swirl</code></a> を作成する、<a href="https://swirlstats.com/instructors.html"><code>swirlify</code></a>、R Markdown の Shiny を利用する、<a href="https://rstudio.github.io/learnr/index.html"><code>learnr</code></a>、<a href="https://www.datacamp.com/teach/content/course">DataCamp が提供するもの</a>である。</li>
+<li>2020 年 3 月時点で有望なのは、<a href="https://swirlstats.com"><code>swirl</code></a> を作成する、<a href="https://swirlstats.com/instructors.html"><code>swirlify</code></a>、R Markdown の Shiny を利用する、<a href="https://rstudio.github.io/learnr/index.html"><code>learnr</code></a>、<a href="https://www.datacamp.com/teach/content/course">DataCamp が提供するもの</a>である。</li>
 </ul>
 </div>
 </div>
@@ -344,7 +400,7 @@ $(document).ready(function () {
 url &lt;- &quot;https://www.mhlw.go.jp/stf/newpage_09964.html&quot;
 h &lt;- read_html(url)
 tab &lt;- h %&gt;% html_nodes(&quot;table&quot;)
-tab_0 &lt;- tab[[3]] %&gt;% html_table 
+tab_0 &lt;- tab[[3]] %&gt;% html_table
 str(tab_0)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    247 obs. of  8 variables:
 ##  $ X1: chr  &quot;新No.&quot; &quot;１&quot; &quot;２&quot; &quot;３&quot; ...
