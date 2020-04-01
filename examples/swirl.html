@@ -2964,15 +2964,14 @@ Selection: 1</code></pre>
 <p>入力と、計算結果は以下の通りとなります。+ の両側に space は入れていませんが、問題ありません。</p>
 <pre class="r"><code>5+7</code></pre>
 <pre><code>## [1] 12</code></pre>
-<pre><code>| Perseverance, that's the answer.
-
-  |=======                                                                                  |   8%
+<pre><code>| Perseverance, that's the answer.</code></pre>
+<p><em>頑張りましたね。それが答えです。</em></p>
+<pre><code>  |=======                                                                                  |   8%
 | R simply prints the result of 12 by default. However, R is a programming language and often the
 | reason we use a programming language as opposed to a calculator is to automate some process or
 | avoid unnecessary repetition.
 
 ...</code></pre>
-<p><em>頑張りなしたね。それが答えです。</em></p>
 <p><em><code>R</code> は、単純に、12 を print（出力）します。しかし、<code>R</code> はプログラム言語ですから、電卓とは、異なるのは、プロセスを自動化し、不必要な反復作業を避けることです。（… とありますね。）</em></p>
 <pre><code>  |=========                                                                                |  11%
 | In this case, we may want to use our result from above in a second calculation. Instead of
@@ -2997,15 +2996,14 @@ Selection: 1</code></pre>
 | as 'x gets 5 plus 7'. Give it a try now.</code></pre>
 <p><em>5+7 の計算結果を、新しい変数 x に割り当てます。このときは、x &lt;- 5+7 とします。「5 足す 7 を x に割り当てる（と置く）」と読みます。やってみてください。</em></p>
 <pre class="r"><code>x &lt;- 5+7</code></pre>
-<pre><code>| You are quite good my friend!
-
-  |===================                                                                      |  21%
+<pre><code>| You are quite good my friend!</code></pre>
+<p><em>いい具合ですね。</em></p>
+<pre><code>  |===================                                                                      |  21%
 | You'll notice that R did not print the result of 12 this time. When you use the assignment
 | operator, R assumes that you don't want to see the result immediately, but rather that you
 | intend to use the result for something else later on.
 
 ...</code></pre>
-<p><em>いい具合ですね。</em></p>
 <p><em><code>R</code> は、今度は、結果の 12 を出力しません。<code>R</code> は、今は、結果を見る必要はないが、いずれ、結果を使いたいのだと解釈します。</em></p>
 <pre><code>|=====================                                                                    |  24%
 | To view the contents of the variable x, just type x and press Enter. Try it now.
@@ -3014,7 +3012,7 @@ Selection: 1</code></pre>
 <pre class="r"><code>x</code></pre>
 <pre><code>## [1] 12</code></pre>
 <pre><code>| Nice work!</code></pre>
-<p><em>それで良いですよ、</em></p>
+<p><em>それで良いですよ。</em></p>
 <pre><code>  |=======================                                                                  |  26%
 | Now, store the result of x - 3 in a new variable called y.</code></pre>
 <p><em>今度は、x-3 の結果を、新しい変数 y に割り当ててください。</em></p>
@@ -3236,7 +3234,7 @@ Selection: 2</code></pre>
 <p>1 を入力すると、2桁の token（証明のしるし）を入力しなさいと表示されます。Moocs の 一つの、Coursera で使われていたものなのでしょう。</p>
 <p><strong>注：Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</strong></p>
 <pre><code>| Nice work!</code></pre>
-<p><em>それで良いですよ、</em></p>
+<p><em>それで良いですよ。</em></p>
 <pre><code>| You've reached the end of this lesson! Returning to the main menu...
 
 | Please choose a course, or type 0 to exit swirl.
@@ -3255,6 +3253,382 @@ Selection: 0</code></pre>
 </div>
 <div id="workspace-and-files" class="section level3">
 <h3>2.2. Workspace and Files</h3>
+<blockquote>
+<p>Unix などの file system（ファイルシステム）に慣れている方は別ですが、そうでないと、混乱するかもしれませんので、ていねいに説明します。<br />
+この課の内容は、実際のプログラムをはじめると、知っていると便利で、理解がしやすく、複雑なプログラムになってくると必須ですが、RStudio で <code>R</code> を使う場合には、右下の Pane（窓枠）の Files Tab や、RStudio の menu で代替できる部分も含みます。</p>
+</blockquote>
+<pre><code>library(swirl)</code></pre>
+<p><code>swirl</code> をはじめるときは、ここからはじめます。(Install していない場合は、1.2 <code>swirl</code> 起動までを読んでください。また、1: Basic Building Blocks（第1課：基本的構成要素）の続きとして、この課を学ぶときは、不要です。)</p>
+<pre><code>| Hi! I see that you have some variables saved in your workspace. To keep things running smoothly,
+| I recommend you clean up before starting swirl.
+
+| Type ls() to see a list of the variables in your workspace. Then, type rm(list=ls()) to clear
+| your workspace.
+
+| Type swirl() when you are ready to begin.</code></pre>
+<p><em>あなたの作業領域に、いくつか、変数を保存してあるようですね。（保存していないかたもいるかもしれません。）支障なく <code>swirl</code> で学ぶために、<code>swirl</code> を起動する前に、それらを消去しておくことをお勧めします。</em></p>
+<p><em>ls() と入力すると、あなたの作業領域にある、変数のリストが得られます。消去するには、rm(list=ls()) と入力します。</em></p>
+<p><em>swirl() と入力してはじめましょう。</em></p>
+<pre><code>&gt; ls()
+[1] &quot;my_div&quot;  &quot;my_sqrt&quot; &quot;x&quot;       &quot;y&quot;       &quot;z&quot;
+&gt; rm(list=ls())
+&gt; swirl()</code></pre>
+<ul>
+<li>これらは、2.1 にある、R Programming 1: Basic Building Blocks（R によるプログラム 第1課：基本的構成要素）のときに使った変数です。それが残っていました。</li>
+</ul>
+<pre><code>| Welcome to swirl! Please sign in. If you've been here before, use the same name as you did then.
+| If you are new, call yourself something unique.
+
+What shall I call you? SL</code></pre>
+<p><em>swirl にようこそ。名前を登録して始めましょう。以前に登録した場合には、同じ名前を使ってください。はじめてのかたは、あなたのことをなんと呼べば良いか、わかりやすい名前を入力してください。</em></p>
+<p><em>何とお呼びしますか？　SL (SL が入力)</em></p>
+<pre><code>| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 1</code></pre>
+<p><em>コースを選択してください。<code>swirl</code> を終了するときは、0 を入力してください。</em></p>
+<p><em>1: <code>R</code> によるプログラム</em><br />
+<em>2: <code>swirl</code> コースのリストへ</em>.</p>
+<p><em>選択：1 （SL が入力）</em></p>
+<pre><code>| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers    
+ 4: Vectors                    5: Missing Values             6: Subsetting Vectors      
+ 7: Matrices and Data Frames   8: Logic                      9: Functions               
+10: lapply and sapply         11: vapply and tapply         12: Looking at Data         
+13: Simulation                14: Dates and Times           15: Base Graphics           
+
+
+Selection: 2</code></pre>
+<p><em>どの課（クラス）からはじめるか選択してください。0 を入力すると、コースのメニューに戻ります。</em></p>
+<p><em>1: 基本的構成要素　2: 作業スペースとファイル　3: 数列<br />
+4: ベクトル　5: 欠損値　6: ベクトルの部分抽出<br />
+7: 行列と、データフレーム　8: 論理　9: 関数<br />
+10: <code>lapply</code> と <code>sapply</code>　11: <code>vapply</code> と <code>tapply</code>　12: データの観察<br />
+13: シミュレーション　14: 日付と時間　15: グラフィックの基本</em></p>
+<p><em>選択：2 （SL が入力）</em></p>
+<pre><code>  |                                                                                         |   0%
+
+| In this lesson, you'll learn how to examine your local workspace in R and begin to explore the
+| relationship between your workspace and the file system of your machine.
+
+...</code></pre>
+<p><em>この課では、<code>R</code> の作業領域 (workspace) と、あなたが使っているコンピュータの、ファイルシステムの関係について学びます。（… まで読んだら、Enter です。）</em></p>
+<pre><code>  |==                                                                                       |   3%
+| Because different operating systems have different conventions with regards to things like file
+| paths, the outputs of these commands may vary across machines.
+
+...</code></pre>
+<p><em>一般的には、異なるオペレーティングシステム（Windows, MacOS, Linux）では、ファイルのパス（そのファイルにたどり着く「道 (path)」の情報）や、それに関する出力形式が異なります。（… まで読んだら、Enter です。以下省略。）</em></p>
+<p>Windows や、Mac では、GUI (Graphical User Interface) を使うことが多く、フォルダ (Folder)　という言い方をしますが、File System としては、ディレクトリ (Directory)と呼びます。Unix では、ディレクトリも File として扱いますが、それは、今は、必要ないでしょう。ディレクトリとあったら、Windows や、Mac の フォルダ (Folder) だと思ってください。その中の書類（画像ファイルなども含めて）が File です。</p>
+<pre><code>  |=====                                                                                    |   5%
+| However it's important to note that R provides a common API (a common set of commands) for
+| interacting with files, that way your code will work across different kinds of computers.
+
+...</code></pre>
+<p><em>しかし、R では、オペレーティングシステムに依存しない、共通の API (Application Programming Interface, 共通の命令群) を使って操作することができます。</em></p>
+<pre><code>  |=======                                                                                  |   8%
+| Let's jump right in so you can get a feel for how these special functions work!
+
+...</code></pre>
+<p><em>これらの関数がどのように作用するのか、ともかく使ってみましょう。</em></p>
+<pre><code>  |=========                                                                                |  10%
+| Determine which directory your R session is using as its current working directory using
+| getwd().</code></pre>
+<p><em>現在の作業ディレクトリ（Current Working Directory）名を、<code>getwd()</code> で表示してください。</em></p>
+<p>’&gt;’ は <code>R</code> Prompt で入力する必要はありません。出力は、隠してあります。</p>
+<pre><code>&gt; getwd()
+[1] *********
+
+| All that practice is paying off!</code></pre>
+<p><em>練習のおかげですね。</em> <code>|===========                                                                              |  13% | List all the objects in your local workspace using ls().</code> <em>ls() を使って、あなたの作業領域にある、Objects（もの、保存した変数など）を表示してください。</em></p>
+<pre><code>&gt; ls()
+character(0)
+
+| That's correct!</code></pre>
+<p><em>正しいです。</em></p>
+<pre><code>  |==============                                                                           |  15%
+| Some R commands are the same as their equivalents commands on Linux or on a Mac. Both Linux and
+| Mac operating systems are based on an operating system called Unix. It's always a good idea to
+| learn more about Unix!
+
+...</code></pre>
+<p><em>Rの命令のいくつかは、Linux や、Mac の同様の命令と同じです。Mac は、Unix という オペレーティングシステムの上にできています。Unix について学ぶと良いですよ。</em></p>
+<pre><code>  |================                                                                         |  18%
+| Assign 9 to x using x &lt;- 9.</code></pre>
+<p><em>9 を 変数 x に割り当て（置い）てください。</em></p>
+<pre><code>&gt; x &lt;- 9
+
+| Perseverance, that's the answer.</code></pre>
+<p><em>頑張りましたね。それが答えです。</em></p>
+<pre><code>  |==================                                                                       |  21%
+| Now take a look at objects that are in your workspace using ls().</code></pre>
+<p><em>あなたの作業領域 (workspace) の Objects がどうなったか表示してください。</em></p>
+<pre><code>&gt; ls()
+[1] &quot;x&quot;
+
+| You're the best!</code></pre>
+<p><em>最高です。</em></p>
+<pre><code>  |=====================                                                                    |  23%
+| List all the files in your working directory using list.files() or dir().</code></pre>
+<p><em>list.files() または、dir() を使って、作業ディレクトリにある、files を表示してください。</em></p>
+<pre><code>&gt; list.files()
+[1] *********
+
+| You are amazing!</code></pre>
+<p><em>驚きです。</em></p>
+<pre><code>  |=======================                                                                  |  26%
+| As we go through this lesson, you should be examining the help page for each new function. Check
+| out the help page for list.files with the command ?list.files.</code></pre>
+<p><em>この課の学びを進めるとき、新しい関数が登場したら、Help ページをチェックすることをお勧めします。まず、?list.files として、list.files について調べてください。</em></p>
+<p>RStudio を使っているときは、右下の Pane の Help タブに、説明が表示されます。</p>
+<pre><code>&gt; ?list.files
+
+| Keep working like that and you'll get there!</code></pre>
+<p><em>その調子でいいですよ。</em></p>
+<pre><code>  |=========================                                                                |  28%
+| One of the most helpful parts of any R help file is the See Also section. Read that section for
+| list.files. Some of these functions may be used in later portions of this lesson.
+
+...</code></pre>
+<p><em>R の Help の See Also（参照）の部分はとても有用ですから、list.files の対応する部分を読んでください。See Also にある、関数は、あとで、使うかもしれません。</em></p>
+<pre><code>  |===========================                                                              |  31%
+| Using the args() function on a function name is also a handy way to see what arguments a
+| function can take.
+...</code></pre>
+<p><em>args() はその関数の引数（その関数を使うときに必要な変数）を表示します。</em></p>
+<pre><code>  |==============================                                                           |  33%
+| Use the args() function to determine the arguments to list.files().</code></pre>
+<p><em>args() を使って、list.files() の引数を表示してください。</em></p>
+<pre><code>&gt; args(list.files)
+function (path = &quot;.&quot;, pattern = NULL, all.files = FALSE, full.names = FALSE, 
+    recursive = FALSE, ignore.case = FALSE, include.dirs = FALSE, 
+    no.. = FALSE) 
+NULL
+
+| Keep working like that and you'll get there!</code></pre>
+<p><em>その調子でいいですよ。</em></p>
+<p><code>args()</code> を Help （RStudio なら右下の Pane の Help Tab）で、args と入れて調べてみることをお勧めします。</p>
+<pre><code>  |================================                                                         |  36%
+| Assign the value of the current working directory to a variable called &quot;old.dir&quot;.</code></pre>
+<p><em>現在の作業ディレクトリを old.dir という変数に割り当ててください。</em></p>
+<pre><code>&gt; old.dir &lt;- getwd()
+
+| Great job!</code></pre>
+<p><em>よくやりましたね。</em></p>
+<pre><code>  |==================================                                                       |  38%
+| We will use old.dir at the end of this lesson to move back to the place that we started. A lot
+| of query functions like getwd() have the useful property that they return the answer to the
+| question as a result of the function.
+
+...</code></pre>
+<p><em>old.dir はこの課の最後に使います。getwd() のような、質問に答えてくれる関数は、その質問の答えを返してくれるので、便利です。</em></p>
+<pre><code>  |=====================================                                                    |  41%
+| Use dir.create() to create a directory in the current working directory called &quot;testdir&quot;.</code></pre>
+<p><em>現在の作業ディレクトリに、“testdir” という名前の新しい、Directory（ディレクトリ）を dir.create() を使って、作成してください。</em></p>
+<p>少しずつ用語を英語に切り替えていきます。英語に慣れるためです。</p>
+<pre><code>&gt; dir.create(&quot;testdir&quot;)
+
+| Great job!</code></pre>
+<p><em>よくやりましたね。</em></p>
+<pre><code>  |=======================================                                                  |  44%
+| We will do all our work in this new directory and then delete it after we are done. This is the
+| R analog to &quot;Take only pictures, leave only footprints.&quot;
+
+...</code></pre>
+<p><em>これから、この新しい Directory で、すべての作業をし、すべて終了してから、それを、消去します。これは、R を使った、いわゆる、「とるものは写真だけ、残すのは足跡のみにしてください」（観光地での標語）の実践です。</em></p>
+<pre><code>  |=========================================                                                |  46%
+| Set your working directory to &quot;testdir&quot; with the setwd() command.</code></pre>
+<p><em>“testdir” を、setwd() を使って、作業ディレクトリに指定してください。</em></p>
+<pre><code>&gt; setwd(&quot;testdir&quot;)
+
+| Excellent work!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>  |===========================================                                              |  49%
+| In general, you will want your working directory to be someplace sensible, perhaps created for
+| the specific project that you are working on. In fact, organizing your work in R packages using
+| RStudio is an excellent option. Check out RStudio at http://www.rstudio.com/
+
+...</code></pre>
+<p><em>一般的には、作業ディレクトリは、あるプロジェクトを実行するための実用的な Directory（ディレクトリ）です。実際、RStudio では、まず、プロジェクトの Directory（ディレクトリ）を作成し、R Package を使って、プロジェクトを進めていきますが、とてもすぐれた方法です。RStudio については、<a href="http://www.rstudio.com/" class="uri">http://www.rstudio.com/</a>　で調べてください。</em></p>
+<pre><code>  |==============================================                                           |  51%
+| Create a file in your working directory called &quot;mytest.R&quot; using the file.create() function.</code></pre>
+<p><em>file.create() 関数を使って、あなたの作業ディレクトリに、“mytest.R” という名前のファイルを作成してください。</em></p>
+<pre><code>&gt; file.create(&quot;mytest.R&quot;)
+[1] TRUE
+
+| You're the best!</code></pre>
+<p><em>最高です。</em></p>
+<pre><code>  |================================================                                         |  54%
+| This should be the only file in this newly created directory. Let's check this by listing all
+| the files in the current directory.
+</code></pre>
+<p><em>新しく作成した Directory（ディレクトリ）にあるのは、このファイルだけのはずです。現在の Directory（ディレクトリ）のファイルをすべて表示してください。</em></p>
+<pre><code>&gt; list.files()
+[1] &quot;mytest.R&quot;
+
+| You got it!</code></pre>
+<p><em>その通りです。</em></p>
+<pre><code>  |==================================================                                       |  56%
+| Check to see if &quot;mytest.R&quot; exists in the working directory using the file.exists() function.</code></pre>
+<p><em>file.exists() 関数を利用して、“mytest.R” という名前のファイルが、作業ディレクトリに存在するかどうか調べてください。</em></p>
+<pre><code>&gt; file.exists(&quot;mytest.R&quot;)
+[1] TRUE
+
+| That's the answer I was looking for.</code></pre>
+<p><em>そうです。それが、期待したものです。</em></p>
+<pre><code>  |====================================================                                     |  59%
+| These sorts of functions are excessive for interactive use. But, if you are running a program
+| that loops through a series of files and does some processing on each one, you will want to
+| check to see that each exists before you try to process it.
+
+...</code></pre>
+<p><em>これらの関数は、対話型で利用するときには、必要ないかもしれませんが、プログラムを動かし、たくさんのファイルについて、何らかの作業をする場合など、そのファイルが存在するかどうか確認することは、必要になってきます。</em></p>
+<pre><code>  |=======================================================                                  |  62%
+| Access information about the file &quot;mytest.R&quot; by using file.info().</code></pre>
+<p><em>file.info() を利用して、“mytest.R” という名前のファイルの情報を得てみましょう。</em></p>
+<p>出力の一部を消去しました。</p>
+<pre><code>&gt; file.info(&quot;mytest.R&quot;)
+         size isdir mode               mtime               ctime               atime uid gid
+mytest.R    0 FALSE  644 2020-03-31 17:51:09 2020-03-31 17:51:09 2020-03-31 17:51:10 501  20
+           uname grname
+mytest.R ******  *******
+
+| Your dedication is inspiring!</code></pre>
+<p><em>感動ものです。</em></p>
+<pre><code>  |=========================================================                                |  64%
+| You can use the $ operator --- e.g., file.info(&quot;mytest.R&quot;)$mode --- to grab specific items.
+
+...</code></pre>
+<p><em>$ 作用素つ使うこともできます。たとえば、file.info(“mytest.R”)$mode とすると、情報の一部を取り出すことができます。</em></p>
+<pre><code>  |===========================================================                              |  67%
+| Change the name of the file &quot;mytest.R&quot; to &quot;mytest2.R&quot; by using file.rename().
+
+&gt; file.rename(&quot;mytest.R&quot;, &quot;mytest2.R&quot;)
+[1] TRUE</code></pre>
+<p><em>file.rename() 関数を使って、“mytest.R” という名前のファイル名を、“mytest2.R” に変えてみてください。</em></p>
+<pre><code>| That's the answer I was looking for.</code></pre>
+<p><em>そうです。それが、期待したものです。</em></p>
+<pre><code>  |==============================================================                           |  69%
+| Your operating system will provide simpler tools for these sorts of tasks, but having the
+| ability to manipulate files programatically is useful. You might now try to delete mytest.R
+| using file.remove('mytest.R'), but that won't work since mytest.R no longer exists. You have
+| already renamed it.
+
+...</code></pre>
+<p><em>あなたが使っているオペレーティングシステムでは、もっと簡単に同様のことができるかもしれません。しかし、File についてのこのような作業をプログラムとしてできることは、有用です。mytest.R というファイルを file.remove(‘mytest.R’) を使って、削除しようとします。しかし、すでに、そのファイルは、名前を変えてあり、存在しませんから、その作業はできません。</em></p>
+<pre><code>  |================================================================                         |  72%
+| Make a copy of &quot;mytest2.R&quot; called &quot;mytest3.R&quot; using file.copy().</code></pre>
+<p><em>“mytest2.R” の複製（copy）をして、“mytest3.R” という名前のファイルを、file.copy() 関数で作成してください。</em></p>
+<pre><code>&gt; file.copy(&quot;mytest2.R&quot;, &quot;mytest3.R&quot;)
+[1] TRUE
+
+| You are doing so well!</code></pre>
+<p><em>とてもうまくいっていますよ。</em></p>
+<pre><code>  |==================================================================                       |  74%
+| You now have two files in the current directory. That may not seem very interesting. But what if
+| you were working with dozens, or millions, of individual files? In that case, being able to
+| programatically act on many files would be absolutely necessary. Don't forget that you can,
+| temporarily, leave the lesson by typing play() and then return by typing nxt().
+
+...</code></pre>
+<p><em>現在のディレクトリに、二つのファイルがあります。それほど面白いと思わないかもしれませんが、たくさんの、そして、無数のファイルを扱うときには、プログラムを使うことが必要です。一度、play()　と入力することで、この課を離れて、また、nxt() と入力して、戻ってみてください。</em></p>
+<p>この間に、復習をしたり、いくつかの関数の Help を見てみることもお勧めです。</p>
+<pre><code>  |====================================================================                     |  77%
+| Provide the relative path to the file &quot;mytest3.R&quot; by using file.path().</code></pre>
+<p><em>“mytest3.R” の相対パス（現在のディレクトリからのパス）を、file.path() を使って、求めてください。</em></p>
+<p>パスは、そのディレクトリやファイルにたどり着く「道 (path)」の情報のことでした。どこからはじめるかにりょい、相対パス (relative path)、絶対パス (absolute path or full path) という用語が使われます。絶対パスは、そのコンピュータの一番ものと root という場所からのパスのことです。作業ディレクトリの概念をはっきりしておくことで、そこからの、相対パスで作業ができ、他のコンピュータで作業をするときにも、同じプログラムが使えるようになります。</p>
+<pre><code>&gt; file.path(&quot;mytest3.R&quot;)
+[1] &quot;mytest3.R&quot;
+
+| You nailed it! Good job!</code></pre>
+<p><em>見事です。</em> <code>|=======================================================================                  |  79% | You can use file.path to construct file and directory paths that are independent of the | operating system your R code is running on. Pass 'folder1' and 'folder2' as arguments to | file.path to make a platform-independent pathname.</code> <em>file.path 関数を使って、ファイルや、ディレクトリのパスを、R を走らせている、オペレーティングシステムに依存せずに、作成することができます。file.path の引数（arguments）として、‘folder1’ と ‘folder2’ をわたして、file.path で、パスの名前を作成してください。</em></p>
+<pre><code>&gt; file.path('folder1', 'folder2')
+[1] &quot;folder1/folder2&quot;
+
+| Excellent work!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>  |=========================================================================                |  82%
+| Take a look at the documentation for dir.create by entering ?dir.create . Notice the 'recursive'
+| argument. In order to create nested directories, 'recursive' must be set to TRUE.</code></pre>
+<p><em>dir.create について、?dir.create として、説明を見てください。‘recursive’（再帰的）という引数があるのがわかりますか。ディレクトリの中にディレクトリが入った、入れ子にするときには、‘recursive’ を TRUE にします。</em></p>
+<pre><code>&gt; ?dir.create
+
+| Your dedication is inspiring!</code></pre>
+<p><em>感動ものです。</em></p>
+<pre><code>  |===========================================================================              |  85%
+| Create a directory in the current working directory called &quot;testdir2&quot; and a subdirectory for it
+| called &quot;testdir3&quot;, all in one command by using dir.create() and file.path().</code></pre>
+<p><em>現在のディレクトリの中に、“testdir2” という名のディレクトリを作成し、その中に、“testdir3” というディレクトリを作成してください。dir.create() と file.path() を組合せて、一つの命令で実行することができます。</em></p>
+<pre><code>&gt; dir.create(file.path(&quot;testdir2&quot;,&quot;testdir3&quot;), recursive = TRUE)
+
+| You're the best!</code></pre>
+<p><em>最高です。</em></p>
+<pre><code>  |==============================================================================           |  87%
+| Go back to your original working directory using setwd(). (Recall that we created the variable
+| old.dir with the full path for the orginal working directory at the start of these questions.)
+
+&gt; setwd(old.dir)</code></pre>
+<p><em>最初の、作業ディレクトリに setwd() を使って戻りましょう。（old.dir に完全パスを保存しておきました。）</em></p>
+<pre><code>| Keep up the great work!</code></pre>
+<p><em>その調子。</em></p>
+<pre><code>  |================================================================================         |  90%
+| It is often helpful to save the settings that you had before you began an analysis and then go
+| back to them at the end. This trick is often used within functions; you save, say, the par()
+| settings that you started with, mess around a bunch, and then set them back to the original
+| values at the end. This isn't the same as what we have done here, but it seems similar enough to
+| mention.
+
+...</code></pre>
+<p><em>作業を始める前にその設定を保存しておいて、最後に戻ってくることは有効です。このことは、関数の中で、たとえば、par() と設定して、はじめ、混乱するようなことをしても、最初に戻ってくるようにできます。これは、ここでしたこととは異なりますが、同様なことなので、ここに書きました。</em></p>
+<pre><code>  |==================================================================================       |  92%
+| After you finish this lesson delete the 'testdir' directory that you just left (and everything
+| in it)
+
+...</code></pre>
+<p><em>この課が終わったら、いま、出てきた’testdir’ を削除して、その中にあるものも含めて消去してください。</em></p>
+<pre><code>  |====================================================================================     |  95%
+| Take nothing but results. Leave nothing but assumptions. That sounds like 'Take nothing but
+| pictures. Leave nothing but footprints.' But it makes no sense! Surely our readers can come up
+| with a better motto . . .
+
+...</code></pre>
+<p><em>結果だけを得れば良い。仮定だけわかればよい。これは、「とるものは写真だけ、残すのは足跡のみにしてください」（観光地での標語）と聞こえますね。しかし、そうでしょうか。みなさんには、もっとよい、標語がありますよね。</em></p>
+<pre><code>  |=======================================================================================  |  97%
+| In this lesson, you learned how to examine your R workspace and work with the file system of
+| your machine from within R. Thanks for playing!
+
+...</code></pre>
+<p><em>この課では、R の作業空間と、ファイルシステムを、R でどのように操作するかを学びました。</em></p>
+<pre><code>  |=========================================================================================| 100%
+| Would you like to receive credit for completing this course on Coursera.org?
+
+1: No
+2: Yes
+
+Selection: 1</code></pre>
+<p><em>Coursera.org の終了認定が欲しいですか。</em></p>
+<p><strong>注：Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、1: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</strong></p>
+<pre><code>| Excellent work!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 0</code></pre>
+<p><em>２課の最後までたどり着きました。メニューに戻るには、</em></p>
+<p><em>コースを選択してください。<code>swirl</code> を終了するときは、0 を入力してください。</em></p>
+<p><em>1: <code>R</code> によるプログラム</em><br />
+<em>2: ｀swirl` コースのリストへ</em>.</p>
+<p><em>選択：0 （SL が入力）</em></p>
+<pre><code>| Leaving swirl now. Type swirl() to resume.</code></pre>
+<p><em>swirl を終了します。再開するときは、swirl() と入力してください。</em></p>
+<pre><code>&gt; </code></pre>
 </div>
 <div id="sequences-of-numbers" class="section level3">
 <h3>2.3. Sequences of Numbers</h3>
