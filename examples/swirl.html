@@ -3869,6 +3869,7 @@ Selection: 3</code></pre>
  [1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
 
 | Keep working like that and you'll get there!</code></pre>
+<p><em>その調子でいいですよ。</em></p>
 <pre><code>|=========================================================================================| 100%
 | Would you like to receive credit for completing this course on Coursera.org?
 
@@ -3877,7 +3878,7 @@ Selection: 3</code></pre>
 
 Selection: 1</code></pre>
 <p><em>Coursera.org の終了認定が欲しいですか。</em></p>
-<p>1 を入力すると、2桁の token（証明のしるし）を入力しなさいと表示されます。Moocs の 一つの、Coursera で使われていたものなのでしょう。</p>
+<p>2 を入力すると、2桁の token（証明のしるし）を入力しなさいと表示されます。Moocs の 一つの、Coursera で使われていたものなのでしょう。</p>
 <p><strong>注：Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</strong></p>
 <pre><code>| Keep up the great work!
 
@@ -3902,6 +3903,355 @@ Selection: 0
 </div>
 <div id="vectors" class="section level3">
 <h3>2.4. Vectors</h3>
+<blockquote>
+<p>数ベクトル（numeric vectors）については、2.1 Basic Building Blocks（基本的構成要素）で、すでに、少し学びましたが、文字列や、論理値のベクトルについて学びます。R がどのように、ベクトルを扱うのかは、とても基本的ですので、よくご存じの方以外は、スキップしないでください。<br />
+swirl() ではじめるところから、解説します。最初に、swirl を Install したり、library(swirl) を実行する部分は、省略します。よくわからない方は、2.2 または、2.1 の最初の部分を復習してください。</p>
+</blockquote>
+<pre><code>&gt; swirl()</code></pre>
+<p>次のステップも同じですから、和訳や解説は省略します。</p>
+<pre><code>| Welcome to swirl! Please sign in. If you've been here before, use the same name as you did then.
+| If you are new, call yourself something unique.
+
+What shall I call you? SL
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers    
+ 4: Vectors                    5: Missing Values             6: Subsetting Vectors      
+ 7: Matrices and Data Frames   8: Logic                      9: Functions               
+10: lapply and sapply         11: vapply and tapply         12: Looking at Data         
+13: Simulation                14: Dates and Times           15: Base Graphics           
+
+
+Selection: 4</code></pre>
+<p>4: Vectors（第４課 ベクトル）を選択しました。</p>
+<pre><code>  |                                                                                         |   0%
+
+| The simplest and most common data structure in R is the vector.
+
+...</code></pre>
+<p><em>R の一番簡単な、データ構造（data structure）は vector（ベクトル）です。</em></p>
+<pre><code>  |==                                                                                       |   3%
+| Vectors come in two different flavors: atomic vectors and lists. An atomic vector contains
+| exactly one data type, whereas a list may contain multiple data types. We'll explore atomic
+| vectors further before we get to lists.
+
+...</code></pre>
+<p><em>ベクトルには、二種類あります。atomic vectors（原子ベクトル）と lists（リスト）です。atomic vector は、一つの種類のデータを含みますが、list の方は、複数の種類のデータを含むことが可能です。ここでは、list を学ぶ前に、一種類のデータからなる atomic vector について学びます。</em></p>
+<pre><code>  |=====                                                                                    |   5%
+| In previous lessons, we dealt entirely with numeric vectors, which are one type of atomic
+| vector. Other types of atomic vectors include logical, character, integer, and complex. In this
+| lesson, we'll take a closer look at logical and character vectors.
+
+...</code></pre>
+<p><em>以前の課では、数ベクトル (numeric vectors) について学びました。これは、atomic vector の一つです。他の種類の atomic vector には、論理、文字、整数、複素数を含むものがあります。この課では、論理ベクトルと、文字ベクトルについて学びます。</em></p>
+<pre><code>  |=======                                                                                  |   8%
+| Logical vectors can contain the values TRUE, FALSE, and NA (for 'not available'). These values
+| are generated as the result of logical 'conditions'. Let's experiment with some simple
+| conditions.
+
+...</code></pre>
+<p><em>論理ベクトルは、TRUE（真）, FALSE（偽）, NA (‘not available’ 不明) の三種類の値から成ります。これらは、論理的な条件（conditions）によって、生成されます。いくつかの条件について見てみましょう。</em></p>
+<pre><code>  |=========                                                                                |  11%
+| First, create a numeric vector num_vect that contains the values 0.5, 55, -10, and 6.</code></pre>
+<p><em>まず、0.5, 55, -10, 6 からなる数ベクトル、num_vect を作成してください。</em></p>
+<pre><code>&gt; num_vect &lt;- c(0.5, 55, -10, 6)
+
+| All that hard work is paying off!</code></pre>
+<p><em>努力は報われます。</em></p>
+<pre><code>  |============                                                                             |  13%
+| Now, create a variable called tf that gets the result of num_vect &lt; 1, which is read as
+| 'num_vect is less than 1'.</code></pre>
+<p><em>今度は、num_vect &lt; 1 の結果からなる、tf という名前のベクトルを作ってください。「num_vec は、1 より小さい」という条件です。</em></p>
+<pre><code>&gt; tf &lt;- num_vect &lt; 1
+
+| Nice work!</code></pre>
+<p><em>それで良いですよ。</em></p>
+<pre><code>  |==============                                                                           |  16%
+| What do you think tf will look like?
+
+1: a single logical value
+2: a vector of 4 logical values</code></pre>
+<p><em>tf はどんな形をしていると思いますか。</em></p>
+<p><em>1: 一つの値</em><br />
+<em>2: 四つの論理値からなるベクトル</em></p>
+<pre><code>Selection: 2
+
+| Great job!</code></pre>
+<p><em>よくやりましたね。</em></p>
+<pre><code>  |================                                                                         |  18%
+| Print the contents of tf now.</code></pre>
+<p><em>tf の中身を見てください。</em></p>
+<pre><code>&gt; tf
+[1]  TRUE FALSE  TRUE FALSE
+
+| Excellent job!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>  |===================                                                                      |  21%
+| The statement num_vect &lt; 1 is a condition and tf tells us whether each corresponding element of
+| our numeric vector num_vect satisfies this condition.
+
+...</code></pre>
+<p><em>statement num_vect &lt; 1 は、数ベクトル num_vect のそれぞれの、成分が、条件を満たしているかということです。</em></p>
+<pre><code>  |=====================                                                                    |  24%
+| The first element of num_vect is 0.5, which is less than 1 and therefore the statement 0.5 &lt; 1
+| is TRUE. The second element of num_vect is 55, which is greater than 1, so the statement 55 &lt; 1
+| is FALSE. The same logic applies for the third and fourth elements.
+
+...</code></pre>
+<p><em>num_vect の最初は、0.5 で、これは、1 より小さいので、0.5 &lt; 1 は TRUE（真）です。二つ目は、55 で、1 より大きいので、55 &lt; 1 は、FALSE（偽）です。同じ論理が、num_vect の三つ目、四つ目の成分についても適用されます。</em></p>
+<pre><code>  |=======================                                                                  |  26%
+| Let's try another. Type num_vect &gt;= 6 without assigning the result to a new variable.</code></pre>
+<p><em>もう一つ試してみましょう。num_vect &gt;= 6 を新しい、変数に割り当てることはしないで、入力してください。</em></p>
+<pre><code>&gt; num_vect &gt;= 6
+[1] FALSE  TRUE FALSE  TRUE
+
+| You got it!</code></pre>
+<p><em>その通りです。</em></p>
+<pre><code>  |==========================                                                               |  29%
+| This time, we are asking whether each individual element of num_vect is greater than OR equal to
+| 6. Since only 55 and 6 are greater than or equal to 6, the second and fourth elements of the
+| result are TRUE and the first and third elements are FALSE.
+
+...</code></pre>
+<p><em>今度は、num_vect のそれぞれの要素が、6 より大きいか、または、等しいか（すなわち、6 以上か）ときいています。55 と 6 は、6 より大きいか、または、等しいので、二番目と、４番目の結果は、TRUE（真）となり、一番目と三番目の結果は、FALSE（偽）</em></p>
+<pre><code>  |============================                                                             |  32%
+| The `&lt;` and `&gt;=` symbols in these examples are called 'logical operators'. Other logical
+| operators include `&gt;`, `&lt;=`, `==` for exact equality, and `!=` for inequality.
+
+...</code></pre>
+<p><em><code>&lt;</code> と <code>&gt;=</code> は、「論理記号」と呼ばれるものの例です。「論理記号」には他に、<code>&gt;</code>, <code>&lt;=</code>, exact equality（丁度等しい）を表す <code>==</code> と、inequality（等しくない）を表す <code>!=</code> があります。</em></p>
+<pre><code>  |==============================                                                           |  34%
+| If we have two logical expressions, A and B, we can ask whether at least one is TRUE with A | B
+| (logical 'or' a.k.a. 'union') or whether they are both TRUE with A &amp; B (logical 'and' a.k.a.
+| 'intersection'). Lastly, !A is the negation of A and is TRUE when A is FALSE and vice versa.
+
+...</code></pre>
+<p><em>二つの論理表現（論理式とも言います）A と B に対して、どちらか一方が正しいという条件を、A | B (logical ‘or’ a.k.a. (also known as)‘union’ 論理的 OR とか、論理和（合併）と呼ばれます。) で表し、どちらも正しいという条件を、A &amp; B（logical ‘and’ a.k.a. ’intersection’論理的 AND とか、論理積（共通部分）と呼ばれます。）最後に、!A は、the negation of A（A の否定）で、A が TRUE（真）なら FALSE（偽）となります、逆の場合も同様です。</em></p>
+<pre><code>  |=================================                                                        |  37%
+| It's a good idea to spend some time playing around with various combinations of these logical
+| operators until you get comfortable with their use. We'll do a few examples here to get you
+| started.
+
+...</code></pre>
+<p><em>慣れるまで、様々なこれらの論理演算子の組合せを考えることに時間をかけるのは良いことです。はじめとして、いくつかの例を試してみましょう。</em></p>
+<pre><code>  |===================================                                                      |  39%
+| Try your best to predict the result of each of the following statements. You can use pencil and
+| paper to work them out if it's helpful. If you get stuck, just guess and you've got a 50% chance
+| of getting the right answer!
+
+...</code></pre>
+<p><em>それぞれの結果を予想してみてください。紙と鉛筆を使って、考えてみるのも良いですよ。行き詰まったら、単にあててみてください。50%の確率で、正解が得られます。</em></p>
+<pre><code>  |=====================================                                                    |  42%
+| (3 &gt; 5) &amp; (4 == 4)
+
+1: FALSE
+2: TRUE</code></pre>
+<p><em>(3 &gt; 5) &amp; (4 == 4) は、1: FALSE（偽）ですか、2: TRUE (真) ですか。</em></p>
+<pre><code>Selection: 1
+
+| Perseverance, that's the answer.</code></pre>
+<p><em>頑張りましたね。それが答えです。</em></p>
+<pre><code>  |========================================                                                 |  45%
+| (TRUE == TRUE) | (TRUE == FALSE)
+
+1: TRUE
+2: FALSE</code></pre>
+<p><em>(TRUE == TRUE) | (TRUE == FALSE) は、1: TRUE (真)ですか、2: FALSE（偽） ですか。</em></p>
+<pre><code>Selection: 1
+
+| All that practice is paying off!</code></pre>
+<p><em>練習のおかげですね。</em></p>
+<pre><code>  |==========================================                                               |  47%
+| ((111 &gt;= 111) | !(TRUE)) &amp; ((4 + 1) == 5)
+
+1: FALSE
+2: TRUE</code></pre>
+<p><em>((111 &gt;= 111) | !(TRUE)) &amp; ((4 + 1) == 5) は、1: FALSE（偽）ですか、2: TRUE (真) ですか。</em></p>
+<pre><code>Selection: 2
+
+| You are amazing!</code></pre>
+<p><em>驚きです。</em></p>
+<pre><code>  |============================================                                             |  50%
+| Don't worry if you found these to be tricky. They're supposed to be. Working with logical
+| statements in R takes practice, but your efforts will be rewarded in future lessons (e.g.
+| subsetting and control structures).
+
+...</code></pre>
+<p><em>手が込んだ難しい問題だなと思っても、心配することはありません。確かにそうですね。論理式を扱うには、練習が必要です。しかし、いずれ報われます。（例として、一部分を取り出したり、制御したりするときに）</em></p>
+<pre><code>  |===============================================                                          |  53%
+| Character vectors are also very common in R. Double quotes are used to distinguish character
+| objects, as in the following example.
+
+...</code></pre>
+<p><em>Character vectors（文字ベクトル）も R で良く使われます。以下の例で示すように、文字からなるものは、Double quote（二重引用符 &quot;&quot;）を用いて、他と区別します。</em></p>
+<pre><code>  |=================================================                                        |  55%
+| Create a character vector that contains the following words: &quot;My&quot;, &quot;name&quot;, &quot;is&quot;. Remember to
+| enclose each word in its own set of double quotes, so that R knows they are character strings.
+| Store the vector in a variable called my_char.</code></pre>
+<p><em>“My”, “name”, “is” からなる、Character vectors（文字ベクトル）を作成しましょう。文字列であることを、R に知らせるために、それぞれの言葉を、Double quote（二重引用符 &quot;&quot;）で囲むことを忘れずに。そのベクトルに、に、 my_char という名前を付けてください。</em></p>
+<pre><code>&gt; my_char &lt;- c(&quot;My&quot;, &quot;name&quot;, &quot;is&quot;)
+
+| Excellent job!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>  |====================================================                                     |  58%
+| Print the contents of my_char to see what it looks like.</code></pre>
+<p><em>my_char はどのように表示されるか見てみましょう。</em></p>
+<pre><code>&gt; my_char
+[1] &quot;My&quot;   &quot;name&quot; &quot;is&quot;  
+
+| You got it right!</code></pre>
+<p><em>その通りです。</em></p>
+<pre><code>  |======================================================                                   |  61%
+| Right now, my_char is a character vector of length 3. Let's say we want to join the elements of
+| my_char together into one continuous character string (i.e. a character vector of length 1). We
+| can do this using the paste() function.
+
+...</code></pre>
+<p><em>今は、my_char は、長さ 3 の Character vector（文字ベクトル）ですが、これらを結合させて、一つの文字列（長さ1 の　Character vector（文字ベクトル））にしてみましょう。それには、paste() 関数を使います。</em></p>
+<pre><code>  |========================================================                                 |  63%
+| Type paste(my_char, collapse = &quot; &quot;) now. Make sure there's a space between the double quotes in
+| the `collapse` argument. You'll see why in a second.</code></pre>
+<p><em>paste(my_char, collapse = &quot; &quot;) と入力してください。引数（argument）の<code>collapse</code>　の二重引用符の間には、一つ半角スペースが入っていることに注意してください。なぜか、すぐわかります。</em></p>
+<pre><code>&gt; paste(my_char, collapse = &quot; &quot;)
+[1] &quot;My name is&quot;
+
+| You're the best!</code></pre>
+<p><em>最高です。</em></p>
+<pre><code>  |===========================================================                              |  66%
+| The `collapse` argument to the paste() function tells R that when we join together the elements
+| of the my_char character vector, we'd like to separate them with single spaces.
+
+...</code></pre>
+<p><em>paste() 関数の <code>collapse</code> argument（引数）は、R に結合するときに、間に、space を一つ入れてください、と伝えます。</em></p>
+<pre><code>  |=============================================================                            |  68%
+| It seems that we're missing something.... Ah, yes! Your name!
+
+...</code></pre>
+<p><em>なにか、不足していませか。そうそう、あなたの名前です。</em></p>
+<pre><code>  |===============================================================                          |  71%
+| To add (or 'concatenate') your name to the end of my_char, use the c() function like this:
+| c(my_char, &quot;your_name_here&quot;). Place your name in double quotes where I've put &quot;your_name_here&quot;.
+| Try it now, storing the result in a new variable called my_name.</code></pre>
+<p><em>my_char の最後に、あなたの名前を加える (add (または ‘concatenate’（結合する）と言います)) には、c() 関数を、c(my_char, “your_name_here”) こんな感じで使います。“your_name_here” の部分に、あなたの名前を入れてください。それを、my_name という新しい変数に割り当ててください。</em></p>
+<pre><code>&gt; my_name &lt;- c(my_char, &quot;SL&quot;)
+
+| Keep working like that and you'll get there!</code></pre>
+<p><em>その調子でいいですよ。</em></p>
+<pre><code>  |==================================================================                       |  74%
+| Take a look at the contents of my_name.</code></pre>
+<p><em>my_name の中身を見てみましょう。</em></p>
+<pre><code>&gt; my_name
+[1] &quot;My&quot;   &quot;name&quot; &quot;is&quot;   &quot;SL&quot;  
+
+| That's correct!</code></pre>
+<p><em>正しいです。</em></p>
+<pre><code>  |====================================================================                     |  76%
+| Now, use the paste() function once more to join the words in my_name together into a single
+| character string. Don't forget to say collapse = &quot; &quot;!</code></pre>
+<p><em>今度は、paste() 関数をもう一度使って、一つの文字列にしてください。collapse = &quot; &quot; とするのを、忘れないでくださいね。</em></p>
+<pre><code>&gt; paste(my_name, collapse = &quot; &quot;)
+[1] &quot;My name is SL&quot;
+
+| Keep working like that and you'll get there!</code></pre>
+<p><em>その調子でいいですよ。</em></p>
+<pre><code>  |======================================================================                   |  79%
+| In this example, we used the paste() function to collapse the elements of a single character
+| vector. paste() can also be used to join the elements of multiple character vectors.
+
+...</code></pre>
+<p><em>この例では、paste() 関数を使って、Character vector（文字ベクトル）を、一つの文字列からなる Character vector（文字ベクトル）に、結合しました。paste() はいくつもの、Character vector（文字ベクトル）の結合にも使えます。</em></p>
+<pre><code>  |=========================================================================                |  82%
+| In the simplest case, we can join two character vectors that are each of length 1 (i.e. join two
+| words). Try paste(&quot;Hello&quot;, &quot;world!&quot;, sep = &quot; &quot;), where the `sep` argument tells R that we want
+| to separate the joined elements with a single space.</code></pre>
+<p><em>簡単な例として、二つの Character vector（文字ベクトル）でそれぞれが、一つの文字列（長さ 1 の Character vector（文字ベクトル））からなるものを結合します。paste(“Hello”, “world!”, sep = &quot; &quot;) と入力しましょう。ここで 引数（argument）<code>sep</code> は、R に、single space（半角スペース１個）だけあけて、つなげるように伝えています。</em></p>
+<pre><code>&gt; paste(&quot;Hello&quot;, &quot;world!&quot;, sep = &quot; &quot;)
+[1] &quot;Hello world!&quot;
+
+| Excellent job!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>  |===========================================================================              |  84%
+| For a slightly more complicated example, we can join two vectors, each of length 3. Use paste()
+| to join the integer vector 1:3 with the character vector c(&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;). This time, use sep =
+| &quot;&quot; to leave no space between the joined elements.</code></pre>
+<p><em>もう少し複雑な例として、二つの、長さ３のベクトルを結合してみましょう。paste() を使って、長さ３の整数からなるベクトル 1:3 と、文字ベクトル c(“X”, “Y”, “Z”) を結合してください。今度は、sep = &quot;&quot; として、間に space を入れないようにします。</em></p>
+<pre><code>&gt; paste(1:3, c(&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;), sep = &quot;&quot;)
+[1] &quot;1X&quot; &quot;2Y&quot; &quot;3Z&quot;
+
+| Keep up the great work!</code></pre>
+<p><em>その素晴らしい調子を続けてください。</em></p>
+<pre><code>  |=============================================================================            |  87%
+| What do you think will happen if our vectors are of different length? (Hint: we talked about
+| this in a previous lesson.)
+
+...</code></pre>
+<p><em>もし、ベクトルの長さが違っていたらどうなると思いますか。（ヒント：以前、説明したことがあります。）</em></p>
+<pre><code>  |================================================================================         |  89%
+| Vector recycling! Try paste(LETTERS, 1:4, sep = &quot;-&quot;), where LETTERS is a predefined variable in
+| R containing a character vector of all 26 letters in the English alphabet.</code></pre>
+<p><em>Vector recycling（ベクトル再利用）です。Try paste(LETTERS, 1:4, sep = “-”) を試してみてください。LETTERS は、すでに、R にはじめから付属している文字ベクトルで、26 文字からなる、英語のアルファベットからなっています。</em></p>
+<pre><code>&gt; paste(LETTERS, 1:4, sep = &quot;-&quot;)
+ [1] &quot;A-1&quot; &quot;B-2&quot; &quot;C-3&quot; &quot;D-4&quot; &quot;E-1&quot; &quot;F-2&quot; &quot;G-3&quot; &quot;H-4&quot; &quot;I-1&quot; &quot;J-2&quot; &quot;K-3&quot; &quot;L-4&quot; &quot;M-1&quot; &quot;N-2&quot; &quot;O-3&quot;
+[16] &quot;P-4&quot; &quot;Q-1&quot; &quot;R-2&quot; &quot;S-3&quot; &quot;T-4&quot; &quot;U-1&quot; &quot;V-2&quot; &quot;W-3&quot; &quot;X-4&quot; &quot;Y-1&quot; &quot;Z-2&quot;
+
+| Great job!</code></pre>
+<p><em>よくやりましたね。</em></p>
+<pre><code>  |==================================================================================       |  92%
+| Since the character vector LETTERS is longer than the numeric vector 1:4, R simply recycles, or
+| repeats, 1:4 until it matches the length of LETTERS.
+
+...</code></pre>
+<p><em>Character vector（文字ベクトル）LETTERS は、Numeric vector（数ベクトル） 1:4 よりも長さが長いので、R は LETTERS の長さに合うように、Recycle（再利用）します。</em></p>
+<pre><code>  |====================================================================================     |  95%
+| Also worth noting is that the numeric vector 1:4 gets 'coerced' into a character vector by the
+| paste() function.
+
+...</code></pre>
+<p><em>さらに、Numeric vector（数ベクトル）は、paste() 関数によって、’coerced’され（強制的に）Character vector（文字ベクトル）として扱われます。</em></p>
+<pre><code>  |=======================================================================================  |  97%
+| We'll discuss coercion in another lesson, but all it really means is that the numbers 1, 2, 3,
+| and 4 in the output above are no longer numbers to R, but rather characters &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, and
+| &quot;4&quot;.
+
+...</code></pre>
+<p><em>coercion（強制）については、いずれ学びますが、要は、1, 2, 3, 4 という数は、もはや、数ではなく、“1”, “2”, “3”, “4” と、Character（文字）として扱われると言うことです。</em></p>
+<pre><code>  |=========================================================================================| 100%
+| Would you like to receive credit for completing this course on Coursera.org?
+
+1: Yes
+2: No
+
+Selection: 2</code></pre>
+<p><em>Coursera.org の終了認定が欲しいですか。</em></p>
+<p>1 を入力すると、2桁の token（証明のしるし）を入力しなさいと表示されます。Moocs の 一つの、Coursera で使われていたものなのでしょう。</p>
+<p><strong>注：Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（swirl Course Repository 参照）</strong></p>
+<pre><code>| Excellent work!
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 0</code></pre>
+<p><em>素晴らしい。</em></p>
+<p><em>課の最後までたどり着きました。メニューに戻るには、</em></p>
+<p><em>コースを選択してください。swirl を終了するときは、0 を入力してください。</em></p>
+<p><em>1: R によるプログラム</em><br />
+<em>2: ｀swirl` コースのリストへ.</em></p>
+<p><em>選択：0 （SL が入力）</em></p>
+<pre><code>| Leaving swirl now. Type swirl() to resume.</code></pre>
+<p><em>swirl を終了します。再開するときは、swirl() と入力してください。</em></p>
+<pre><code>&gt; </code></pre>
 </div>
 <div id="missing-values" class="section level3">
 <h3>2.5. Missing Values</h3>
