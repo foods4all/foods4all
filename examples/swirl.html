@@ -3502,7 +3502,7 @@ mytest.R ******  *******
 | You can use the $ operator --- e.g., file.info(&quot;mytest.R&quot;)$mode --- to grab specific items.
 
 ...</code></pre>
-<p><em>$ 作用素つ使うこともできます。たとえば、file.info(“mytest.R”)$mode とすると、情報の一部を取り出すことができます。</em></p>
+<p><em>$ 作用素を使うこともできます。たとえば、file.info(“mytest.R”)$mode とすると、情報の一部を取り出すことができます。</em></p>
 <pre><code>  |===========================================================                              |  67%
 | Change the name of the file &quot;mytest.R&quot; to &quot;mytest2.R&quot; by using file.rename().
 
@@ -3632,6 +3632,273 @@ Selection: 0</code></pre>
 </div>
 <div id="sequences-of-numbers" class="section level3">
 <h3>2.3. Sequences of Numbers</h3>
+<blockquote>
+<p>数列 (Sequences of Numbers) を作る方法を練習します。基本的ですから、よくご存じの方以外は、スキップしないでください。<br />
+<code>swirl()</code> ではじめるところから、解説します。最初に、swirl を Install したり、<code>library(swirl)</code> を実行する部分は、省略します。よくわからない方は、2.2 または、2.1 の最初の部分を復習してください。</p>
+</blockquote>
+<pre><code>&gt; swirl()</code></pre>
+<p>次のステップも同じですから、和訳や解説は省略します。</p>
+<pre><code>| Welcome to swirl! Please sign in. If you've been here before, use the same name as you did then.
+| If you are new, call yourself something unique.
+
+What shall I call you? SL
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 1
+
+| Please choose a lesson, or type 0 to return to course menu.
+
+ 1: Basic Building Blocks      2: Workspace and Files        3: Sequences of Numbers    
+ 4: Vectors                    5: Missing Values             6: Subsetting Vectors      
+ 7: Matrices and Data Frames   8: Logic                      9: Functions               
+10: lapply and sapply         11: vapply and tapply         12: Looking at Data         
+13: Simulation                14: Dates and Times           15: Base Graphics           
+
+
+Selection: 3</code></pre>
+<p>3: Sequences of Numbers（第３課 数列）を選択しました。</p>
+<pre><code>  |                                                                                         |   0%
+
+| In this lesson, you'll learn how to create sequences of numbers in R.
+
+...</code></pre>
+<p><em>この課では、R で数列を作る方法を学びます。</em></p>
+<pre><code>  |====                                                                                     |   4%
+| The simplest way to create a sequence of numbers in R is by using the `:` operator. Type 1:20 to
+| see how it works.</code></pre>
+<p><em>R で一番簡単に数列を作るには、<code>:</code> 作用素を使います。1:20 と入力し、どんな具合か見てみましょう。</em></p>
+<pre><code>&gt; 1:20
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+| That's the answer I was looking for.</code></pre>
+<p><em>そうです。それが、期待したものです。</em></p>
+<pre><code>  |========                                                                                 |   9%
+| That gave us every integer between (and including) 1 and 20. We could also use it to create a
+| sequence of real numbers. For example, try pi:10.</code></pre>
+<p><em>1からはじまり20までの整数（integer）の列となります。実数からも数列を作れます。pi:10 を試してみてください。</em></p>
+<pre><code>&gt; pi:10
+[1] 3.141593 4.141593 5.141593 6.141593 7.141593 8.141593 9.141593
+
+| That's correct!</code></pre>
+<p><em>正しいです。</em></p>
+<pre><code>|============                                                                             |  13%
+| The result is a vector of real numbers starting with pi (3.142...) and increasing in increments
+| of 1. The upper limit of 10 is never reached, since the next number in our sequence would be
+| greater than 10.
+
+...</code></pre>
+<p><em>結果として得られるベクトル（数が並んだもの）はまず、pi(3.142…) から始まり、1 ずつ加えていき、10を超さない範囲に収まるようになっています。</em></p>
+<pre><code>|===============                                                                          |  17%
+| What happens if we do 15:1? Give it a try to find out.</code></pre>
+<p><em>では、15:1 ではどうでしょうか。試してみてください。</em></p>
+<p><strong>ちょっと間違ってみました。1ではなく、17と入れてみました。</strong></p>
+<pre><code>&gt; 15:17
+[1] 15 16 17</code></pre>
+<pre><code>| Give it another try. Or, type info() for more options.
+
+| Type 15:1 and press Enter.</code></pre>
+<p><em>もう一度やってみたください。info() 入力してみるのも一つです。15:1 を入力し、Enter を押します。</em></p>
+<p>ということで、info() の方をまず試してみました。</p>
+<pre><code>&gt; info()
+
+| When you are at the R prompt (&gt;):
+| -- Typing skip() allows you to skip the current question.
+| -- Typing play() lets you experiment with R on your own; swirl will ignore what you do...
+| -- UNTIL you type nxt() which will regain swirl's attention.
+| -- Typing bye() causes swirl to exit. Your progress will be saved.
+| -- Typing main() returns you to swirl's main menu.
+| -- Typing info() displays these options again.</code></pre>
+<p>覚えていますか。最初にこの説明がありました。この日本語を知りたい人は、1.3 を参照してください。</p>
+<pre><code>&gt; 15:1
+ [1] 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1
+
+| Keep working like that and you'll get there!</code></pre>
+<p><em>その調子で良いですよ。</em></p>
+<pre><code>|===================                                                                      |  22%
+| It counted backwards in increments of 1! It's unlikely we'd want this behavior, but nonetheless
+| it's good to know how it could happen.
+...</code></pre>
+<p><em>1ずつ逆向きに（数を減らしていく方向に）数列を生成しました。このようなことは、考えないかもしれませんが、何が起こるか知っておいてもよいと思います。</em></p>
+<pre><code>|=======================                                                                  |  26%
+| Remember that if you have questions about a particular R function, you can access its
+| documentation with a question mark followed by the function name: ?function_name_here. However,
+| in the case of an operator like the colon used above, you must enclose the symbol in backticks
+| like this: ?`:`. (NOTE: The backtick (`) key is generally located in the top left corner of a
+| keyboard, above the Tab key. If you don't have a backtick key, you can use regular quotes.)
+
+...</code></pre>
+<p><em>R 関数について、質問があるときは、その関数の前に ? をつけて Help を求めるのでした。しかし、この場合のコロン（:）の場合には、baktick (`) で囲む必要があります。通常は、キーボードの左上、TAB キーの上にあります。もし、見つけられないときは、通常の引用符を使ってください。</em></p>
+<p>ちょっと試してみましたが、他の引用符ではうまくいかないようです。また、RStudio の右下の pane の虫眼鏡の窓に入れるときは、: のままが良いようです。ただ、この backtick は重要なので、ちょっと説明しておきます。上の、説明は、通常 ASCII キーボード、US キーボードと言われるものの配列です、日本では、JIS キーボードを使っている場合が多いと思うので（ASCII にひらがなをつけているものもあります。左上、TAB の上に、backtick があれば、ASCII 型です。）、P の右横、@ の上にあります。ということで、シフトを押して、@ となります。ついでに、引用符（quotation mark）について少し書いておきます。多用するようになったときに、もう一度書きます。すでに、出てきていますが、single quote (’) と、double quote (&quot;) があります。R では、基本的に、どちらも同じだと考えてください。</p>
+<pre><code>|===========================                                                              |  30%
+| Pull up the documentation for `:` now.
+</code></pre>
+<p><em><code>:</code> を使って、説明文書を見てみてください。</em></p>
+<p>? のあとにすぐ <code>:</code> を入力すればよいのですが、space を一つ入れてみました。問題ありませんね。どんどん、試してみてください。たいへんなことは起こりません。心配なら、play() として、一旦、swirl を抜けて、練習をし、nxt() で戻ってくれば良いでしょう。</p>
+<pre><code>&gt; ? `:`
+
+| Excellent work!
+</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>|===============================                                                          |  35%
+| Often, we'll desire more control over a sequence we're creating than what the `:` operator gives
+| us. The seq() function serves this purpose.
+
+...</code></pre>
+<p><em><code>:</code> よりももっと複雑なことをしたいときがあります。そのときは、seq() を使います。</em></p>
+<pre><code>|===================================                                                      |  39%
+| The most basic use of seq() does exactly the same thing as the `:` operator. Try seq(1, 20) to
+| see this.</code></pre>
+<p><em>最も基本的な使い方として、<code>:</code> と同じことをしてみましょう。seq(1,20) を試してください。</em></p>
+<pre><code>&gt; seq(1,20)
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+
+| All that practice is paying off!</code></pre>
+<p><em>練習のおかげですね。</em></p>
+<pre><code>|=======================================                                                  |  43%
+| This gives us the same output as 1:20. However, let's say that instead we want a vector of
+| numbers ranging from 0 to 10, incremented by 0.5. seq(0, 10, by=0.5) does just that. Try it out.</code></pre>
+<p><em>1:20 と同じ結果を得ました。しかし、たとえば、0 からはじめ 10 までの数列ですが、増加分を、0.5 としてみましょう。seq(0, 10, by=0.5) です。試してみてください。</em></p>
+<pre><code>&gt; seq(0, 10, by=0.5)
+ [1]  0.0  0.5  1.0  1.5  2.0  2.5  3.0  3.5  4.0  4.5  5.0  5.5  6.0  6.5  7.0  7.5  8.0  8.5  9.0
+[20]  9.5 10.0
+
+| You are amazing!</code></pre>
+<p><em>驚きです。</em></p>
+<pre><code>|===========================================                                              |  48%
+| Or maybe we don't care what the increment is and we just want a sequence of 30 numbers between 5
+| and 10. seq(5, 10, length=30) does the trick. Give it a shot now and store the result in a new
+| variable called my_seq.</code></pre>
+<p><em>増加分ではなく、全体で 30個の数から成る列を生成したいとします。そのときは、seq(5, 10, length=30) を使います。やってみましょう。その結果を、my_seq という名前の変数に割り当ててください。</em></p>
+<pre><code>&gt; my_seq &lt;- seq(5, 10, length=30)
+
+| Keep up the great work!</code></pre>
+<p><em>その調子です。</em></p>
+<pre><code>|==============================================                                           |  52%
+| To confirm that my_seq has length 30, we can use the length() function. Try it now.</code></pre>
+<p><em>たしかに、長さが、30 の数列を生成したことを、length() 関数を用いて、確認してください。</em></p>
+<pre><code>&gt; length(my_seq)
+[1] 30
+
+| Great job!</code></pre>
+<p><em>よくやりましたね。</em></p>
+<pre><code>|==================================================                                       |  57%
+| Let's pretend we don't know the length of my_seq, but we want to generate a sequence of integers
+| from 1 to N, where N represents the length of the my_seq vector. In other words, we want a new
+| vector (1, 2, 3, ...) that is the same length as my_seq.
+
+...</code></pre>
+<p><em>いま、my_seq の長さを知らないと仮定して、その長さと同じ、1 からはじめ N までの数列を作ろうとします。ここで、N は、my_seq の長さになります。</em></p>
+<pre><code>|======================================================                                   |  61%
+| There are several ways we could do this. One possibility is to combine the `:` operator and the
+| length() function like this: 1:length(my_seq). Give that a try.</code></pre>
+<p><em>いくつかの方法がありますが、一つの方法は、1:length(my_seq) とすることです。試してみてください。</em></p>
+<pre><code>&gt; 1:length(my_seq)
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+| Your dedication is inspiring!</code></pre>
+<p><em>感動ものです。</em></p>
+<pre><code>|==========================================================                               |  65%
+| Another option is to use seq(along.with = my_seq). Give that a try.</code></pre>
+<p><em>もう一つの方法は、seq(along.with = my_seq) です。試してみてください。</em></p>
+<pre><code>&gt; seq(along.with = my_seq)
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+| All that hard work is paying off!</code></pre>
+<p><em>努力は報われます。</em></p>
+<pre><code>|==============================================================                           |  70%
+| However, as is the case with many common tasks, R has a separate built-in function for this
+| purpose called seq_along(). Type seq_along(my_seq) to see it in action.</code></pre>
+<p><em>よくある作業については、これとは、別に、そのための関数も R に用意されています。seq_along()</em></p>
+<pre><code>&gt; seq_along(my_seq)
+ [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+
+| All that hard work is paying off!
+</code></pre>
+<p><em>努力は報われます。</em></p>
+<pre><code>|==================================================================                       |  74%
+| There are often several approaches to solving the same problem, particularly in R. Simple
+| approaches that involve less typing are generally best. It's also important for your code to be
+| readable, so that you and others can figure out what's going on without too much hassle.
+
+...</code></pre>
+<p><em>R では、同じ問題を解決するのにいくつもの方法がある場合があります。一般的に一番良いのは、入力する文字数が少ないことです。それ以外にも、code（プロセスを記号化したもの、プログラム）が他のひとにとっても読みやすく (readable) 理解しやすいということも大切です。</em></p>
+<pre><code>|======================================================================                   |  78%
+| If R has a built-in function for a particular task, it's likely that function is highly
+| optimized for that purpose and is your best option. As you become a more advanced R programmer,
+| you'll design your own functions to perform tasks when there are no better options. We'll
+| explore writing your own functions in future lessons.
+
+...</code></pre>
+<p><em>Rに付属の関数は、特定の作業のために特化しています。あなたが、上級の R のプログラマーにあんると、目的に合った命令を、自分で作ろうとするでしょう。その方法については、いずれ勉強します。</em></p>
+<pre><code>|==========================================================================               |  83%
+| One more function related to creating sequences of numbers is rep(), which stands for
+| 'replicate'. Let's look at a few uses.
+
+...</code></pre>
+<p><em>もう一つの数列を作成する関数として、rep() があります。これは、‘replicate’（複製）からとられています。いくつか例を見てみましょう。</em></p>
+<pre><code>|=============================================================================            |  87%
+| If we're interested in creating a vector that contains 40 zeros, we can use rep(0, times = 40).
+| Try it out.
+</code></pre>
+<p><em>40個 0 が並んだ列を作りたいとします。そのときは、rep(0, times = 40) を使います。試してみてください。</em></p>
+<pre><code>&gt; rep(0, times = 40)
+ [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+| Nice work!
+</code></pre>
+<p><em>それで良いですよ。</em></p>
+<pre><code>|=================================================================================        |  91%
+| If instead we want our vector to contain 10 repetitions of the vector (0, 1, 2), we can do
+| rep(c(0, 1, 2), times = 10). Go ahead.</code></pre>
+<p><em>(0,1,2) というベクトルを、10個ならべたものを作成するときは、rep(c(0, 1, 2), times = 10) とします。さあ、やってみましょう。</em></p>
+<pre><code>&gt; rep(c(0, 1, 2), times = 10)
+ [1] 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2 0 1 2
+
+| Excellent work!</code></pre>
+<p><em>素晴らしい。</em></p>
+<pre><code>|=====================================================================================    |  96%
+| Finally, let's say that rather than repeating the vector (0, 1, 2) over and over again, we want
+| our vector to contain 10 zeros, then 10 ones, then 10 twos. We can do this with the `each`
+| argument. Try rep(c(0, 1, 2), each = 10).</code></pre>
+<p><em>最後に (0, 1, 2) を何回も繰り返すのではなく、0 を 10回、1 を 10回、2 を 10回繰り返したいときは、argument（引数）の <code>eachi</code> を使います。 rep(c(0, 1, 2), each = 10) を試してみてください。</em></p>
+<pre><code>&gt; rep(c(0, 1, 2), each = 10)
+ [1] 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2
+
+| Keep working like that and you'll get there!</code></pre>
+<pre><code>|=========================================================================================| 100%
+| Would you like to receive credit for completing this course on Coursera.org?
+
+1: No
+2: Yes
+
+Selection: 1</code></pre>
+<p><em>Coursera.org の終了認定が欲しいですか。</em></p>
+<p>1 を入力すると、2桁の token（証明のしるし）を入力しなさいと表示されます。Moocs の 一つの、Coursera で使われていたものなのでしょう。</p>
+<p><strong>注：Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</strong></p>
+<pre><code>| Keep up the great work!
+
+| You've reached the end of this lesson! Returning to the main menu...
+
+| Please choose a course, or type 0 to exit swirl.
+
+1: R Programming
+2: Take me to the swirl course repository!
+
+Selection: 0
+</code></pre>
+<p><em>その調子です。</em></p>
+<p><em>課の最後までたどり着きました。メニューに戻るには、</em></p>
+<p><em>コースを選択してください。<code>swirl</code> を終了するときは、0 を入力してください。</em></p>
+<p><em>1: <code>R</code> によるプログラム</em><br />
+<em>2: ｀swirl` コースのリストへ</em>.</p>
+<p><em>選択：0 （SL が入力）</em></p>
+<pre><code>| Leaving swirl now. Type swirl() to resume.</code></pre>
+<p><em>swirl を終了します。再開するときは、swirl() と入力してください。</em></p>
+<pre><code>&gt; </code></pre>
 </div>
 <div id="vectors" class="section level3">
 <h3>2.4. Vectors</h3>
