@@ -1,0 +1,86 @@
+---
+title: |
+  | Let's enjoy data science together!
+  | データサイエンス、一緒に学びませんか
+output:
+  html_document:
+    df_print: paged
+#    toc: yes
+#    toc_float: yes
+---
+<a name = "top"></a><div align = "right">Last Updated: `r Sys.Date()`</div>
+
+## Free Open Online Data Science for All (FOODS4ALL)
+
+* **Free**: 無償(Free of Charge)・偏見なく(With Less Bias) 
+* **Open**: 公開されているものを活用し (Utilizing Public Domain Software, Open Data)、結果を共有し (Open to Others)
+* **Online**: 公共の資源としての Internet 上の、Online ツールを活用
+
+>**Data Science**:
+> データを活用して課題を発見・探求し、適切な解決策を探る意思決定のための科学（Decision Science）で、
+> エンピリカル（Empirical Study）すなわち、理論ではなく、実証性を特徴とする。 
+> データから得られる特徴を表示するとともに、数理モデルを適用し・機械学習などで評価し・アルゴリズムを策定する数理的思考を通して得られた結果を、可視化などによってコミュニケーションをおこない、共有し、他者の意見を聞き理解する努力をしながら、さらに課題について、あらたにデータを活用して考え、検証し、適切な解決策がもたらす新たな課題も予測しながら、調整をはかる。
+
+* **For All**: 経済的な格差が、教育格差とならないよう、Free Open Online の特徴を生かして、すべてのひとに開かれた、学びを場をめざす。Data Science の学びに留まらず、Data Science を用いて、考え、学び、ひとり一人への影響に思いをはせ、活きた智として活用することを目標とする。Mathematics（数学）や、Statistics（統計）や、Computer、または、英語は、苦手と言う人にも開かれた、学びの場をめざします。
+
+より詳しくは、[About 参照](about.html)
+
+## Reproducible and Literate Programming
+
+> Reproducible （再現可能）かつ、Literate　な（理解できるように記述する）ことをたいせつにします。
+
+* 学びは、まねをする部分もありますし、覚えることも、実際に、試してみることもたいせつで、それには、記録が不可欠です。理解できるように記述しておくことは、自分のためにも、共有するためにも、改善のためにもたいせつです。
+* Science（科学）に、Reproducibility（再現可能性）は、たいせつです。宇宙物理学（Astrophysics）や、進化生物学（Evolutionary Biology）などでは、Reproducibility を問うことは困難ですが、Data Science においては、結果を導いた、道筋を再現（Reproduce）でき、かつ共有できることは、たいせつなだけでなく、とても有用です。Science の性質の、反証可能性（Falsifiability）のためにも、Literate な記録は、鍵となるものです。早い段階から、Reproducible and Literate Programing が習慣となることを期待しています。
+
+## Software
+
+>`R` を主として利用します。`RStudio` を活用します。
+
+* Data Science には、多くの Software がありますが、特に、`R` または、Python は主要な Programming 言語です。
+* Python の情報についても、いずれは、加えていきますが、Programming の基本から始める必要がありますので、初級レベルでは、`R` が適しているのではないでしょうか。Simple な ものであれば、`R` のなかでも Python のProgram を動かすことが可能です。
+* 学びのためにも、共有するためにも、Reproducible （再現可能）かつ、Literate　な（理解できるように記述した）ものとして記録してきたいと思います。そのためにも、`R` では、`Rmarkdown` が使え、この Homepage も `Rmarkdown` で書いています。`Bookdown` 形式で、本の出版も始まっています。Python では、Jupyter (Julia+Python+R, Python Notebook) が同様の機能を持っています。Python を使うときには、Jupyter は有用です。`Rmarkdown` については、別途説明します。
+* 商用の表計算ソフトに慣れている方も多いと思いますが、Reproducible and Literate Programming のためにも、`R` をはじめませんか。商用のソフトは、いろいろな意味で、Free ではありません。
+* `R` は `RStudio` を用いて、利用することが、一般的になっています。Windows でも、Mac でも、Linux でも、Free（無償）で利用することができます。
+
+## Local and Online
+
+> 手元の Computer と同時に、Online でも、作業が可能であるようにします。
+
+* Online Cloud の環境をもつことで、どこでも、同じ環境で Data Science を活用して考えることができます。
+* 同じ環境なので、共同での作業、協力も可能となります。
+* [RStudio.cloud](https://rstudio.cloud) を Free （無償）で利用することができます。
+* 公的な機関や、大学などで、RStudio Server を利用できれば、ひとり一人が、別々に、package を install する手間も省けます。共有も、楽になります。
+* Interactive（対話型）な、Graph や、Homepage のためには、共有できる環境にある Server が必要です。これも、Online で、作業をしていれば、利用しやすくなります。
+* 現状は、環境が、不十分な面もありますが、今後、整備されていくと思います。
+
+## Learning Resources
+
+> 学びのための Resource を紹介します。
+
+* Free（無償）の、Online の Resource ですばらしいものがたくさんあります。自分で学びたいひと、さらに、深く学びたい人を応援します。
+* Moocs (Massive Open Online Courses) を、実際に受講したものを中心に、紹介します。Moocs 以外にも、Free（無償）で、（少なくとも、途中まで）学べる講座を紹介します。
+* Free（無償）で公開されている、本を紹介します。
+
+## Public and Open Data
+
+> 利用可能な、Public Data とか Open Data といわれるものと、利用方法を紹介します。
+
+* 膨大なすばらしいデータがたくさん利用可能です。
+
+## Examples
+
+> Data Science の例とともに、Reproducible, Literate Programming の例を増やしていきます。
+
+* 実際に Public and Open Data を用いて、どのように、Data Science を通して考えるかは、例が大切です。それも、Reproducible and Literate なものとして得ることが、初心者には必須です。単に教科書に出ているような例だけでなく、Hot な News や、課題を、Public and Open Data を用いて、Media の情報を検証したり、そこには現れないほかの視点から、考察する例が必要だと思います。少しずつ、提供していきます。
+* サイト管理者の学びの記録でもあります。
+* Memorandom（覚え書き）を必要に応じて残します。
+
+## English
+
+> 英語での学びを支援します。Expand your horizon!
+
+* 英語での Resource はおそらく、日本語の 100 倍程あるだけではなく、非常に上質ものもがたくさんあります。
+* 身近な課題であっても、世界から学ぶことで、世界は広がります。地球規模の問題も、たくさんあり、それらの多くが、私たちの、身近な問題に関係しています。
+* 日本語の Site でも、すぐれたものはありますが、この Site では、英語を活用して、学び、考えることに、とくに力を入れていきます。日本語で学んでいる人が、英語で学ぶことによって世界を広げることができればと願っています。そのため、英語の用語を極力使い、また、紹介していきます。Data Science の英語は、難しくありません。学ぶべきは、Data Science です。英語を、Excuse（いいわけ）にしないようにしましょう。
+* 中国語も、重要になってくるでしょう。検索では、中国の情報は現れにくいこともあります。将来的には、中国語の Site の情報も発信していきたいと思います。
+
