@@ -430,7 +430,7 @@ $(document).ready(function () {
 <ul>
 <li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力して、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、package も用意されています。<code>swirlify</code> です。</li>
 <li>使ってみましょう。package は、Install しただけでは、使えません。使うよと宣言します。それが、<code>library(&quot;swirl&quot;)</code> です。quotation mark は、この場合、なくても可ですが、入れる習慣をつけておくとよいでしょう。場合によっては、問題が起こることもないとはいえません。Console の <span class="math inline">\(&gt;\)</span> の次に、<code>library(&quot;swirl&quot;)</code>　として Enter、そして、<code>swirl()</code> と入力すると、学習プログラムが始まります。ちょっとした説明のあと、“What shall I call you?” とでます。名前でも、Nickname でも、イニシャルでも入れてください。このあとは、あなたのことを、この名前で呼ばれます。そのあとは、“…” まで読んだら、Enter と言う説明がありますから、また Enter。1 Continue., 2 Proceed. , 3 Let’s get going! の選択がでます。どれでもよいので、番号を入力してください。次に、途中でどうするかの説明があります。ともかくやめたいときは、ESC（Escape Key）、<span class="math inline">\(&gt;\)</span> が出ていて、そこまでを保存してやめたいときは、<code>quit()</code> 他にも、いくつも選択肢があることがわかります。次には、1: R Programming 2: Take me to the swirl course repository!　と出ます。1 を選ぶのがよいでしょう。2 を選ぶと、Pop-up window が出ます。Browser がそれを、Pop-up を表示しない設定になっていると、一旦終わります。1 を選ぶと、1-15 の項目が現れます。どれからでもよいですが、<code>R</code> について何も知らない場合は、1 からトライしてみてください。<span class="math inline">\(&gt;\)</span> が出ているときには、<code>quit()</code>、<span class="math inline">\(&gt;\)</span> が出ていないときに、ともかくやめたいときは、ESC です。Interactive Lesson を楽しんでみてください。</li>
-<li><a href="examples/swirl.html">日本語での説明と例</a>：英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。</li>
+<li><a href="examples/swirl.html">日本語での説明と例</a>：英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。基本的な、R Programming コースには、簡単な解説も、付いています。行き詰まったら、参照してください。<a href="#swirl">Swirl</a> の欄に、より詳しい説明があります。</li>
 <li>音声がありませんが、<code>swirl</code> のサイトから、簡単な Youtube Video にリンクがあります。それを見てみるのもよいでしょう。最初のビデオは、最初の module あとのビデオでは、15 Basic Graphics を選んでいます。三つ目は、説明もあり、<code>R</code> と、RStudio の Installation から説明しています。
 <ul>
 <li><a href="https://www.youtube.com/watch?v=0ksZmNU5FRM">Learning R interactively with Swirl by Jonghyun Lee</a> [5’39’’]</li>
@@ -626,6 +626,7 @@ RStudio で紹介した、<code>swirl</code> も活用してください。</p>
 <li><a href="https://rstudio.cloud/learn/primers/6">Write Functions</a>: 関数を書いて利用するときに、必要なことを学びます。</li>
 </ol></li>
 </ul>
+<p><a name = "swirl"></a></p>
 </div>
 <div id="swirl" class="section level3">
 <h3>Swirl</h3>
@@ -637,12 +638,44 @@ Use the R console as an interactive learning environment. Users receive immediat
 <li><a href="https://swirlstats.com">{<code>swirl</code>} website</a>: <code>swirl</code> の解説とともに、<code>swirl</code> を開発するための <code>swirlify</code> の説明もあります。</li>
 <li><a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a>
 <ul>
-<li><a href="https://swirlstats.com/scn/title.html">Swirl Courses Organized by Title</a>: List of <code>swirl</code> courses</li>
+<li>初級・中級・上級のコースのお薦めも書いてあります。</li>
+<li><a href="https://swirlstats.com/scn/title.html">Swirl Courses Organized by Title</a>: List of <code>swirl</code> courses, タイトルと、著者に分けてコースリストがあります。</li>
 </ul></li>
 <li><a href="https://cran.r-project.org/web/packages/swirl/index.html">CRAN <code>swirl</code> Package</a>, <a href="https://cran.r-project.org/web/packages/swirl/swirl.pdf">Manual in PDF</a></li>
 <li><a href="https://cran.r-project.org/web/packages/swirlify/index.html">CRAN <code>swirlify</code> Package</a>, <a href="https://cran.r-project.org/web/packages/swirlify/swirlify.pdf">Manual in PDF</a></li>
 <li><a href="examples/swirl.html">日本語での説明と例</a> [2020.3.31]<br />
-英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。</li>
+英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。　　- R Programming（初級用）：解答と簡単な解説が含まれています。
+<ol style="list-style-type: decimal">
+<li>Basic Building Blocks（基本的構成要素）<br />
+</li>
+<li>Workspace and Files（作業スペースとファイル）<br />
+</li>
+<li>Sequences of Numbers（数列）<br />
+</li>
+<li>Vectors（ベクトル）<br />
+</li>
+<li>Missing Values（欠損値）<br />
+</li>
+<li>Subsetting Vectors（ベクトルの部分抽出）<br />
+</li>
+<li>Matrices and Data Frames（行列と、データフレーム）<br />
+</li>
+<li>Logic（論理）<br />
+</li>
+<li>Functions（関数）<br />
+</li>
+<li>lapply and sapply（lapply と sapply）<br />
+</li>
+<li>vapply and tapply（vapply と tapply）<br />
+</li>
+<li>Looking at Data（データの構造を見る）<br />
+</li>
+<li>Simulation（シミュレーション）</li>
+<li>Dates and Times（日付と時刻）<br />
+</li>
+<li>Base Graphics（グラフィックの基本）<br />
+</li>
+</ol></li>
 <li><strong>注：</strong> <em>Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</em></li>
 </ul>
 </div>
