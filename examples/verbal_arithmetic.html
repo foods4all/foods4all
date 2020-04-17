@@ -1713,7 +1713,7 @@ summary {
 <a href="../index.html">FOODS4ALL HOME</a>
 </div>
 <div align="right">
-Last Update: 2020-04-14
+Last Update: 2020-04-17
 </div>
 <blockquote>
 <p>1〜9までの相異なる二つの数字があり、一方は5桁、他方は4桁で、差が、3333となる数をみつける引き算の覆面算からヒントを受けて、このタイプの問題を考えてみたい。</p>
@@ -1833,7 +1833,13 @@ check &lt;- function(x){
 all(sapply(1:floor(nrow(v)/2), check))</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <ol start="5" style="list-style-type: decimal">
-<li>理由は？　</li>
+<li>理由は？<br />
+</li>
+</ol>
+<ul>
+<li><a href="#solutionto5">解説</a></li>
+</ul>
+<ol start="6" style="list-style-type: decimal">
 <li>背景にある数学は？　つまり、どのような一般化が可能か。</li>
 </ol>
 </div>
@@ -1962,12 +1968,64 @@ sample_problems &lt;- cbind(sample(level_4, 5), sample(level_3, 5), sample(level
 colnames(sample_problems) &lt;- c(&quot;Level 4&quot;, &quot;Level 3&quot;, &quot;Level 2&quot;, &quot;Level 1&quot;, &quot;Level 0&quot;)
 sample_problems</code></pre>
 <pre><code>##      Level 4 Level 3 Level 2 Level 1 Level 0
-## [1,]   17357    5887   38202   34104   96512
-## [2,]    5844   50373   58383   71985   82171
-## [3,]   33816   48912   35971   79662   97351
-## [4,]    2777   45968   77964   20662   86614
-## [5,]    3747   80266   63703   42305   82126</code></pre>
+## [1,]   86575   70438   58022   31141   11636
+## [2,]   73737   80264   51894   63498   97153
+## [3,]   27844    3739   84029   95163   96341
+## [4,]   65842   26039   53018   71503   45132
+## [5,]   55548   30278    7662   50928   91366</code></pre>
+<p><a name="solutionto5"></a></p>
 </div>
+</div>
+<div id="対称性について" class="section level3">
+<h3>対称性について</h3>
+<blockquote>
+<p><span class="math inline">\(\mbox{diff}\)</span> に対する解と、<span class="math inline">\(1000000-\mbox{diff}\)</span> の解の数は等しい。<br />
+count(diff) = count(100000 - diff)</p>
+</blockquote>
+<p>まず、以下のように置く。</p>
+<ul>
+<li><p><span class="math inline">\(X = A * 10^4 + B * 10^3 + C * 10^2 + D * 10 + E\)</span></p></li>
+<li><p><span class="math inline">\(Y = F * 10^3 + G * 10^2 + H * 10 + I\)</span></p></li>
+<li><p><span class="math inline">\(Z = X - Y\)</span></p></li>
+<li><p><span class="math inline">\(\bar{A} = 10 - A\)</span>, <span class="math inline">\(\bar{B} = 10 - B\)</span>, <span class="math inline">\(\bar{C} = 10 - C\)</span>, <span class="math inline">\(\bar{D} = 10 - D\)</span>, <span class="math inline">\(\bar{E} = 10 - E\)</span>, <span class="math inline">\(\bar{F} = 10 - F\)</span>, <span class="math inline">\(\bar{G} = 10 - G\)</span>, <span class="math inline">\(\bar{H} = 10 - H\)</span>, <span class="math inline">\(\bar{I} = 10 - I\)</span></p></li>
+<li><p><span class="math inline">\(\bar{X} = \bar{A} * 10^4 + \bar{B} * 10^3 + \bar{C} * 10^2 + \bar{D} * 10 + \bar{E}\)</span></p></li>
+<li><p><span class="math inline">\(\bar{Y} = \bar{F} * 10^3 + \bar{G} * 10^2 + \bar{H} * 10 + \bar{I}\)</span></p></li>
+</ul>
+<p>すると、 <span class="math display">\[\begin{eqnarray*}
+100000 - Z &amp; = &amp; (111110 - X) - (11110 - Y)\\
+&amp; = &amp; (10 - A) * 10^4 + (10 - B) * 10^3 + (10 - C) * 10^2 + (10 - D) * 10 + (10 - E)\\ 
+&amp; &amp; - ((10 - F) * 10*3 + (10 - G) * 10^2 + (10 - H) * 10 + (10 - I))\\
+&amp; = &amp; \bar{A} * 10^4 + \bar{B} * 10^3 + \bar{C} * 10^2 + \bar{D} * 10 + \bar{E}\\ 
+&amp; &amp; - (\bar{F} * 10*3 + \bar{G} * 10^2 + \bar{H} * 10 + \bar{I})\\
+&amp; = &amp; \bar{X} - \bar{Y}
+\end{eqnarray*}\]</span></p>
+<p>したがって、<span class="math inline">\(\bar{X}\)</span>, <span class="math inline">\(\bar{Y}\)</span> が、<span class="math inline">\(\bar{Z} = 100000 - Z = \bar{Y} - \bar{Z}\)</span> を満たす。</p>
+<p><span class="math display">\[\{1, 2, 3, 4, 5, 6, 7, 8, 9\} = \{A, B, C, D, E, F, G, H, I\} = \{\bar{A}, \bar{B}, \bar{C}, \bar{D}, \bar{E}, \bar{F}, \bar{G}, \bar{H}, \bar{I}\}\]</span></p>
+<p>従って、</p>
+<p><span class="math display">\[
+\begin{array}{cccccc}
+\mbox{} &amp; A &amp; B &amp; C &amp; D &amp; E\\
+-)&amp;  &amp; F &amp; G &amp; H &amp; I\\
+\hline
+&amp;&amp;&amp;&amp; Z &amp;
+\end{array} \quad\Leftrightarrow\quad
+\begin{array}{cccccc}
+\mbox{} &amp; \bar{A} &amp; \bar{B} &amp; \bar{C} &amp; \bar{D} &amp; \bar{E}\\
+-)&amp;  &amp; \bar{F} &amp; \bar{G} &amp; \bar{H} &amp; \bar{I}\\
+\hline
+&amp; &amp; 10^5 &amp; - &amp;  Z &amp; 
+\end{array}
+\]</span></p>
+<p>解の数は、等しい。</p>
+</div>
+<div id="練習問題" class="section level3">
+<h3>練習問題</h3>
+<ol style="list-style-type: decimal">
+<li>5桁＋4桁 の問題にするとどうなるか。</li>
+<li>桁の最大を、5桁と、4桁とし、差に関する同様の問題を考えるとどうなるか。</li>
+<li><span class="math inline">\(0\)</span> も加えることにして、5桁以下＋5桁以下、5桁以下 - 5桁以下として、正の答えが得られる問題に変えるとどうなるか。</li>
+<li>Shiny で、Web 上の問題を提供できないか。</li>
+</ol>
 </div>
 
 
