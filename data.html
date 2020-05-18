@@ -312,47 +312,89 @@ $(document).ready(function () {
 
 
 <blockquote>
-<p>Data は、機械的に構成したり、手で入力することも、可能ですが、ここでは、ある程度の大きさも持った、実際の Data の分析を目指します。最初は、Data を探し、目的に合わせて利用できる形にする必要があります (Data Wrangling, Munging, or Reshaping)。このプロセスが、もっとも手がかかる部分で、Data Engineering とも呼ばれます。Data Science を学ぶには、まずは、整えられた Data を利用するのが、良いでしょう。その上で、実際の Data と取り組みましょう。</p>
+<p><code>R</code> に付属の Data (Built-in Datasets) について説明してから、Public Data や、様々な Open Data について紹介します。Data は、調査主体や、調査対象者だけでなく、その Data が関係する「みんなのもの」という考え方も広がっています。共有財産を、有効に活用したいですね。</p>
 </blockquote>
+<p>Data Science では、実際の Data の分析を行います。最初は、Data を探し、目的に合わせて利用できる形に整理する必要があります (英語では、Data Wrangling, Munging, Reshaping などと呼ばれます)。</p>
+<p>自動的に生成されるインターネット上の Data など、Big Data と呼ばれるものを扱うときには、このプロセスが、もっとも手がかかる部分で、Data Engineering と呼ばれます。このことで、統計分析（Statistical Analysis）と言われる部分以外が膨らんで、Data Science が、統計分析の殻を破った、または、統計の占める部分が全体の中で小さくなったと言えるかもしません。（むろん重要度が低くなった訳ではありませんが。）反対に、多様な数理モデルや、機械学習、意思決定の科学 (Decision Making Science) として、社会的影響から、倫理面も重要になっています。</p>
+<p>Data Science を学ぶには、ある程度整えられた Data からはじめるのが、良いでしょう。機械的に構成したり、手で入力することも、可能ですが、ここでは、学習用としても有用な、様々な分野の実際の Data からなる、<code>R</code> に付属する Data (Built-in Datasets) および、Package に付属している Data についてまず説明します。歴史的にも重要な統計学の理論を提示するために使われた Data も含まれています。</p>
+<p>最近は、Data を、それを集めている主体（Institution や Agent）だけが利用するのではなく、公共（Public, みんな）のものとして活用すべきものとして、政府や公共機関、非営利団体だけでなく、企業でも公開が進んでいます。これも、Data Science が重要になってきた理由でもあります。そこで、Public Data、Open Data と呼ばれる、これらの Data や、その取得方法などを紹介します。</p>
 <div id="built-in-datasets-and-data-attached-to-packages" class="section level2">
 <h2>Built-in Datasets and Data Attached to Packages</h2>
 <blockquote>
-<p><code>R</code> には、付属の Data が付属しており、<code>R</code> の　package にも、Data が付属していることが多いので、まずは、それらを試してみましょう。 Data の集合体が package となっているものもあります。</p>
+<p><code>R</code> に付属する Data、<code>R</code> の　Package に付属している Data を活用しましょう。 Data 集めたものが Package となっているものもあります。</p>
 </blockquote>
 <div id="built-in-datasets" class="section level3">
 <h3>Built-in Datasets</h3>
+<blockquote>
+<p>RStudio を立ち上げる（または、<code>R</code> を起動する）と同時に読み込まれる Data です。</p>
+</blockquote>
 <ul>
-<li>Built-in（<code>R</code> が Install されたときに、<code>base</code> に含まれる）Datasets は、<code>R</code> の Console または　R Script などで、<code>library(help = &quot;datasets&quot;)</code> とすると、リストを見ることができます。<code>cars</code> も含まれます。また、<code>ggplot2</code> など他の package を読み込んだあとで、<code>data()</code> とすると、Built-in Datasets に加えて、packages などに含まれる、そのときに利用可能な Data のリストを見ることができます。</li>
+<li>Built-in（<code>R</code> が Install されたときに、含まれ、初期設定では、起動するときに読み込まれる）Datasets は、<code>R</code> の Console または　R Script などで、<code>library(help = &quot;datasets&quot;)</code> とすると、リストを見ることができます。すでに利用した <code>cars</code> も含まれます。また、<code>ggplot2</code> など他の Package を読み込んだあとで、<code>data()</code> とすると、Built-in Datasets に加えて、Packages などに含まれる、そのときに利用可能な Data のリストを確認することができます。</li>
 <li><code>R</code> の version 4.0.0 の Built-in Datasets の情報は <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html">Statistical Data Analysis</a> に掲載されています。</li>
-<li>RStudio の 右下の pane の Help tab で、たとえば、<code>cars</code> と入力するか、Console または R Script で、<code>? cars</code> と入力すると、基本情報が得られ、<code>?? cars</code> と入力すると、<code>cars</code> という言葉が含まれる他の package の Data の情報も表示されます。</li>
-<li>Built-in Dataset には Examples がついているものが多く、たとえば <code>example(cars)</code> などで実行できます。ただし、時間がかかると、注意がついていて、<code>example</code> Command では実行できない場合もあります。</li>
-<li><a href="examples/datasets.html">Built-in Datasets with Explanations and Examples</a>: <code>? data</code> と、<code>head(data)</code>, <code>example(data)</code> の出力をリストです。</li>
+<li>RStudio の 右下の Pane の Help Tab で、たとえば、<code>cars</code> と入力するか、Console または <code>R</code> Script で、<code>? cars</code> と入力すると、基本情報が得られ、<code>?? cars</code> と入力すると、<code>cars</code> という言葉が含まれる他の Package の Data の情報も表示されます。</li>
+<li><code>str()</code>, <code>class()</code>, <code>head()</code>, <code>tail()</code>, <code>summary()</code> （括弧の中には、Data 名をいれます）などを使って、どのような Data かを見てみることをお薦めします。</li>
+<li>Built-in Dataset には Examples がついているものが多く、たとえば <code>example(cars)</code> などで実行できます。ただし、時間がかかると、注意がついていて、<code>example()</code> では実行できない場合もあります。</li>
+<li><a href="examples/datasets.html">Built-in Datasets with Explanations and Examples</a>: <code>? data</code> と、<code>head(data)</code>, <code>example(data)</code> の出力のリストです。</li>
+</ul>
+</div>
+<div id="data-packages-and-data-attached-to-packages" class="section level3">
+<h3>Data Packages and Data Attached to Packages</h3>
+<blockquote>
+<p>それぞれの Package には、Data が含まれている場合が多く、また、Data を集めたものが Package となっている場合、教科書などの本の Data、MOOCs などで利用するための、Data からなる Package もあります。</p>
+</blockquote>
+<ul>
+<li>Install し、library() で、読み込んだら、data() として、同時に読み込んだデータを調べてみるのもよいでしょう。Help で、Data の情報をしらべたり、Example が付いている場合もあります。</li>
+<li>たとえば、<code>ggplot2</code> を読み込むと、<code>diamonds</code>, <code>economics</code>, <code>economics_long</code>, <code>faithfuld</code>, <code>luv_colours</code>, <code>midwest</code>, <code>mpg</code>, <code>msleep</code>, <code>presidential</code>, <code>seals</code>, <code>txhousing</code> と、読み込まれます。</li>
+<li><code>MASS</code> Package は、<a href="https://CRAN.R-project.org/package=MASS">CRAN Package MASS</a> にFunctions and datasets to support Venables and Ripley, “Modern Applied Statistics with S” (4th edition, 2002) とあるように、<code>R</code> の母体である、<code>S</code> の教科書に関係した Function（関数、コマンド）と、Data からなるものです。説明によく用いられています。</li>
+<li><code>UsingR</code> や <code>HistData</code> Package は、データ集になっています。
+<ul>
+<li><a href="https://CRAN.R-project.org/package=UsingR">CRAN: UsingR: Data Sets, Etc. for the Text “Using R for Introductory Statistics”, Second Edition</a></li>
+<li><a href="https://CRAN.R-project.org/package=HistData">CRAN HistData: Data Sets from the History of Statistics and Data Visualization</a></li>
+</ul></li>
+<li>Package を Install し <code>library()</code> などで読み込んだら、<code>data()</code> として、付属の Data を調べてみることも有効です。その、Package の活用例が得られることもあります。</li>
 </ul>
 </div>
 </div>
-<div id="public-data" class="section level2">
-<h2>Public Data</h2>
+<div id="public-data-open-data" class="section level2">
+<h2>Public Data, Open Data</h2>
 <blockquote>
 <p>Public Data として様々な国際機関や、政府、大学や、研究所などがデータを公開しています。登録が必要な場合もありますが、基本的には、自由に、Download することができます。<br />
-データ取得のための、API や、<code>R</code> Package を提供している場合も多いので、調べてみましょう。</p>
+データ取得のための、API (Application Program Interface) や、<code>R</code> Package を提供している場合も多いので、調べてみましょう。</p>
 </blockquote>
-<div id="google-public-data" class="section level3">
-<h3>Google Public Data</h3>
+<p>Open Data の定義は、機関によって異なりますが、世界的には、共有財産という概念が、近年強くなってきています。</p>
+<ul>
+<li><a href="http://opendatatoolkit.worldbank.org">World Bank: Open Data Defined</a> 世界銀行（国際連合の専門機関の一つ）のオープン・データの定義<br />
+The term “Open Data” has a very precise meaning. Data or content is open if anyone is free to use, re-use or redistribute it, subject at most to measures that preserve provenance and openness. オープン・データという言葉には、非常に明確な意味付けがあります。データやその中身がオープン（公開されている）ということは、出所と、オープンであることが維持される限りにおいて、だれでも自由に利用、再利用、再配布が可能であることです。
+<ol style="list-style-type: decimal">
+<li>The data must be legally open, which means they must be placed in the public domain or under liberal terms of use with minimal restrictions. オープン・データは法的にオープン（公開されたもの）であること。すなわち、共有財産として誰でも自由に利用できる状態にあること、または最小限の制限のもとで利用可能であることです。</li>
+<li>The data must be technically open, which means they must be published in electronic formats that are machine readable and non-proprietary, so that anyone can access and use the data using common, freely available software tools. Data must also be publicly available and accessible on a public server, without password or firewall restrictions. To make Open Data easier to find, most organizations create and manage Open Data catalogs. オープン・データは技術的にオープン（公開されたもの）であること。すなわち、電子的な形式で、機械判読可能であり、独占されることなく、だれでも、フリー（自由・無償）に使うことができるソフトで、入手し、利用可能であること。また、公的なサーバーに置かれ、パスワードを使わずに、ネットワークに障害なく接続をすることができること。さらに、簡単にデータを見つけることができるように、データのカタログも準備されているということです。<br />
+</li>
+</ol></li>
+<li><a href="http://www.soumu.go.jp/menu_seisaku/ictseisaku/ictriyou/opendata/">総務省：オープン・データの定義</a>
+<ol style="list-style-type: decimal">
+<li>営利目的、非営利目的を問わず二次利用可能なルールが適用されたもの</li>
+<li>機械判読に適したもの</li>
+<li>無償で利用できるもの</li>
+</ol></li>
+</ul>
+<div id="google-public-data-explore" class="section level3">
+<h3>Google Public Data Explore</h3>
 <blockquote>
-<p>Public Data と検索してみます。商用のサイト以外に、Google Public Data が見つかります。日本語で検索すると、日本語サイトが現れ、世界開発銀行の世界開発指標へのリンクなど、いくつかのサイトのリストがあらわれます。つぎに、言語を英語に切り替えると、長いリストが現れます。 Google Public Data では、いろいろと設定を変えて、グラフを表示させることができます。</p>
+<p>Public Data と検索してみます。商用のサイト以外に、Google Public Data が見つかります。Google Public Data Explore では、いろいろと設定を変えて、グラフを表示させることができます。</p>
 </blockquote>
+<p>日本語で検索すると、日本語サイトが現れ、世界銀行の世界開発指標へのリンクなど、いくつかのサイトのリストがあらわれます。つぎに、言語を英語に切り替えると、長いリストが現れます。検索言語によって、表示される Public Data が変わりますので、注意してください。</p>
 <ul>
 <li>言語の切り替え方法が不明な場合は、下のリンクをクリックしてください。
 <ul>
 <li><a href="https://www.google.com/publicdata/directory?hl=en_US">Google Public Data</a></li>
 <li>ブラウザー（IE, Safari, Crome, FireFox など）の一つの言語を英語に設定しておくことも一つです。</li>
 </ul></li>
-<li>上の、英語の Google Public Data Site で、検索 Box に Japan と入れると、日本に関係した、Data が表示されます。</li>
+<li>Google Public Data Site で、検索 Box に Japan と入れると、日本に関係した、Data が表示されます。</li>
 <li>World Development Indicators（世界開発指標）を選択します。左の Indicator の Environment のところから、CO2 emission per capita （1人あたりの、二酸化炭素排出量）を探し、チェックします。グラフが現れます。左下は、World の Check Box にチェックされていると思いますが、左下の Check Box をすべて選択してみてください。グラフはどうなりますか。North America だけ、Check Box を外してみてください。どう変化しますか。ここから、どのような、ことがわかりますか。</li>
 <li>CO2 emission については、他の指標もありますから、いろいろと試してみてください。また、上には、グラフの種類も選べるようになっており、対数での値に切り替えることもできるようになっています。</li>
 <li>膨大な種類の Public Data を、Google がこのように、グラフ表示できるようにしています。Web API (Application Programming Interface) と呼ばれるもので、特に、このような形式のものを、Dashboard（もともとの意味は「計器計」）と呼ばれます。<code>R</code> では、Shiny を利用することで、作成することができます。いずれにしても、Public Data を用い、このような Dashboard から得られる情報は膨大です。ただ、常に Update されているわけではなく、細かい形式など、Google という私企業の方針に依存することになります。ある意味では Open で、Online ではありますが、Free かどうかは、難しいところです。</li>
+<li>Google では、表計算のための Google Spread Sheet や Python Notebook (Jupyter) が使える Colab の他にも、<a href="https://trends.google.com">Trends</a>, <a href="https://datasetsearch.research.google.com/">Datasets Search</a>, <a href="https://analytics.google.com/">Analytics</a> などのサービスも提供しています。</li>
 </ul>
-<p>以下、主要な Public Data とそのデータの入手方法を説明します。</p>
 </div>
 <div id="united-nations-un-data国際連合" class="section level3">
 <h3>United Nations’ UN Data（国際連合）</h3>

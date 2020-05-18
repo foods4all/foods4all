@@ -312,8 +312,11 @@ $(document).ready(function () {
 
 
 <blockquote>
-<p>Rstudio で <code>R</code> を使う、はじめの一歩. <code>R</code> とは、RStudio.cloud の紹介、<code>R</code> と RStudio IDE の Install、簡単な使い方を説明します。 そのあとで、 <code>R</code> の基本を学ぶ、Site の紹介をします。</p>
+<p><code>R</code> による Data Science のはじめの一歩。<br />
+<code>R</code> と、RStudio Cloud の紹介、<code>R</code> と RStudio IDE の Install、簡単な使い方を説明します。 そのあとで、 <code>R</code> の基本を学ぶ、Site の紹介をします。</p>
 </blockquote>
+<p>Data Science は、実際の Data や、それをグラフに表したものを見て興味をもったり、ある Data から得られる事実の説明に疑問をもったり、新しい AI の活用に驚いたりすることが出発点です。そして、自分でも、元の Data を調べ、新たな発見をしたり、根拠や、どの程度の確実性があるかを考えたり、AI にどうしてそのようなことが可能なのか、便利さの影になにか問題は潜んでいないのかを調べてみようと行動を起こす。それが、はじめの一歩です。</p>
+<p>本を読んで学ぶことも必要になりますが、まずは、実際の Data にあたることです。しかし、元の Data は膨大なことが多く、ほとんどの場合、目で観察したり、手計算では、手に負えません。Data をいろいろな角度から見、いくつもの切り口で特徴を捉え、グラフなどを使って結果を視覚化するために、コンピュータ言語 <code>R</code> を活用します。RStudio は <code>R</code> を使いやすくするために開発された、総合開発環境 (Integrated Development Environment (IDE)) です。</p>
 <div id="r-and-rstudio" class="section level2">
 <h2><code>R</code> and RStudio</h2>
 <div id="r" class="section level3">
@@ -321,47 +324,48 @@ $(document).ready(function () {
 <blockquote>
 <p>R is ‘GNU S’, a freely available language and environment for statistical computing and graphics which provides a wide variety of statistical and graphical techniques: linear and nonlinear modelling, statistical tests, time series analysis, classification, clustering, etc. (<a href="https://cran.r-project.org" class="uri">https://cran.r-project.org</a>)</p>
 </blockquote>
-<p><code>R</code> を管理している cran (The Comprehensive R Archive Network) にある、<code>R</code> の説明です。「統計解析とグラフ作成のための言語」とあり、様々な Data Analysis（データ解析）に対応していることがわかります。最初に、‘GNU S’ とありますが、GNU は、Free Software の意味だとして、Free の意味についても、<a href="https://www.gnu.org/home.en.html">GNU</a> の Site に書かれています。‘S’ とありますが、これは、<code>R</code> の母体となっている、米国の、Bell Laboratories（ベル研究所）で開発された統計解析ソフトの名称です。</p>
+<p><code>R</code> を管理している CRAN (The Comprehensive R Archive Network) にある、<code>R</code> の説明です。「統計解析とグラフ作成のための言語と環境」とあり、様々な Data Analysis（データ解析）や数理モデル（Mathematical Models）に対応していることがわかります。最初に、‘GNU S’ とありますが、GNU は、Free Software の意味だとして、Free の意味についても、<a href="https://www.gnu.org/home.en.html">GNU</a> の Site に書かれています。‘S’ とありますが、これは、<code>R</code> の母体となっている、米国の、Bell Laboratories（ベル研究所）で開発された統計解析ソフトの名称です。</p>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=dKmkcadmIu8">Richard Stallman’s TEDx video: “Introduction to Free Software”</a>: GNU の創始者の Richard Stallman の TED での TALK の Youtube Video です。なにが、Free Software かを語っています。英語の字幕を見ることができます。[13’39’’]</li>
+<li>Graphics（グラフィックス）は、グラフだけを意味する言葉ではありませんし、Data Science でも、グラフとは通常呼ばないものも、視覚化に活用しますが、一般的に使われているグラフということばを使います。引用箇所では、“graphical techniques” とありますから、視覚化技術とする方が適切かもしれません。</li>
 </ul>
 </div>
-<div id="rstudio.cloud" class="section level3">
-<h3>RStudio.cloud</h3>
+<div id="rstudio-cloud" class="section level3">
+<h3>RStudio Cloud</h3>
 <blockquote>
-<p>Let’s try <code>R</code> on online! <code>R</code> を <a href="https://rstudio.cloud">RStudio.cloud</a> を使って Online で。</p>
+<p>Let’s try <code>R</code> online! <a href="https://rstudio.cloud">RStudio Cloud</a> を使って <code>R</code> を Online で。</p>
 </blockquote>
-<p><code>R</code> は RStudio を使って利用することが一般的になっています。<code>R</code> や RStudio (desktop RStudio IDE) も Free（無償）で、Local な Computer に Install することが可能ですが、まずは、Online で <code>R</code> を RStudio で使う方法を紹介します。大学・研究機関などでは、RStudio Server を導入しているところも多いと思いますが、ここでは、Free Open Online な、RStudio.cloud を紹介します。</p>
+<p><code>R</code> は RStudio を使って利用することが一般的になっています。<code>R</code> や RStudio (desktop RStudio IDE) も Free（無償）で、手元の (Local) Computer に Install することが可能ですが、まずは、Online で <code>R</code> を RStudio で使う方法を紹介します。大学・研究機関などでは、RStudio Server を導入しているところも多いと思いますが、ここでは、Free Open Online な、RStudio Cloud を紹介します。</p>
 <ul>
 <li><strong>Account の取得から Login まで</strong>
 <ol style="list-style-type: decimal">
-<li><a href="https://rstudio.cloud">RStudio.cloud</a> に Access します。</li>
-<li>右上の Sign Up を click。</li>
-<li>Email を入力すると、Password の提案ができますが、使用しないとして、Password を設定、First Name, Last Name を入力します。Sign Up をクリックすると、アカウントが作成されます。名前をどうするか聞かれますが、それを決めれば、完了です。Your Workspace という画面に移ります。
+<li><a href="https://rstudio.cloud">RStudio Cloud</a> に Access します。</li>
+<li>右上の Sign Up を Click。</li>
+<li>Email を入力すると、Password の提案がされます。（これを記録しておいて、使っても良いですが）使用しないとして、Password を設定、First Name, Last Name を入力します。Sign Up をクリックすると、アカウントが作成されます。このアカウントで使用する名前をどうするか聞かれますが、それを決めれば、完了です。Your Workspace という画面に移ります。
 <ul>
 <li>[Alternative] 他の方法として、Sign Up with Google と、Sing Up with Github があります。自分の Google や、Github のアカウントとリンクすることでもアカウントを作成できます。その場合は、それぞれのアカウントの Password を入力してください。すでに、Google の自分のアカウントに Login していれば、Password は不要です。</li>
 </ul></li>
 <li>New Project を Click または、Project 名を入れて Click すれば、Project が立ち上がります。Project 名を入れてみてください。Learning R などでも良いですよ。あとから、Project 名を入れることもできます。ここからは、Local で RStudio を利用する場合と殆ど同じですから、別途説明します。</li>
-<li>右上の名前を選び、Logout すれば、終了できます。</li>
-<li>アカウントができていて Login するときは、Sign In を選択し、アカウントで使った、Email Address を入力します。自分しか使わない、Laptop PC などで、Login のときなど、他の形で、Security が保てる場合には、Login 情報を保存しておけば、簡単に、Sign In できますが、危険もありますので、十分注意してください。</li>
+<li>右上の（自分の）名前を選び、Logout すれば、終了できます。</li>
+<li>アカウントを作成済みで Login するときは、Sign In を選択し、アカウントで使った、Email Address を入力します。自分しか使わない、Laptop PC などで、Login のときなど、他の形で、Security が保てる場合には、Login 情報を保存しておけば、簡単に、Sign In できますが、危険もありますので、十分注意してください。</li>
 </ol></li>
-<li><strong>RStudio.cloud</strong> について
+<li><strong>RStudio Cloud</strong> について
 <ul>
 <li>2020年3月時点では、beta 版となっており、開発途上であることを示しています。</li>
-<li><a href="https://rstudio.cloud/learn/guide">RStudio.cloud Guide</a>: 基本的な解説があります。<br />
+<li><a href="https://rstudio.cloud/learn/guide">RStudio Cloud Guide</a>: 基本的な解説があります。<br />
 </li>
 <li>25 Projects が上限、公開・非公開・限定公開を選べますが、共同で編集する場合は、10人が上限、1 Project 毎に 1GB が上限とあります。[2020.3.12]</li>
 </ul></li>
-<li><strong>RStudio.cloud</strong> での <code>R</code> の利用について
+<li><strong>RStudio Cloud</strong> での <code>R</code> の利用について
 <ul>
-<li>基本的に、desktop RStudio IDE の使い方と同じですので、対応する項をみてください。</li>
+<li>New Project の決め方以外は、基本的に、Desktop RStudio IDE の使い方と同じですので、対応する項をみてください。</li>
 </ul></li>
 </ul>
 </div>
 <div id="local-installation-of-r-and-rstudio" class="section level3">
 <h3>Local Installation of <code>R</code> and RStudio</h3>
 <blockquote>
-<p>自分のコンピュータに、<code>R</code> や、RStudio を Install しましょう。 しばらくは、Online だけで学びたい場合は、この節は飛ばしてください。</p>
+<p>自分のコンピュータに、<code>R</code> や、RStudio を Install しましょう。 しばらくは、Online だけで学びたい場合は、この項は飛ばしてください。</p>
 </blockquote>
 <p>インターネットが自由に使えない環境にいる場合もあるでしょうし、RStudio はまだ、beta 版ですから、個人で使える、パソコンがある場合には、<code>R</code> や、Rstudio を Install しておきましょう。まず、<code>R</code> を Install してから、RStudio を Install します。</p>
 <ul>
@@ -374,11 +378,11 @@ $(document).ready(function () {
 <ol style="list-style-type: lower-alpha">
 <li>Windows では、Install R for the first time と base のところにありますから、それを選択、Install してください。<br />
 </li>
-<li>Mac では、Latest Release とあるものを、Install しますが、古い Operaton System (OS) を使っている場合は、説明を読んで、適切なものを選択してください。OS の version が不明のときは、Mac の左上の、リンゴマークの「このMacについて」から情報を得てください。</li>
+<li>Mac では、Latest Release とあるものを、Install しますが、古い Operaton System (OS) を使っている場合は、説明を読んで、適切なものを選択してください。OS の Version が不明のときは、Mac の左上の、リンゴマークの「このMacについて」から情報を得てください。</li>
 </ol>
 <ol start="3" style="list-style-type: decimal">
 <li>あとは、他の Software の Installation と同じです。指示に従ってください。</li>
-<li>Version は、三つの数字からなっており、3.x.y 形式になっています。このページを compile しているのは、R version 3.6.2 (2019-12-12) となっています。二番目の x の部分は、ほぼ一年間に一つずつ大きくなり、3.6.y は 2019年、3.7.y は2020年のものなどとなっています。三番目は、minor change の version となります。</li>
+<li>Version は、三つの数字からなっており、3.x.y（または 4.x.y）形式になっています。このページを compile しているのは、R version 3.6.2 (2019-12-12) となっています。二番目の x の部分は、ほぼ一年間に一つずつ大きくなり、3.6.y は 2019年、3.7.y は2020年のものなどとなっています。三番目は、minor change の Version となります。</li>
 </ol></li>
 </ul>
 <p>この <code>R</code> を、Application として立ち上げれば、Console が現れ、そのまま使えますが、<code>R</code> の Integrated Development Environment（IDE 総合開発環境）である、RStudio IDE を導入します。</p>
@@ -388,110 +392,107 @@ $(document).ready(function () {
 <li><a href="https://rstudio.com/">RStudio</a> に Access します。</li>
 <li>一番上の Download を Click します。</li>
 <li>RStudio Desktop IDE, Open Source License, Free と書いてあるものを、Download し、他の Application と同じように Install します。</li>
-<li>Application として、RStudio を立ち上げます。すると、RStudio.cloud で、Project を立ち上げたときと似た画面が出てきます。上の Menu Bar の File の上の方（おそらく上から二番目）にある New Project を選択します。新しい Project を Computer のどこに Save するかと、Project 名を入力します。何でもかまいませんが、Learning R でもよいでしょう。すると、右端に、Project 名が入ります。ここまでで、RStudio.cloud の項で述べた状態とほぼ同じになります。</li>
+<li>Application として、RStudio を立ち上げます。すると、RStudio Cloud で、Project を立ち上げたときと似た画面が出てきます。上の Menu Bar の File の上の方（おそらく上から二番目）にある New Project を選択します。新しい Project を Computer のどこに Save するかと、Project 名を入力します。（保存する場所を選び新しい Directory を作成して保存することも可能です。）何でもかまいませんが、Learning R でもよいでしょう。すると、右端に、Project 名が入ります。ここまでで、RStudio Cloud の項で述べた状態とほぼ同じになります。</li>
 </ol></li>
-<li>R や、RStudio の Installation でつまずいてしまったら、<a href="https://www.youtube.com">Youtube</a> で、Install R and RStudio, Windows [または Mac] と入れて検索してください。video がいくつも見つかります。英語がわかりにくいときは、字幕を出して確認して、Install してください。</li>
+<li>R や、RStudio の Installation でつまずいてしまったら、<a href="https://www.youtube.com">Youtube</a> で、Install R and RStudio, Windows [または Mac] と入れて検索してください。Video がいくつも見つかります。英語がわかりにくいときは、字幕を出して確認して、Install してください。</li>
 </ul>
-<p>RStudio Desktop IDE, Open Source License, Free, そして Download と書いてある下に、Learn More とありますから、それを、Click すると、仲程に、‘Take a tour of RStudio’s IDE’ と書いてある、Video があります。ざっと見てみるのもよいでしょう。なとなく、概要（雰囲気）がわかります。</p>
+<p>RStudio Desktop IDE, Open Source License, Free, そして Download と書いてある下に、Learn More とありますから、それを、Click すると、中程に、‘Take a tour of RStudio’s IDE’ と書いてある、Video があります。ざっと見てみるのもよいでしょう。なとなく、概要（雰囲気）がわかります。</p>
 <p>さらに、CLICK HERE TO SEE MORE RSTUDIO FEATURES へと進むと、もう少し情報を得ることができます。急ぐ必要はありません。使い始めてから、<a href="https://rstudio.com/products/rstudio/features/">このページ</a> に戻ってくるとよいでしょう。</p>
 </div>
 <div id="lets-try-r-on-rstudio" class="section level3">
 <h3>Let’s Try <code>R</code> on RStudio</h3>
 <blockquote>
-<p>ここまでで、準備 OK です。RStudio.cloud または、RStudio Desktop IDE で R を使うことができるようになりました。</p>
+<p>ここまでで、準備 OK です。RStudio Cloud または、RStudio Desktop IDE で R を使うことができるようになりました。</p>
 </blockquote>
-<p>ほんの少し、RStudio 上で、<code>R</code> を使ってみましょう。</p>
+<p>少し、RStudio 上で、<code>R</code> を使ってみましょう。</p>
 <div id="step-1.-console-and-panes" class="section level4">
 <h4>Step 1. Console and Panes</h4>
 <ul>
-<li>RStudio には、<a href="https://rstudio.com/resources/cheatsheets/">たくさんの Cheat Sheets</a>（カンニング・ペーパー）とよばれるものが、用意されています。とても、便利です。（<a href="https://rstudio.com/">RStudio の Top Page</a> の Resources から見ることができます）まずは、RStudio IDE の Cheat Sheet を見てみましょう。
+<li>RStudio には、<a href="https://rstudio.com/resources/cheatsheets/">たくさんの Cheat Sheets</a>（早見表、字義通りには「カンニング・ペーパー」）とよばれるものが、用意されています。とても、便利です。（<a href="https://rstudio.com/">RStudio の Top Page</a> の Resources から見ることができます）まずは、RStudio IDE の Cheat Sheet を見てみましょう。
 <ul>
 <li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio IDE Cheat Sheet</a> [Download English Version]</li>
 <li><a href="https://github.com/rstudio/cheatsheets/raw/master/translations/japanese/rstudio-IDE-cheatsheet_ja.pdf">RStudio IDE Cheat Sheet translated by Masato Takahashi</a> [Download Japanese Version] このように、いくつかの Cheat Sheets は日本語に訳されています。Cheat Sheets のページの下の方を探してください。</li>
 </ul></li>
-<li>上に Menu Bar があり、下が、通常は、4つの枠に別れています。これを pane と言います。隠れている場合もあります。Maximize（最大化）すると現れるようになっています。左下の pane に Console という Tab（タブ）があると思います。起動時には、これが開いていると思いますが、開いていなければ、それを選択して開いてみてください。左下の Pane が、Console になります。</li>
-<li>Console に、<span class="math inline">\(&gt;\)</span> が表示されていると思います。そこに、<code>3+5</code> といれて、Enter (Enter Key, Carriage Return (CR) でもかまいません）してください。[1] 8 と出て、新しい、<span class="math inline">\(&gt;\)</span> が現れます。次に、<code>7*24</code> と入れてみてください。[2] 168 一週間の時間数が現れます。次に、<code>plot(cars)</code> と入力してみてください。右下の pane の Plots Tab に、下のようなグラフが現れるはずです。 <img src="get_started_files/figure-html/unnamed-chunk-1-1.png" width="672" /></li>
-<li><code>R</code> には、付属のデータがたくさんついていて、これは、Speed and Stopping Distances of Cars（自動車のスピードと制動距離）のデータです。右下の pane に Help という Tab があると思います。その pane の右上に、虫眼鏡マークの、Search Box があると思いますから、そこに、cars と小文字で入れてみてください。その情報が現れます。今度は、その Search Box に、plot と入れてみてください。manual（説明）が現れます。</li>
+<li>上に Menu Bar があり、下が、通常は、4つの枠に別れています。これを Pane（窓枠）と言います。隠れている場合もあります。Maximize（最大化）すると現れるようになっています。左下の Pane に Console という Tab（タブ、見出し用の「つまみ」）があると思います。起動時には、これが開いていると思いますが、開いていなければ、それを選択して開いてみてください。左下の Pane が、Console になります。</li>
+<li>Console に、<span class="math inline">\(&gt;\)</span> が表示されていると思います。そこに、<code>3+5</code> といれて、Enter (Enter Key, Carriage Return (CR) でもかまいません）してください。[1] 8 と出て、新しい、<span class="math inline">\(&gt;\)</span> が現れます。次に、<code>7*24</code> と入れてみてください。[2] 168 一週間の時間数が現れます。次に、<code>plot(cars)</code> と入力してみてください。右下の Pane の Plots Tab に、下のようなグラフが現れるはずです。 <img src="get_started_files/figure-html/unnamed-chunk-1-1.png" width="672" /></li>
+<li><code>R</code> には、付属のデータがたくさんついていて、これは、Speed and Stopping Distances of Cars（自動車のスピードと制動距離）のデータです。右下の Pane に Help という Tab があると思います。その pane の右上に、虫眼鏡マークの、Search Box があると思いますから、そこに、cars と小文字で入れてみてください。その情報が現れます。今度は、その Search Box に、plot と入れてみてください。manual（説明）が現れます。</li>
 <li>今度は、右上の pane から、History（履歴）tab を見つけて、選択してください。すると、いままでに、Console に打ち込んだ、Command（命令）<code>3+5</code>, <code>7*24</code>, <code>plot(cars)</code> が現れると思います。</li>
 </ul>
 </div>
-<div id="step-2.-package-installation-and-swirl" class="section level4">
-<h4>Step 2. Package Installation and <code>swirl</code></h4>
+<div id="step-2.-package-installation-and-swirl-statistics-with-interactive-r-lerning" class="section level4">
+<h4>Step 2. Package Installation and <code>swirl</code> (Statistics with Interactive R Lerning)</h4>
 <ul>
-<li><code>R</code> には、現在、15000を越える、あるプロセスで、公式に認証された packages があります。Open Software ということで、世界中の users が、program（data が含まれる場合もあります） を作成して、形式を整えて、登録してあり、それを利用することができます。</li>
-<li>一つの package が他の package に関連していたり、依存していたりするため、これを利用するときには、その依存関係も考慮に入れて、Install する必要があります。 Rstudio では、このことも考慮して、簡単に Install できるようになっています。しかし、一つの機能が、二つの package で異なる形で、拡張されることもあるため、package の Installation は、能動的に行うようになっています。</li>
-<li>たとえば、よく使われる、<code>tidyverse</code> という package の場合には、利用するときには、<code>ggplot2</code>, <code>purrr</code>, <code>tibble</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, <code>readr</code>, <code>forcats</code> と 8つの package を同時によみこむようになっています。さらに、Install するときには、他の関連する packages も、読み込まれます。いずれ使うようになりますので、Install してみましょう。</li>
-<li>Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>tidyverse</code> と入力してみてください。途中まで入力すると、候補がいろいろと現れ、最後、spell を間違っていなければ、<code>tidyverse</code> だけが残りますから、Install ボタンを押してください。ちょっと時間がかかりますが、Console に次々とメッセージが現れ、最後に <span class="math inline">\(&gt;\)</span> が現れます。RStudio IDE のときは、どこから、Download するかを聞かれるかもしれませんが、そのときは、どれかを選んでください。近いところのほうが一般的には Install の時間が短くなります。どのようなものか見たいときには、また、右下の pane から、Help tab を選んで、<code>tidyverse</code> と入れてみてください。<code>vignette</code> と現れ、その右に、選択肢が現れます。manual よりもう少し、詳しい情報が、わかりやすくかかれているものが、<code>vignette</code> です。すべての package にあるわけではありませんが、manual だけでは、わからないことも多いので、これがあると有効です。</li>
+<li><code>R</code> には、現在、15,000を越える、公式に認証され CRAN に登録された Packages（パッケージ、プログラム集で、Data がいくつも含まれているものもある）があります。Open Software ということで、世界中の Users が、Program を作成して、形式を整えて、登録してあり、それを利用することができます。教科書や、コースで利用する、Program や、Data を集めたものもあります。</li>
+<li>一つの Package が他の Package に関連していたり、依存していたりするため、これを利用するときには、その依存関係も考慮に入れて、Install する必要があります。 Rstudio では、このことも考慮して、簡単に Install できるようになっています。（R の機能ですが、まず RStudio で説明します。）しかし、一つの機能が、二つの Package で異なる形で、拡張されることもあるため、Package の Installation は、能動的に行うようになっています。</li>
+<li>たとえば、よく使われる、<code>tidyverse</code> という Package の場合には、利用するときには、<code>ggplot2</code>, <code>purrr</code>, <code>tibble</code>, <code>dplyr</code>, <code>tidyr</code>, <code>stringr</code>, <code>readr</code>, <code>forcats</code> と 8つの Package を同時に読みこむようになっています。さらに、Install するときには、他の関連する Packages も、読み込まれます。いずれ使うようになりますので、Install してみましょう。</li>
+<li>Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>tidyverse</code> と入力してみてください。途中まで入力すると、候補がいろいろと現れ、spell（つづり）を間違っていなければ、<code>tidyverse</code> だけが残りますから、Install ボタンを押してください。ちょっと時間がかかりますが、Console に次々とメッセージが現れ、最後に <span class="math inline">\(&gt;\)</span> が現れます。RStudio IDE のときは、どこから、Download するかを聞かれるかもしれませんが、そのときは、どれかを選んでください。近いところのほうが一般的には Install の時間が短くなります。どのようなものか見たいときには、また、右下の Pane から、Help Tab を選んで、<code>tidyverse</code> と入れてみてください。<code>vignette</code> と現れ、その右に、選択肢が現れます。Manual よりもう少し、詳しい情報が、わかりやすくかかれているものが、<code>vignette</code> です。すべての Package にあるわけではありませんが、Manual だけでは、わからないことも多いので、これがあると便利です。（Console に、<code>install.packages(&quot;tidyverse&quot;)</code> と入力し Enter をしても同様のことが可能です。）</li>
 </ul>
 <blockquote>
 <p>ちょっと小休止。ここまでを Video と Exercise で確認してみませんか。Skip してもかまいません。<br />
 <a href="https://learnr-examples.shinyapps.io/ex-setup-r/#section-install-r">確認とExercise</a> （<code>learnr</code> で作成されています。<code>learnr</code> に興味のあるかたは、この Link の左にある <a href="https://learnr-examples.shinyapps.io/ex-setup-r/">Welcome</a> および、<a href="https://rstudio.github.io/learnr/index.html"><code>learnr</code></a> を参照してください。）</p>
 </blockquote>
 <ul>
-<li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力して、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、package も用意されています。<code>swirlify</code> です。</li>
-<li>使ってみましょう。package は、Install しただけでは、使えません。使うよと宣言します。それが、<code>library(&quot;swirl&quot;)</code> です。quotation mark は、この場合、なくても可ですが、入れる習慣をつけておくとよいでしょう。場合によっては、問題が起こることもないとはいえません。Console の <span class="math inline">\(&gt;\)</span> の次に、<code>library(&quot;swirl&quot;)</code>　として Enter、そして、<code>swirl()</code> と入力すると、学習プログラムが始まります。ちょっとした説明のあと、“What shall I call you?” とでます。名前でも、Nickname でも、イニシャルでも入れてください。このあとは、あなたのことを、この名前で呼ばれます。そのあとは、“…” まで読んだら、Enter と言う説明がありますから、また Enter。1 Continue., 2 Proceed. , 3 Let’s get going! の選択がでます。どれでもよいので、番号を入力してください。次に、途中でどうするかの説明があります。ともかくやめたいときは、ESC（Escape Key）、<span class="math inline">\(&gt;\)</span> が出ていて、そこまでを保存してやめたいときは、<code>quit()</code> 他にも、いくつも選択肢があることがわかります。次には、1: R Programming 2: Take me to the swirl course repository!　と出ます。1 を選ぶのがよいでしょう。2 を選ぶと、Pop-up window が出ます。Browser がそれを、Pop-up を表示しない設定になっていると、一旦終わります。1 を選ぶと、1-15 の項目が現れます。どれからでもよいですが、<code>R</code> について何も知らない場合は、1 からトライしてみてください。<span class="math inline">\(&gt;\)</span> が出ているときには、<code>quit()</code>、<span class="math inline">\(&gt;\)</span> が出ていないときに、ともかくやめたいときは、ESC です。Interactive Lesson を楽しんでみてください。</li>
-<li><a href="examples/swirl.html">日本語での説明と例</a>：英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。基本的な、R Programming コースには、簡単な解説も、付いています。行き詰まったら、参照してください。<a href="#swirl">Swirl</a> の欄に、より詳しい説明があります。</li>
-<li>音声がありませんが、<code>swirl</code> のサイトから、簡単な Youtube Video にリンクがあります。それを見てみるのもよいでしょう。最初のビデオは、最初の module あとのビデオでは、15 Basic Graphics を選んでいます。三つ目は、説明もあり、<code>R</code> と、RStudio の Installation から説明しています。
-<ul>
-<li><a href="https://www.youtube.com/watch?v=0ksZmNU5FRM">Learning R interactively with Swirl by Jonghyun Lee</a> [5’39’’]</li>
-<li><a href="https://www.youtube.com/watch?v=McoHQIxJd-o">Learn R interactively via Swirl by Yimi Zhao</a> [1’37’’]</li>
-<li><a href="https://www.youtube.com/watch?v=6azsCcyJ-lM">Learn to Program R in R! Intro to Swirl by BurkeyAcademy</a></li>
-</ul></li>
+<li>もう一つ、<code>swirl</code> package を Install してみましょう。同じように、Menu Bar の Tools から、Install Packages … を選択します。Packages という枠に、<code>swirl</code> と入力して、Install です。<a href="https://swirlstats.com"><code>swirl</code></a> は、Johns Hopkins University で開発された、学習用の package で、これを作るための、Package も用意されています。<code>swirlify</code> です。</li>
+<li>使ってみましょう。Package は、Install しただけでは、使えません。使うよと宣言します。それが、<code>library(swirl)</code> です。Console の <span class="math inline">\(&gt;\)</span> の次に、<code>library(swirl)</code> として Enter、そして、<code>swirl()</code> と入力すると、学習プログラムが始まります。ちょっとした説明のあと、“What shall I call you?” と表示されます。名前でも、Nickname でも、イニシャルでも入れてください。このあとは、あなたのことを、この名前で呼ばれます。そのあとは、“…” まで読んだら、Enter と言う説明がありますから、また Enter。1 Continue., 2 Proceed. , 3 Let’s get going! の選択がでます。どれでもよいので、番号を入力してください。次に、途中でどうするかの説明があります。ともかくやめたいときは、ESC（Escape Key）、<span class="math inline">\(&gt;\)</span> が出ていて、そこまでを保存してやめたいときは、<code>quit()</code> 他にも、いくつも選択肢があることがわかります。次には、1: R Programming 2: Take me to the swirl course repository!　と出ます。1 を選ぶのがよいでしょう。2 を選ぶと、Pop-up window が出ます。Browser がそれを、Pop-up を表示しない設定になっていると、一旦終わります。1 を選ぶと、1-15 の項目が現れます。どれからでもよいですが、<code>R</code> について何も知らない場合は、1 からトライしてみてください。<span class="math inline">\(&gt;\)</span> が出ているときには、<code>quit()</code>、<span class="math inline">\(&gt;\)</span> が出ていないときに、ともかくやめたいときは、ESC です。Interactive Lesson を楽しんでみてください。</li>
+<li><a href="examples/swirl.html">日本語での説明と例</a>：英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。基本的な、R Programming コース（1課-15課）には、簡単な解説も、付いています。少しずつ進めていくことができると良いですね。行き詰まったら、参照してください。<a href="#swirl">Swirl</a> の欄に、より詳しい説明があります。</li>
 </ul>
 <p>続けて、<code>swirl</code> でしばらく学ぶのも良いでしょう。他の、Learning Resource を、下で紹介しますが、その前に、RStudio での次の大切なステップを紹介します。</p>
 </div>
 <div id="step-3.-r-scripts" class="section level4">
 <h4>Step 3. R Scripts</h4>
 <blockquote>
-<p><code>R</code> の一つ一つの、Command であっても、保存しておくことが重要になります。<br />
-ある程度の長さのプログラムになれば、なおのことです。Reproducibility（再現性）のためにも、大切です。Console ではなく、R Script を使って、記録します。</p>
+<p><code>R</code> の一つ一つの、Command であっても、記録のために保存しておくことが重要になります。<br />
+ある程度の長さのプログラムになれば、なおのことです。Reproducibility（再現性）のためにも、大切です。そのためには、Console ではなく、R Script を利用して、記録します。</p>
 </blockquote>
 <ul>
-<li>RStudio の Menu Bar の File から、R Script を選択します。左上の pane に、Untitled1 などと書かれた枠ができます。</li>
-<li>RStudio の Menu Bar の File から、Save as … を選択して、名前をつけて、保存してください。このときに、現在の、Project （desktop RStudio IDE の場合は、Project を作った Folder です。）の中に、新しいファイルができます。もし、新しい、Folder に入れたいときは、新たに作成して、Save してください。ここでは、test1 としてみます。RStudio.cloud を使っているときは、Browser（閲覧ソフト）を使っていて、それにも、名前を付けて保存（Save as …）などがあると思いますから、それと間違わないでください。</li>
-<li>下の、三行を、入力するか、copy &amp; paste をしてください。</li>
-</ul>
+<li>RStudio の Menu Bar の File から、R Script を選択します。左上の Pane に、Untitled1 などと書かれた枠ができます。</li>
+<li>RStudio の Menu Bar の File から、Save as … を選択して、名前をつけて、Save（保存）してください。このときに、現在の、Project （Desktop RStudio IDE の場合は、Project を作った Folder です。）の中に、新しいファイルができます。もし、新しい、Folder に入れたいときは、新たに作成して、Save してください。ここでは、test1 としてみます。RStudio Cloud を使っているときは、Browser（閲覧ソフト）を使っていて、それにも、名前を付けて保存（Save as …）などがあると思いますから、それと間違わないでください。</li>
+<li><p>下の、三行を、入力するか、copy &amp; paste をしてください。</p>
 <pre><code>data(cars)
 head(cars)
-plot(cars)</code></pre>
-<ul>
-<li>それぞれ改行していますが、なにも起こりません。ここで、左上の RScript の pane の右上にある、Source Pulldown Menu の Source を選んでください。なにか、動きがあり、右下には、以前も、生じた <code>plot(cars)</code> のグラフが現れたと思います。Source では、その RScript の最初からすべてを、実行します。Plots の pane には、Exports ボタンもありますので、画像として、取り出すことも可能です。また、Zoom で拡大することもできます。</li>
-<li>右上の pane の Environments に Data, Values と現れたはずです。Data には、cars とあり、50 obj. 2 variables、Values には、x, y とあります。cars を Click すると、speed, dist の値が現れ、50 obj. 2 variables を Click すると、R Script があった pane に表があらわれます。Filter とも書いてあり、speed や dist のあたりを、さわると、順番の並べ替えも起こります。</li>
-<li>左上の pane の、R Script のファイル名を選ぶと、R Script に戻ります。そこで、<code>head(cars)</code> の後ろに、マウスなどで、carret（入力位置）をおき、または、その行を highlight（選択）して、Run ボタンをおすと、<code>head(cars)</code> が実行されて、Console に、cars という data の最初の6行が現れます。一行または、highlight した箇所が実行されます。</li>
-<li>右下の pane の Help の枠に、<code>head</code> と入れてみてください。Return the First or Last Part of an Object と出てきます。何も特別な指定をしないと、通常は、最初の6行が現れます。Help の一番下にある、Example を R Script のところに入れて、試してみるとよいでしょう。たとえば、<code>head(letters, n = -6L)</code> では何が現れますか。Help をよく読むとわかります。<code>letters</code> を、<code>cars</code> にするなどして、試してみてください。</li>
-<li>右下の pane の Files を見ると、おそらく、三つファイルがあるのではないかと思います。.Rhistory, project.Rproj, それと、R Script のファイル名です。上で、test1 とファイル名を決めた場合には、test1.R とあると思います。ピリオッド以下の最後の部分を File extension（ファイル拡張子）といいますが、それが、R Script の場合には、.R になります。</li>
-<li>Menu bar の File から Save を選んで、保存すれば、そこまでの状態をあとから、Reproduce（再現）することも可能です。</li>
+plot(cars)</code></pre></li>
+<li>それぞれ改行していますが、なにも起こりません。ここで、左上の RScript の Pane の右上にある、Source Pulldown Menu の Source を選んでください。なにか、動きがあり、右下には、以前も、生じた <code>plot(cars)</code> のグラフが現れたと思います。Source では、その RScript の最初からすべてを、実行します。Plots の pane には、Exports ボタンもありますので、画像として、取り出すことも可能です。また、Zoom で拡大することもできます。</li>
+<li>右上の Pane の Environments に Data, Values と現れたはずです。Data には、cars とあり、50 obj. 2 variables、Values には、x, y とあります。cars を Click すると、speed, dist の値が現れ、50 obj. 2 variables を Click すると、R Script があった pane に表があらわれます。Filter とも書いてあり、speed や dist のあたりを、さわると、順番の並べ替えも起こります。</li>
+<li>左上の Pane の、R Script のファイル名を選ぶと、R Script に戻ります。そこで、<code>head(cars)</code> の後ろに、マウスなどで、carret（入力位置）をおき、または、その行を highlight（選択）して、Run ボタンをおすと、<code>head(cars)</code> が実行されて、Console に、cars という data の最初の6行が現れます。（下のような内容です。）一行または、highlight した箇所が実行されます。
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["speed"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["dist"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"4","2":"2","_rn_":"1"},{"1":"4","2":"10","_rn_":"2"},{"1":"7","2":"4","_rn_":"3"},{"1":"7","2":"22","_rn_":"4"},{"1":"8","2":"16","_rn_":"5"},{"1":"9","2":"10","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+</script>
+</div></li>
+<li>右下の Pane の Help の枠に、<code>head</code> と入れてみてください。Return the First or Last Part of an Object と出てきます。何も特別な指定をしないと、通常は、最初の6行が現れます。Help の一番下にある、Example を R Script のところに入れて、試してみるとよいでしょう。たとえば、<code>head(letters, n = -6L)</code> では何が現れますか。Help をよく読むとわかります。<code>letters</code> を、<code>cars</code> にするなどして、試してみてください。</li>
+<li>右下の Pane の Files を見ると、おそらく、三つファイルがあるのではないかと思います。.Rhistory, project.Rproj, それと、R Script のファイル名です。上で、test1 とファイル名を決めた場合には、test1.R とあると思います。ピリオッド以下の最後の部分を File extension（ファイル拡張子）といいますが、それが、R Script の場合には、.R になります。</li>
+<li><p>Menu bar の File から Save を選んで、保存すれば、そこまでの状態をあとから、Reproduce（再現）することも可能です。</p></li>
 </ul>
 <p>どうですか。R Script の使い方、R Studio の機能、少し理解できましたか。</p>
 </div>
-<div id="step-4.-r-markdown-and-notebook" class="section level4">
-<h4>Step 4. R Markdown and notebook</h4>
+<div id="step-4.-r-markdown-and-r-notebook" class="section level4">
+<h4>Step 4. R Markdown and R Notebook</h4>
 <blockquote>
-<p>R Script などで、実行したことを、説明も含めて、R Markdown, Notebook で文書として記録することで、Reproducibility（再現性）だけでなく、Literate Programming（理解できるように記録する）ことが可能になります。</p>
+<p>R Script などで、実行したことを、説明も含めて、R Markdown, R Notebook で文書として記録することで、Reproducibility（再現性）だけでなく、Literate Programming（理解できるように記録すること）が可能になります。</p>
 </blockquote>
 <ul>
-<li>RStudio の Menu Bar の New File から、今度は、Notebook を選択してください。すでに、なにやら、文章がはいったものが出てきます。読んでみてください。</li>
+<li>RStudio の Menu Bar の New File から、今度は、R Notebook（または R Markdown（後述））を選択してください。すでに、なにやら、文章がはいったものが出てきます。読んでみてください。</li>
 <li>まず、<a href="http://rmarkdown.rstudio.com">R Markdown</a> の Notebook であることで、R Markdown のリンクが書かれています。つぎに、Chunk（code chunk と呼ばれる、プログラムの塊で、例では、<code>plot(cars)</code> が —{r} から — までで囲まれている部分をさします。Run ボタン（Code Chunk の右上にある、右をむいた三角印のことです。）を押すか cursor（カーソル）をその Chunk の中に合わせて、Cmd+Shift+Enter を押すと、実行することができるとあります。やってみてください。この Chunk の下に、グラフが現れます。右上には、X がありますから、それ押せば消えます。</li>
-<li>このような Chunk を加えるには、Tool Bar の Insert Chunk（Insert ボタンを押すと一番上に、R とありますからそれを）を押すか、Cmd+Option+I とします。と、書いてあります。そこで、どこでも良いのですが、一番下まで、Cursor を持って行って、そこで、実行してみてください。すると、上の Chunk と似たもので、真ん中が一行空いたものが現れます。そこで、たとえば、<code>head(cars)</code> と書き入れてみてください。</li>
-<li>Preview と書いてあるボタンを押すか、<code>knit</code> とあり、knit to HTML, knit to PDF, knit to Word と選べるようになっているかもしれません。それを選択すると、HTML（ホームページの記述に標準的に使われる、Hypertext Markup Language）か、PDF（Portable Document Format）か、Microsoft Word file になります。RStudio.cloud では、最初、Pop-up が block されていると、表示されませんが、Retry をすれば、表示されると思います。</li>
+<li>このような Chunk を加えるには、Tool Bar の Insert Chunk（Insert ボタンを押すと一番上に、R とありますからそれを押します。Short-cut Key の活用も便利です [Windows: Ctrl + Alt + I, MacOS X: Cmd + Option + I]）と、書いてあります。そこで、どこでも良いのですが、一番下まで、Cursor を持って行って、そこで、実行してみてください。すると、上の Chunk と似たもので、真ん中が一行空いたものが現れます。そこで、たとえば、<code>head(cars)</code> と書き入れてみてください。</li>
+<li>Preview と書いてあるボタンを押すか、<code>knit</code> とあり、knit to HTML, knit to PDF, knit to Word と選べるようになっているかもしれません。それを選択すると、HTML（ホームページの記述に標準的に使われる、Hypertext Markup Language）か、PDF（Portable Document Format）か、Microsoft Word file になります。RStudio Cloud では、最初、Pop-up が block されていると、表示されませんが、Retry をすれば、表示されると思います。</li>
 <li>HTML は通常問題ありませんが、PDF と、Word については、多少コメントが必要です。最初は読み飛ばしてください。
 <ul>
-<li>PDF には、<span class="math inline">\(\TeX\)</span> という プログラムが使われています。RStudio.cloud には、最初から、Install されているようですが、通常は、<code>tinytex</code> というプログラムを Install します。また、日本語が含まれるときには、少し修正が必要です。別途解説します。特に、すでに、<code>LiveTeX</code> などを、Local に Install されているときは、調整が必要です。<br />
+<li>PDF には、<span class="math inline">\(\TeX\)</span> という プログラムが使われています。RStudio Cloud には、最初から、Install されているようですが、通常は、<code>tinytex</code> というプログラムを Install します。また、日本語が含まれるときには、少し修正が必要です。別途解説します。特に、すでに、<code>LiveTeX</code> などを、Local に Install されているときは、調整が必要です。<br />
 </li>
-<li>Word は、Default では、Paper Size が Letter になっています。A4 に変えるなどが必要です。<a href="https://bookdown.org/yihui/rmarkdown/word-document.html">Word Document</a> に少し説明がありますが、出力した、Word File の Format をお好みに変えてから、my-styles.docx と名前を変えて、Project のある Folder に入れ、、一番上の <code>yaml</code> と言われる部分に、引用した箇所のように、<code>reference_docx: my-styles.docx</code> を加えれば、そのフォーマットで次から、output してくれます。<br />
+<li>Word は、Default では、Paper Size が Letter になっています。A4 に変えるなどが必要です。<a href="https://bookdown.org/yihui/rmarkdown/word-document.html">Word Document</a> に少し説明がありますが、出力した、Word File の Format を修正してから、my-styles.docx と名前を変えて、Project のある Folder に入れ、一番上の <code>yaml</code> と言われる部分に、引用した箇所のように、<code>reference_docx: my-styles.docx</code> を加えれば、次からそのフォーマットで、output してくれます。<br />
 </li>
 <li><a href="https://rmarkdown.rstudio.com">R Markdown</a> を参照してください。</li>
 </ul></li>
 <li>これで、HTML の文書が作れることがわかりました。Title: “R Notebook” を自分の好みに変え、日本語で説明の文書をを加えるなどして、R Notebook を作成してください。Reproducible and Literate Programming というものが、できるようになります。今後も、R Notebook を使って、自分のノートを作っておくと良いでしょう。</li>
 <li>流れを復習します。R Script でプログラムを作成する。完成したら、R Notebook を作成、Code Chunk に、R Script の プログラムを挿入すれば、その結果を含んだ HTML 文書を作成することができます。</li>
-<li>Notebook ではなく、R Markdown を選択しても、基本的には同じです。ただ、最初に、出力形式を選択したり、名前を入れたりします。File Extention（拡張子）は、.Rmd でどちらも同じです。</li>
+<li>Notebook ではなく、R Markdown を選択しても、基本的には同じです。ただ、最初に、出力形式を選択したり、名前を入れたりします。File Extention（拡張子）は、どちらも最後に .Rmd が付きます。</li>
 </ul>
 <blockquote>
 <p><a href="https://rmarkdown.rstudio.com/lesson-1.html">R Markdown Overview</a>: R Markdown の概要の Video を見てみませんか。</p>
 </blockquote>
 <p><strong>Note 備考</strong></p>
 <ul>
-<li><code>R</code> の update: Installation と同じ方法で行います。作業の途中はさけてください。挙動が変わる場合もたまにあります。<code>R.version</code> Command などで、version を確認して、net 上で調べてください。</li>
+<li><code>R</code> の update（更新）: Installation と同じ方法で行います。作業の途中はさけてください。挙動が変わる場合もたまにあります。<code>R.version</code> Command などで、version を確認して、net 上で調べてください。</li>
 <li>RStudio の update: Installation と同じ方法で行います。RStudio の About RStudio menu から version を確認できます。</li>
 </ul>
 </div>
@@ -501,65 +502,38 @@ plot(cars)</code></pre>
 <ul>
 <li>R Markdown の基本は、RStudio の Menu Bar の Markdown Quick Reference を参照してください。</li>
 <li>R Markdown では、Homepage や、本の作成も可能です。詳細は、<a href="http://rmarkdown.rstudio.com">R Markdown</a> を参照してください。</li>
-<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheat Sheet</a></li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">R Markdown Cheat Sheet（早見表）</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">R Markdown Reference Guide（利用ガイド）</a></li>
 </ul>
 <div id="markdown" class="section level4">
 <h4>Markdown</h4>
 <blockquote>
 <p>More information on Markdown Syntax and Markdown Editors</p>
 </blockquote>
-<p><code>R Markdown</code> を頻繁に使うようになると、RStudio の Help に書かれている情報より、もう少し詳しい説明が欲しくなります。 また、日本語入力において、RStudio では、困難を覚えることもあるかもしれません。</p>
+<p><code>R Markdown</code> は、Markdown という記述言語に、<code>R</code> の Code Chunk の機能を加えたものですが、これを頻繁に使うようになると、RStudio の Help に書かれている情報より、もう少し詳しい説明が欲しくなります。 また、日本語入力において、RStudio では、困難を覚えるかもしれません。</p>
 <ul>
 <li><a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>: RStudio の <a href="https://rmarkdown.rstudio.com/lesson-8.html">Markdown のページ</a>からリンクがある Pandoc’s Markdown に <code>Markdown</code> についての、正確な情報が書かれています。Pandoc は、universal document converter で、様々な Format（形式）の文書の、変換を行うもので、<code>R Markdown</code> の文書を、html や、MS Word file に、書き換えるときに、使われているものです。</li>
 <li><a href="https://www.markdowntutorial.com">Markdown Tutorials</a>: Exercise 形式で、Markdown の Syntax（文法）について学べるようになっています。</li>
 <li><a href="https://daringfireball.net/projects/markdown/dingus">DARING FIREBALL <code>Markdown</code> Dingus</a>: [DARING FIREBALL: Markdown] (<a href="https://daringfireball.net/projects/markdown/" class="uri">https://daringfireball.net/projects/markdown/</a>)] にある、Dingus（「なんとか言う奴」という程度の意味）。日本語入力のときは、RStudio と比較して、入力がスムーズです。Online の Markdown Editor として利用できます。Filter を Markdown、Results を Preview にして、Convert を押します。他にも、Online の Markdown Editor はいくつもあります。入力と同時に、Preview が表示されるものもあります。好みのものを探してください。</li>
-<li><a href="https://cocalc.com/">Cocalc</a>: Collaborative Calculation and Data Science で、数式処理の SageMath、<span class="math inline">\(\LaTeX\)</span> Editor、Jupyter Notebook などが使え、<code>R</code> Console もあり、R Markdown も使えるようになっていますが、日本語は使えない、Package 管理の問題もあるため、詳細は紹介しませんが、個人的には、Markdown Editor としても使っています。</li>
+<li><a href="https://cocalc.com/">CoCalc</a>: Collaborative Calculation and Data Science で、数式処理の SageMath、<span class="math inline">\(\LaTeX\)</span> Editor、Jupyter Notebook などが使え、<code>R</code> Console もあり、R Markdown も使えるようになっています。Package 管理の問題もあるため、詳細は紹介しませんが、個人的には、Markdown Editor として活用しています。（管理者権限のないコンピュータに Package を Install する場合は、たとえば <a href="https://docs.oracle.com/cd/E67822_01/OREAD/apx_packagetips.htm#OREAD-GUID-35B6EE2F-AB0C-42BC-A7AE-8F9D0F5577ED">Oracle のページ</a>・<a href="https://docs.oracle.com/cd/E90713_01/OREAD/R-package-installation-basics.htm">（日本語）</a>を参照してください。）</li>
 </ul>
 </div>
 <div id="more-on-rstudio" class="section level4">
 <h4>More on RStudio</h4>
 <blockquote>
 <p>はじめて、<code>R</code> や RStudio に触れるひとは、この項は読み飛ばしてください。<br />
-<a href="https://rstudio.com">RStudio Site</a> の上の Resources の Webinar &amp; Videos を見てみましょう。<code>R</code> や Data Science を少し知っているので、先回りして、RStudio でできることを知りたい人にお勧めです。</p>
+<a href="https://rstudio.com">RStudio Site</a> の上の Resources の Webinar &amp; Videos を見てみましょう。<code>R</code> や Data Science についての知識をある程度お持ちで、先回りして、RStudio について知りたい方にお勧めです。<br />
+最新のニュースについても知ることができます。</p>
 </blockquote>
-<p>ページの左に、次のようにあります。</p>
-<ul>
-<li>Learning Roadmap
-<ul>
-<li>RStudio Essentials</li>
-<li>Data Science Essentials</li>
-<li>Advanced Data Science</li>
-<li>Working with Spark</li>
-<li>Product: Connect</li>
-<li>RStudio Pro Administration</li>
-<li>Español Materials</li>
-</ul></li>
-<li>Events
-<ul>
-<li>Webinars</li>
-<li>rstudio::conf by Year</li>
-<li>rstudio::conf by Topic</li>
-<li>Additional Talks</li>
-</ul></li>
-<li>Important RStudio Sites
-<ul>
-<li>shiny</li>
-<li>R Markdown</li>
-<li>tidyverse</li>
-<li>Databases</li>
-<li>sparklyr</li>
-</ul></li>
-</ul>
 </div>
 </div>
 </div>
 <div id="manual-and-online-help" class="section level2">
 <h2>Manual and Online Help</h2>
 <blockquote>
-<p><code>R</code> の文法、<code>R</code> や package の Command（命令）の詳細は膨大で覚えることは不可能です。<br />
-基本をある程度理解し、あとは、Manual や、Help を調べ、Examples をとおして学びます。<br />
-Internet 上を検索して調べること、Blog などでの、Discussion から情報をえることも必要な場合が多いですが、まずは基本を理解しましょう。</p>
+<p><code>R</code> の文法、<code>R</code> や Package の Command（命令、<code>R</code> では Function（関数・機能）と呼ばれます）の詳細は膨大で覚えることは不可能です。<br />
+基本をある程度理解し、あとは、Manual や、Help を調べ、Examples を通して学びます。<br />
+Internet 上で検索して調べること、Blog などでの、Discussion から情報をえることも必要な場合が多いですが、まずは基本を理解しましょう。</p>
 </blockquote>
 <div id="manual-and-introduction-to-r" class="section level3">
 <h3>Manual and Introduction to <code>R</code></h3>
@@ -577,38 +551,38 @@ Internet 上を検索して調べること、Blog などでの、Discussion か�
 <li><strong>Preface</strong>: <code>R</code> についてなど、基本事項の紹介のあと、読者に二件書いてあります。
 <ul>
 <li><em>Most R novices will start with the introductory session in Appendix A. This should give some familiarity with the style of R sessions and more importantly some instant feedback on what actually happens.</em>　まず “Appendix A A sample session” を見ると、<code>R</code> の実際についての基本についてわかります、とありますから、見てみることをお勧めします。</li>
-<li><em>Many users will come to R mainly for its graphical facilities. See Graphics, which can be read at almost any time and need not wait until all the preceding sections have been digested.</em> 二つ目として、グラフィックについて調べる場合が多いと思うので、他の箇所を十分理解してからでなくても、12. Graphical Procedures を読むことを勧めています。</li>
+<li><em>Many users will come to R mainly for its graphical facilities. See Graphics, which can be read at almost any time and need not wait until all the preceding sections have been digested.</em> 二つ目として、グラフについて調べる場合が多いと思うので、他の箇所を十分理解してからでなくても、12. Graphical Procedures を読むことを勧めています。</li>
 <li>以上二件、ざっと見てみることをお勧めします。</li>
 </ul></li>
 </ul>
 </div>
-<div id="online-help" class="section level3">
-<h3>Online Help</h3>
+<div id="help-in-rstudio-and-online-help" class="section level3">
+<h3>Help in RStudio and Online Help</h3>
 <blockquote>
-<p><code>R</code>には、膨大な packages があり、それを日常的に利用します。一つ一つの package については、Introdution to <code>R</code> には書かれていません。また、上の Manual ではなく、RStudio の画面などで、Help を利用する方が簡単です。Help の使い方を基本から紹介します。</p>
+<p><code>R</code>には、膨大な Packages があり、それを日常的に利用します。一つ一つの Package については、Introdution to <code>R</code> には書かれていません。また、上の Manual ではなく、RStudio の画面などで、Help を利用する方が簡単です。Help の使い方を基本から紹介します。</p>
 </blockquote>
 <ul>
-<li>‘Introduction to <code>R</code>’ の項でも紹介した、Appendix A の最初に、<code>help.start()</code> について、<em>Start the HTML interface to on-line help (using a web browser available at your machine). You should briefly explore the features of this facility with the mouse.</em> とあります。これを、RStudio の Console や、R Script で、command として実行（run）すると、RStudio の 右下の pane の Help に、‘Statistical Data Analysis <code>R</code>’ と現れ、最初に、‘Introduction to <code>R</code>’ が現れます。ここからも、この文書を見ることができます。‘The <code>R</code> Language Definition’、‘<code>R</code> Data Import/Export’, ‘Packages’, ‘<code>R</code> Resources’ は、すぐにでも役に立つと思います。</li>
+<li>‘Introduction to <code>R</code>’ の項でも紹介した、Appendix A の最初に、<code>help.start()</code> について、<em>Start the HTML interface to on-line help (using a web browser available at your machine). You should briefly explore the features of this facility with the mouse.</em> とあります。これを、RStudio の Console や、R Script で、Command として実行（run）すると、RStudio の 右下の Pane の Help Tab に、‘Statistical Data Analysis <code>R</code>’ と現れ、最初に、‘Introduction to <code>R</code>’ が現れます。ここからも、この文書を見ることができます。‘The <code>R</code> Language Definition’、‘<code>R</code> Data Import/Export’, ‘Packages’, ‘<code>R</code> Resources’ は、すぐにでも役に立つと思います。</li>
 <li>RStudio で、<code>head</code>, <code>mean</code>（平均）, <code>sd</code>（標準偏差）, <code>plot</code>, <code>summary</code>, <code>tidyverse</code>, <code>ggplot2</code> などを調べたいとき.
 <ol style="list-style-type: decimal">
 <li>Console または、R Script で、? を付けて検索。<code>?head</code> Enter。</li>
 <li>Console または、R Script で、?? を付けて検索。<code>??head</code> Enter。</li>
-<li>右下の pane の Help Tab の右上の虫眼鏡マークに head などと入力。</li>
+<li>右下の Pane の Help Tab の右上の虫眼鏡マークに head などと入力。</li>
 </ol></li>
 </ul>
 <p>それぞれどのように表示されるか、比較してみてください。</p>
 <ul>
-<li><code>tidyverse</code> や <code>ggplot2</code> などの、重要な package の場合は、Vignette が表示され、かなり詳しい説明にアクセスできます。</li>
+<li><code>tidyverse</code> や <code>ggplot2</code> などの、重要な Package の場合は、Vignette が表示され、かなり詳しい説明にアクセスできます。</li>
 <li><code>plot</code> などで、Help に表示されるものが長い時は、さらに、検索が必要な場合もあります。RStudio の時には、虫眼鏡の次の行の Box に調べたい Key Word を入力すると、その Help のページ内で、検索してくれます。</li>
 </ul>
 <p>Help の活用は、とても、有効ですから、Internet での情報を探す前に、まずは、Help を活用してください。</p>
 </div>
 </div>
-<div id="learning-sites" class="section level2">
-<h2>Learning Sites</h2>
+<div id="interactive-learning-tools" class="section level2">
+<h2>Interactive Learning Tools</h2>
 <blockquote>
-<p><code>R</code> の基本を学びましょう。Interactive に学べるサイトと、Static な Online Contents を、実際に使ってみながら紹介していきます。<br />
-RStudio で紹介した、<code>swirl</code> も活用してください。</p>
+<p>Data Science を学ぶ、一番良い方法は、実際の Data を自分で分析してみることです。しかし、基本を学ぶことも必要です。本などで、基本を知識として学ぶこともできますが、能動的に、実際に、<code>R</code> を使いながら、学ぶことが近道であると思います。知識と、実際の分析の間を埋めるのが、対話型の Exercise 形式で学ぶ、Interactive Learning Tool です。<br />
+<code>R</code> の基本を Interactive に学ぶことのできるサイトはたくさんありますが、主として、RStudio Primers と、すでに、少し紹介した、<code>R</code> の Console 動作する Swirl について説明します。</p>
 </blockquote>
 <div id="rstudio-primers" class="section level3">
 <h3>RStudio Primers</h3>
@@ -616,10 +590,10 @@ RStudio で紹介した、<code>swirl</code> も活用してください。</p>
 <p>Interactive Tutorials が Free Open Online で提供されています。今後、Contents が増えていくことが期待されます。</p>
 </blockquote>
 <ul>
-<li><a href="https://rstudio.cloud/learn/primers">RStudio Primers</a>: <a href="https://rstudio.cloud">RStudio.cloud</a> の下からリンクがついています。Login なしで使えます。
+<li><a href="https://rstudio.cloud/learn/primers">RStudio Primers（入門書）</a>: <a href="https://rstudio.cloud">RStudio Cloud</a> の下からリンクがついています。Login なしで使えます。RStudio Cloud を使っているときは、左上の三本線を選択すると、Learn のリストの一つとして Primers へのリンクが付いています。
 <ol style="list-style-type: decimal">
-<li><a href="https://rstudio.cloud/learn/primers/1">The Basics</a>: <code>ggplot2</code> 入門の、Visualization Basics と、Programing Basics にわかれています。最初から、<code>ggplot2</code> の package は load されています。もし、R Script や、R Markdown, Notebook などに記録するときは、最初に <code>library(ggplot2)</code> を実行してから始めてください。問題は <a href="https://r4ds.had.co.nz">R for Data Science</a> からとられています。<a href="https://jrnold.github.io/r4ds-exercise-solutions/">Solutions to Exercises of R for Data Science</a> の答えも公開されています。</li>
-<li><a href="https://rstudio.cloud/learn/primers/2">Working with Data</a>: <code>R</code> の基本的なデータ形式は、Data Frame ですが、より、扱いやすい、<code>tibble</code> および、それをあつかう、<code>dplyr</code> package についての問題です。</li>
+<li><a href="https://rstudio.cloud/learn/primers/1">The Basics</a>: <code>ggplot2</code> 入門の、Visualization Basics と、Programming Basics にわかれています。最初から、<code>ggplot2</code> の Package は load されています。もし、R Script や、R Markdown, R Notebook などに記録するときは、最初に <code>library(ggplot2)</code> を実行してから始めてください。問題は <a href="https://r4ds.had.co.nz">R for Data Science</a> からとられています。<a href="https://jrnold.github.io/r4ds-exercise-solutions/">Solutions to Exercises of R for Data Science</a> の答えも公開されています。</li>
+<li><a href="https://rstudio.cloud/learn/primers/2">Working with Data</a>: <code>R</code> の基本的なデータ形式は、Data Frame ですが、より、扱いやすい、<code>tibble</code> および、それをあつかう、<code>dplyr</code> Package についての問題です。</li>
 <li><a href="https://rstudio.cloud/learn/primers/3">Visualizing Data</a>: <code>ggplot2</code> で扱う、様々なグラフについての問題です。</li>
 <li><a href="https://rstudio.cloud/learn/primers/4">Tidy Your Data</a>: <code>tidyverse</code> を学ぶ問題です。</li>
 <li><a href="https://rstudio.cloud/learn/primers/5">Iterate</a>: <code>R</code> で Program を書くときに、必要なことを学びます。</li>
@@ -628,10 +602,10 @@ RStudio で紹介した、<code>swirl</code> も活用してください。</p>
 </ul>
 <p><a name = "swirl"></a></p>
 </div>
-<div id="swirl" class="section level3">
-<h3>Swirl</h3>
+<div id="swirl-statistics-with-interactive-r-lerning" class="section level3">
+<h3>Swirl (Statistics with Interactive R Lerning)</h3>
 <blockquote>
-<p>Console を利用して、対話型で学ぶコースを提供する、Package です。基本的なことは学べるコースがすでに用意されています。下のような説明があります。<br />
+<p>Console を利用して、対話型で学ぶコースを提供する、Package です。基本的なことを学べるコースがすでに用意されています。下のような説明があります。<br />
 Use the R console as an interactive learning environment. Users receive immediate feedback as they are guided through self-paced lessons in data science and R programming.</p>
 </blockquote>
 <ul>
@@ -644,7 +618,9 @@ Use the R console as an interactive learning environment. Users receive immediat
 <li><a href="https://cran.r-project.org/web/packages/swirl/index.html">CRAN <code>swirl</code> Package</a>, <a href="https://cran.r-project.org/web/packages/swirl/swirl.pdf">Manual in PDF</a></li>
 <li><a href="https://cran.r-project.org/web/packages/swirlify/index.html">CRAN <code>swirlify</code> Package</a>, <a href="https://cran.r-project.org/web/packages/swirlify/swirlify.pdf">Manual in PDF</a></li>
 <li><a href="examples/swirl.html">日本語での説明と例</a> [2020.3.31]<br />
-英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。　　- R Programming（初級用）：解答と簡単な解説が含まれています。
+英語での演習に抵抗があるかたのために、作成しました。少しずつ、英語に慣れていけるとよいですね。　
+<ul>
+<li>R Programming（初級用）：解答と簡単な解説があります。
 <ol style="list-style-type: decimal">
 <li>Basic Building Blocks（基本的構成要素）<br />
 </li>
@@ -676,77 +652,116 @@ Use the R console as an interactive learning environment. Users receive immediat
 <li>Base Graphics（グラフィックの基本）<br />
 </li>
 </ol></li>
+<li>R Programming 以外も、いくつかの swirl Course の、Console Log（実際に使ったときの Console に表示される履歴）と、注意事項を記載しました。自分にあったものを見つけてください。</li>
+</ul></li>
 <li><strong>注：</strong> <em>Beginner 用の R Programming の各 Lesson の最後に、‘Would you like to receive credit for completing this course on Coursera.org?’ とメッセージが表示されますが、2: No を選択してください。（<a href="https://github.com/swirldev/swirl_courses#swirl-courses"><code>swirl</code> Course Repository</a> 参照）</em></li>
+</ul>
+</div>
+<div id="other-interactive-learning-sites" class="section level3">
+<h3>Other Interactive Learning Sites</h3>
+<p>以下のサイトは、いずれも、Sign-Up が必要で、また、すべてのコースを受講し機能を利用するのは、有料です。ただし、無償でも、基本は学ぶことができます。他にも似たサイトがあります。</p>
+<ul>
+<li><strong>Data Camp</strong> <a href="https://learn.datacamp.com/courses/free-introduction-to-r">Intro R datacamp</a>: <code>R</code> だけでなく、様々なコースを提供しています。一定期間は、すべての機能が利用可能です。Data Camp は、システムも提供しており、HarvardX Data Science でも利用しています。</li>
+<li><strong>Data Quest</strong> <a href="https://app.dataquest.io/dashboard">Dashboard</a>: <code>R</code> だけでなく、様々なコースを提供しています。<br />
+</li>
+<li><strong>Vertabelo</strong> <a href="https://academy.vertabelo.com/course/introduction-to-r">Introduction to R</a>: <code>R</code> だけでなく、様々なコースを提供しています。<code>R</code> では、28 exercises を無償で試すことができます。</li>
+</ul>
+</div>
+</div>
+<div id="refrences-and-miscellaneous-learning-sites" class="section level2">
+<h2>Refrences and Miscellaneous Learning Sites</h2>
+<blockquote>
+<p>調べるときに、便利なサイト、大学で提供している、学習支援サイトをいくつか紹介します。<br />
+MOOCs (Massive Open Online Courses) や、Bookdown で書かれ Online で提供されている教科書などについては、Resources のページを参照してください。</p>
+</blockquote>
+<div id="learning-support-centers-of-universities" class="section level3">
+<h3>Learning Support Centers of Universities</h3>
+<blockquote>
+<p>多くの大学が学習支援サイトをもっており、公開しているところもいくつもあります。ここでは、その中から、いくつか紹介します。</p>
+</blockquote>
+<ul>
+<li><strong>Johns Hopkins UniversityCoursera</strong>
+<ul>
+<li><a href="https://jhudatascience.org/index.html">The Johns Hopkins Data Science Lab</a>, <a href="https://jhudatascience.org/courses.html">Online Courses</a>: 膨大な情報があります。Coursera からたくさんのコースが提供されており、無償で Online で読める教科書もあります。</li>
+</ul></li>
+<li><strong>Harvard University</strong>
+<ul>
+<li><a href="https://dss.iq.harvard.edu">Data Science Services</a>, <a href="https://dss.iq.harvard.edu/workshop-materials">Workshop Materials</a>: R Workshop Materials の Tab を選択すると、Online Textbook を含め、膨大な情報が提供されています。</li>
+</ul></li>
+<li><strong>University of Michigan</strong>
+<ul>
+<li><a href="https://www.socr.umich.edu/index.html">The Statistics Online Computational Resource (SOCR)</a>: 膨大な情報が公開されており、コースによっては、詳細な内容を確認することができます。（<a href="https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html">例</a>）</li>
+</ul></li>
 </ul>
 </div>
 <div id="various-learning-sites" class="section level3">
 <h3>Various Learning Sites</h3>
 <blockquote>
-<p>少しずつ紹介していきます。</p>
+<p>以下のどれでも、<code>R</code> の基本を学ぶことができます。他にもたくさんありますが、一部のみ紹介します。自分の気に入ったものを見つけてください。学習のリソースについては、Resources を参照してください。</p>
 </blockquote>
 <ul>
-<li>Rstat by Selva Prabhakaran: <a href="http://r-statistics.co" class="uri">http://r-statistics.co</a>.</li>
-<li>Tutorials Point.
+<li>DataCamp: <a href="https://www.statmethods.net/r-tutorial/index.html">Quick R</a> コンパクトにまとまっています。DataCamp のコースの参考にも使われます。</li>
+<li>Tutorials Point: <a href="https://www.tutorialspoint.com/r/index.htm">Learning R Programming</a> 各種コースもあります。</li>
+<li>R Tutorial: <a href="http://www.r-tutor.com/r-introduction">An R Introduction to Satistics</a>　コンパクトにまとまっています。</li>
+<li>Code Academy: <a href="https://www.codecademy.com/learn">Learn R</a> 各種コースもあります。</li>
+</ul>
+</div>
+<div id="youtube-video" class="section level3">
+<h3>Youtube Video</h3>
+<blockquote>
+<p>Youtube には、Data Science に関しても、膨大な Video が公開されており、MOOCs などのコースの Video で公開されているものもあります。ここでは、少しだけ紹介します。[ ] の中は長さです。</p>
+</blockquote>
 <ul>
-<li>Learning R Programming: <a href="https://www.tutorialspoint.com/r/index.htm" class="uri">https://www.tutorialspoint.com/r/index.htm</a></li>
-<li>Big Data and Analytics Tutorials: <a href="https://www.tutorialspoint.com/big_data_tutorials.htm" class="uri">https://www.tutorialspoint.com/big_data_tutorials.htm</a></li>
-<li>Machine Learning: <a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm" class="uri">https://www.tutorialspoint.com/machine_learning_tutorials.htm</a></li>
-<li>Mathematics for Data Science and Machine Learning Using R: (some previews) <a href="https://www.tutorialspoint.com/mathematics_for_data_science_and_machine_learning_using_r/index.asp" class="uri">https://www.tutorialspoint.com/mathematics_for_data_science_and_machine_learning_using_r/index.asp</a></li>
+<li><a href="https://www.youtube.com/watch?v=y-HOQnMsylA">R: R The most powerful and most widely used statistical software</a> [1’33&quot;]<br />
+統計ソフトとしての <code>R</code> についての短い紹介です。英語ですが、字幕を表示させることができます。ただし、機械的に認識して表示しているので、<code>R</code> は <code>our</code> となっています。</li>
+<li>Simplilearn: <a href="https://www.youtube.com/watch?v=X3paOmcrTjQ">Data Science In 5 Minutes | Data Science For Beginners | What Is Data Science?</a> [4’37&quot;]
+<ul>
+<li>Simplilearn という学習コンテンツを提供しているインドの会社のビデオです。コンパクトに Data Science について、特に、Data Scientist はどのような仕事かについて説明しています。英語字幕が付いており、わかりやすいと思います。項目を書いておきます。</li>
+<li>Data Scientist はどんな仕事か
+<ol style="list-style-type: decimal">
+<li>Business Problem ビジネスでの課題を特定する</li>
+<li>Data Acquisition 必要なデータの特定・入手可能性・方法</li>
+<li>Data Preparation （Wrangling, Munging）データの整理と準備</li>
+<li>Exploratory Data Analysis データ探索</li>
+<li>Data Modeling（Machine Learning） 数理モデルの考察・選択（機械学習）</li>
+<li>Visualization and Communication　視覚化を通して的確に理解・共有</li>
+<li>Deploys and Maintains 実際の問題への適用と改善<br />
+ビジネスにおける流れが説明されていますが、Data Science の基本的な流れでもあります。</li>
+</ol></li>
+<li>Data Science Changing the World 世界を変えつつある</li>
+<li>Various Roles: Data Analysts, Machine Learning Engineer, Deep Learning Engineer, Data Engineer, Data Scientist いろいろな役割があり、それに伴って、いろいろな名前で呼ばれている。</li>
+<li><a href="https://www.youtube.com/user/Simplilearn">Youtube Simplilearn Page</a><br />
+他にも、様々なビデオを提供しています。<a href="https://www.youtube.com/watch?v=bAyrObl7TYE">Big Data</a> [5’11&quot;]、<a href="https://www.youtube.com/watch?v=ukzFI9rgwfU">Machine Learning</a> [7’51&quot;] など興味のあるトピックのビデオを見てみるのもお薦めです。</li>
+<li>もし、これらが気に入れば <a href="https://www.youtube.com/watch?v=7WRlYJFG7YI">Data Science Full Course | Data Science For Beginners | Learn Data Science In 10 Hours | Simplilearn</a> [9:51’32’’] もあります。</li>
 </ul></li>
-<li>R Tutorial: <a href="http://www.r-tutor.com/r-introduction" class="uri">http://www.r-tutor.com/r-introduction</a></li>
-<li>Quick R: <a href="https://www.statmethods.net/r-tutorial/index.html" class="uri">https://www.statmethods.net/r-tutorial/index.html</a></li>
-<li>Guru99: <a href="https://www.guru99.com/r-tutorial.html" class="uri">https://www.guru99.com/r-tutorial.html</a></li>
-<li>Cyclismo: <a href="https://www.cyclismo.org/tutorial/R/" class="uri">https://www.cyclismo.org/tutorial/R/</a></li>
-<li>Edureka <a href="https://www.edureka.co/blog/r-tutorial/" class="uri">https://www.edureka.co/blog/r-tutorial/</a>:</li>
-<li>Monash Data Fluency: <a href="https://monashdatafluency.github.io/r-intro-2/index.html" class="uri">https://monashdatafluency.github.io/r-intro-2/index.html</a></li>
-<li>Data carpentry <a href="https://datacarpentry.org/R-ecology-lesson/index.html" class="uri">https://datacarpentry.org/R-ecology-lesson/index.html</a>.
+<li><a href="https://www.youtube.com/watch?v=_V8eKsto3Ug">R: R Programming Tutorial - Learn the Basics of Statistical Computing</a> [2:10’38’’]
 <ul>
-<li>Ggplot2 <a href="https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html" class="uri">https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html</a>:</li>
-</ul></li>
-<li>R Tutorials: <a href="https://data-flair.training/blogs/r-tutorials-home/" class="uri">https://data-flair.training/blogs/r-tutorials-home/</a></li>
-<li>Intro R datacamp: <a href="https://learn.datacamp.com/courses/free-introduction-to-r%20" class="uri">https://learn.datacamp.com/courses/free-introduction-to-r%20</a>.
-<ul>
-<li><a href="https://learn.datacamp.com/courses/data-visualization-with-ggplot2-1" class="uri">https://learn.datacamp.com/courses/data-visualization-with-ggplot2-1</a></li>
-</ul></li>
-<li>Data Quest: <a href="https://app.dataquest.io/dashboard" class="uri">https://app.dataquest.io/dashboard</a> - interactive</li>
-<li>W3square spaces: <a href="https://www.w3resource.com/r-programming-exercises/basic/" class="uri">https://www.w3resource.com/r-programming-exercises/basic/</a></li>
-<li>Vertabelo <a href="https://academy.vertabelo.com/course/introduction-to-r" class="uri">https://academy.vertabelo.com/course/introduction-to-r</a> 28 exercises [good]</li>
-<li>edX Microsoft: Introduction to R for Data Science: Data Camp.
-<ul>
-<li><a href="https://www.edx.org/course/introduction-to-r-for-data-science-2" class="uri">https://www.edx.org/course/introduction-to-r-for-data-science-2</a></li>
-</ul></li>
-<li>Coursera <a href="https://www.coursera.org/learn/r-programming" class="uri">https://www.coursera.org/learn/r-programming</a>:
-<ul>
-<li><a href="https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8" class="uri">https://www.youtube.com/playlist?list=PLVext98k2evi8mDNRo4MwIgVgSmwM3cS8</a></li>
-</ul></li>
-<li>Harvard University Data Science Services: <a href="https://dss.iq.harvard.edu" class="uri">https://dss.iq.harvard.edu</a>.
-<ul>
-<li>Materials: <a href="https://dss.iq.harvard.edu/workshop-materials" class="uri">https://dss.iq.harvard.edu/workshop-materials</a></li>
-</ul></li>
-<li>University of Michigan: <a href="https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html" class="uri">https://www.socr.umich.edu/people/dinov/courses/DSPA_Topics.html</a>.</li>
-<li>UCLA:
-<ul>
-<li>Data Science and Predictive Analytics: Biomedical and Health Applications using R with supporting materials (including R code)</li>
-</ul></li>
-<li>Data Novia Courses: <a href="https://www.datanovia.com/en/dtcourses/" class="uri">https://www.datanovia.com/en/dtcourses/</a></li>
-<li>Code Academy: Learn R: <a href="https://www.codecademy.com/learn" class="uri">https://www.codecademy.com/learn</a>.
-<ul>
-<li>readr, dplyr</li>
+<li>二時間に及ぶ Lecture（講義）で、<code>R</code> によるデータ分析について説明しています。豊富な内容が、順序立てて説明され、基本がカバーされていて、よくまとまっています。最初から、すべてを理解することは難しいと思いますが、Video の下に、項目ごとに、何分頃に何が説明されているかも書かれており、途中から見ることができるようになっています。</li>
+<li><a href="https://datalab.cc/tools/r01">Files</a> も公開されており、Lecture の中で使われる <a href="https://drive.google.com/drive/folders/15U8WjVKbYXaq6N6Wb_6bCr9QZ1DwCkAO">R Script へのリンク</a> が Google Drive に付いていて、利用することができます。</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="data-visualization" class="section level2">
-<h2>Data Visualization</h2>
-<div id="graphics" class="section level3">
-<h3>Graphics</h3>
+<div id="notes-on-graphics" class="section level2">
+<h2>Notes on Graphics</h2>
+<blockquote>
+<p>実際に Data Science をはじめると、最初に苦労するのが、グラフについてではないかと思います。しかし、ここに、ちょっと微妙な問題があります。以下、Graphics（グラフ）について、特に、Base <code>R</code> Graphics と <code>ggplot2</code> について書き、Get Started の結びとします。</p>
+</blockquote>
+<div id="base-r-graphics-and-ggplot2" class="section level3">
+<h3>Base R Graphics and <code>ggplot2</code></h3>
+<p>これから、<code>R</code> について学んでいくにあたって、ひとつだけ書いておくべきことがあります。それは、特に、グラフに関して生じる、Base Graphics と、<code>tidyverse</code> などの「現代的 (Modern)」な Package 群に支えられた、<code>ggplot2</code> を使った Graphics の違いについてです。</p>
+<p>Interactive Learning Tool の項で、swirl と、RStudio Premier を紹介しましたが、swirl の R Programming は、Base Graphics と呼ばれる、<code>R</code> に最初から Install されているものだけを使っており、最後の、15. Base Graphics も、そのタイトルの通り、Base の グラフ環境だけを使っています。一方、R Studio Premier では、<code>ggplot2</code> など、一群の <code>tidyverse</code> Package を使っています。</p>
+<p><code>R</code> は、Free Open Source であり、多くの人たちによって、機能が付け加えられ、それが、維持・管理されています。しかし、そのことは、それぞれのユーザーの必要に応える形で開発されていくために、名称も含め、システム全体としての、統一性に欠けていたり、全体が論理的構成になっていないなどの問題が生じます。これまでも、規格を定めるなどして整合性は維持されてきましたし、Package を登録するときの規定も明確に定められて来ています。しかし、一番、問題を生じたのが、グラフの部分です。<code>R</code> は、様々な分野で利用されていますが、ユーザーが、それぞれの分野として頻繁に使う形式の出力を簡単にするために、Package を追加していったことが背景にあると思います。</p>
+<p>Leland Wilkinson によって提唱された、Grammar of Graphics をベースに、Hadley Wickham 等によって、論理的な構成が形となり生まれた、<code>ggplot2</code> に、さらに、高速化を含む、Data を扱う一群の、Package が、<code>tidyverse</code> としてまとめられ、現在は、広く使われており、初心者のうちから、<code>ggplot2</code> などを使うことが薦められています。個人的には、非常にすぐれていると思います。そこで、常に <code>tidyverse</code> を使っていますので、上でも、Package の最初に、<code>tidyverse</code> の Installation からはじめました。</p>
+<p>しかし、Data を最初に概観するときには、簡単な命令でもある、Base R Graphics は便利です。個人的には、<code>R</code> の基本と、Base Graphics の基本を押さえてから、現代的な Graphics をしっかり学んでいくのがよいと思っています。</p>
+</div>
+<div id="references-on-base-graphics-and-modern-graphics" class="section level3">
+<h3>References on Base Graphics and Modern Graphics</h3>
 <ul>
-<li><a href="examples/examples_of_graphs.html">Examples of Graphs</a>: グラフの基本的な例</li>
+<li><strong><code>tidyverse</code></strong> <a href="https://www.tidyverse.org">R packages for data science</a>：ホームページ。関連、Package の簡単な解説と、Hadley Wickham と Garrett Grolemund による本 <a href="https://r4ds.had.co.nz">R for data science (r4ds)</a> など、学習のためのリンク。</li>
+<li><a href="examples/examples_of_graphs.html">Examples of Graphs</a>: グラフの基本的な例（学習ノート）</li>
 </ul>
 </div>
-</div>
-<div id="miscellaneous" class="section level2">
-<h2>Miscellaneous</h2>
 </div>
 
 <hr>
